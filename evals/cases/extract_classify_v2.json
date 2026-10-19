@@ -1,0 +1,532 @@
+[
+  {
+    "id": "note-01",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "buy milk. Sam prefers email over calls",
+    "expected": [
+      {
+        "text": "buy milk", 
+        "kind": "task",
+        "context": null,
+        "confidence": "high",
+        "reason": null, "topic":
+        "Personal"
+      },
+      {
+        "text": "Sam prefers email over calls",
+        "kind": "note", 
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "INBOX"
+      }
+    ]
+  },
+  {
+    "id": "note-02",
+    "topics":["Kids", "House", "Errands", "Work"],
+    "input": "the wifi password is on the fridge",
+    "expected": [
+      {"text": "the wifi password on the fridge", 
+      "kind": "note",
+      "context": null,
+      "confidence": "high",
+      "reason": null,
+      "topic": "House"}
+    ]
+  },
+  {
+    "id": "note-03",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "the tax deadline is the 31st",
+    "expected": [
+      {
+        "text": "tax deadline is the 31st", "kind": "note", "context": null, "confidence": "medium", "reason": "A deadline could be an informational note or imply a task.", "topic": "Finance"}
+    ]
+  },
+  {
+    "id": "idea-01",
+    "topics": ["Acme Launch", "Hiring", "Fundraising", "Personal"],
+    "input": "what if we added a dark mode to the dashboard",
+    "expected": [
+      {"text": "Add dark mode to the dashboard", "kind": "idea", "context": null, "confidence": "high", "reason": null, "topic": "Acme Launch"}
+    ]
+  },
+  {
+    "id": "topic-01",
+    "topics": ["Work", "Fitness"],
+    "input": "it would be nice to learn to cook thai food",
+    "expected": [
+      {"text": "learn to cook thai food", "kind": "idea", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"}
+    ]
+  },
+  {
+    "id": "topic-02",
+    "topics": [],
+    "input": "buy milk. call the bank about the mortgage. maybe try a standing desk",
+    "expected": [
+      {"text": "buy milk", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"},
+      {"text": "call the bank about the mortgage", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"},
+      {"text": "try a standing desk", "kind": "idea", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"}
+    ]
+  },
+  {
+    "id": "topic-03",
+    "topics": ["Acme Launch", "Fitness"],
+    "input": "buy milk. call Rui about the pricing page. renew passport",
+    "expected": [
+      {"text": "buy milk", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"},
+      {"text": "call Rui about the pricing page", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"},
+      {"text": "renew passport", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"}
+    ]
+  },
+  {
+    "id": "topic-04",
+    "topics": ["Clients", "Admin", "Home", "Health"],
+    "input": "renew the car insurance. invoice Marta for October",
+    "expected": [
+      {"text": "renew the car insurance", "kind": "task", "context": null, "confidence": "medium", "reason": "Admin is a plausible but underspecified topic.", "topic": "Admin"},
+      {"text": "invoice Marta for October", "kind": "task", "context": null, "confidence": "medium", "reason": "This could fit both client work and administration.", "topic": "Clients"}
+    ]
+  },
+  {
+    "id": "topic-05",
+    "topics": ["Work", "Home"],
+    "input": "work on the garden this weekend",
+    "expected": [
+      {"text": "work on the garden", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "Home"}
+    ]
+  },
+  {
+    "id": "topic-06",
+    "topics": ["Health", "Finance"],
+    "input": "renew health insurance",
+    "expected": [
+      {"text": "renew health insurance", "kind": "task", "context": null, "confidence": "medium", "reason": "The task fits both health and financial administration.", "topic": "Finance"}
+    ]
+  },
+  {
+    "id": "topic-07",
+    "topics": ["Ana", "Sam", "Work"],
+    "input": "order a gift for Ana. send Sam the Q3 slides",
+    "expected": [
+      {"text": "order a gift for Ana", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "Ana"},
+      {"text": "send Sam the Q3 slides", "kind": "task", "context": null, "confidence": "medium", "reason": "Both the person-named topic and Work are plausible classifications.", "topic": "Sam"}
+    ]
+  },
+
+  {
+    "id": "noise-01",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "ugh I'm so tired and my head is spinning. need to call the bank about the card. I should really exercise more. what a week",
+    "expected": [
+      {"text": "call the bank about the card", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "Finance"},
+      {"text": "exercise more", "kind": "idea", "context": null, "confidence": "medium", "reason": "This aspiration could be classified as either an idea or a task.", "topic": "Health"}
+    ]
+  },
+  {
+    "id": "null-01",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "so tired today. honestly who even knows what I'm doing with my life. ugh mondays",
+    "expected": []
+  },
+  {
+    "id": "meta-01a",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "i should order a gift for ana... i can't even explain how tired i am - what even is time, the energy provider moved the payment date to the 5th, maybe try a standing desk ok also schedule the quarterly review with sam, ugh",
+    "expected": [
+      {"text": "order a gift for Ana", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "Personal"},
+      {"text": "schedule the quarterly review with Sam", "kind": "task", "context": null, "confidence": "high", "reason": null, "topic": "Work"},
+      {"text": "maybe try a standing desk", "kind": "idea", "context": null, "confidence": "medium", "reason": "Both Health and Work aer plausible topics", "topic": "Health"},
+      {"text": "the energy provider moved payment date moved to the 5th", "kind": "note", "context": null, "confidence": "high", "reason": null, "topic": "Finance"}
+    ]
+  },
+  {
+    "id": "meta-01b",
+    "topics": ["Work", "Fitness"],
+    "input": "i should order a gift for ana... i can't even explain how tired i am - what even is time, the energy provider moved the payment date to the 5th, maybe try a standing desk ok also schedule the quarterly review with sam, ugh",
+    "expected": [
+      {
+        "text": "order a gift for Ana",
+        "kind": "task",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "INBOX"
+      },
+      {
+        "text": "schedule the quarterly review with Sam",
+        "kind": "task",
+        "context": null, "confidence": "high", "reason": null, "topic": "Work"},
+      {
+        "text": "maybe try a standing desk", "kind": "idea", 
+        "context": null, 
+        "confidence": "medium", 
+        "reason": "Both Health and Work aer plausible topics",
+        "topic": "Health"
+      },
+      {"text": "the energy provider moved the payment date moved to the 5th", "kind": "note", "context": null, "confidence": "high", "reason": null, "topic": "INBOX"}
+    ]
+  },
+  {
+    "id": "meta-01c",
+    "topics": [],
+    "input": "i should order a gift for ana... i can't even explain how tired i am - what even is time, the energy provider moved the payment date to the 5th, maybe try a standing desk ok also schedule the quarterly review with sam, ugh",
+    "expected": [
+      {
+        "text": "order a gift for Ana",
+        "kind": "task",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "INBOX"
+      },
+      {
+        "text": "schedule the quarterly review with Sam",
+        "kind": "task",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "INBOX"
+      },
+      {
+        "text": "maybe try a standing desk",
+        "kind": "idea",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "INBOX"
+      },
+      {
+        "text": "energy provider payment date moved to the 5th",
+        "kind": "note", 
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "INBOX"
+      }
+    ]
+  },
+  {
+    "id": "brain-01",
+    "topics": ["Work", "Personal", "Health", "Finance", "Errands"],
+    "input": "um okay so like I just need to get everything out of my head. so tomorrow I have the board thing and I'm kind of freaking out about the slides, like what if the numbers are wrong, I should probably double check the revenue figures with Rui first thing. also I told Sam I'd call him back about the contract and I totally forgot so call Sam today. oh my god the car, the insurance runs out at the end of the month, renew it, don't let me forget again. and I need to buy a present for Ana, her birthday is the twentieth, she likes ceramics I think, or was that someone else. hm. what else. oh I want to start running again, maybe sign up for that ten k in spring, that would be cool. the gym said they'd be closed on bank holiday Monday by the way. also pick up the dry cleaning before seven or they close. I feel like I'm forgetting something huge. ok. I'm gonna go make tea.",
+    "expected": [
+      {
+        "text": "double check the revenue figures with Rui first thing",
+        "kind": "task",
+        "context": "tomorrow I have the board thing and I'm kind of freaking out about the slides, like what if the numbers are wrong",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "call Sam today",
+        "kind": "task",
+        "context": "I told Sam I'd call him back about the contract and I totally forgot",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "renew the car insurance",
+        "kind": "task",
+        "context": "the insurance runs out at the end of the month",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Finance"
+      },
+      {
+        "text": "buy a present for Ana",
+        "kind": "task",
+        "context": "her birthday is the twentieth, she likes ceramics I think, or was that someone else",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Personal"
+      },
+      {
+        "text": "start running again",
+        "kind": "task",
+        "context": null,
+        "confidence": "medium",
+        "reason": "This is an expressed personal goal, but it is not yet a specific commitment or planned action.",
+        "topic": "Health"
+      },
+      {
+        "text": "maybe sign up for that ten k in spring",
+        "kind": "idea",
+        "context": "I want to start running again",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Health"
+      },
+      {
+        "text": "the gym said they'd be closed on bank holiday Monday",
+        "kind": "note",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "Health"
+      },
+      {
+        "text": "pick up the dry cleaning before seven",
+        "kind": "task",
+        "context": "or they close",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Errands"
+      }
+    ]
+  },
+  {
+    "id": "brain-02",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "ok so my brain is just loud today. I woke up at 4 thinking about money, like what if the rent goes up again, I can't even. anyway, pay the electricity bill, it's overdue by a few days, ugh. also transfer something to savings, I'll figure out how much later. my sister called yesterday and said mum's knee is getting worse so I should probably call mum this weekend, or maybe go visit? don't know yet. work stuff: the onboarding docs are a mess and nobody owns them, I could just rewrite them myself, idea, might actually be fun. and the standup is moving to 9:30 starting next week, that's actually nice. I should really stop checking email at midnight. I keep telling myself that. funny how the brain works. oh and buy running shoes, mine are falling apart, I think the gym isn't even the problem, it's the shoes. ok that's the dump for now, feeling a bit lighter.",
+    "expected": [
+      {
+        "text": "pay the electricity bill",
+        "kind": "task",
+        "context": "it's overdue by a few days",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Finance"
+      },
+      {
+        "text": "transfer something to savings",
+        "kind": "task",
+        "context": "I'll figure out how much later",
+        "confidence": "medium",
+        "reason": "The transfer is intended, but the amount has not been decided.",
+        "topic": "Finance"
+      },
+      {
+        "text": "call mum this weekend",
+        "kind": "task",
+        "context": "my sister called yesterday and said mum's knee is getting worse; or maybe go visit? don't know yet",
+        "confidence": "medium",
+        "reason": "Calling is suggested as a next step, but the user is still considering visiting instead.",
+        "topic": "Personal"
+      },
+      {
+        "text": "rewrite the onboarding docs myself",
+        "kind": "idea",
+        "context": "the onboarding docs are a mess and nobody owns them; might actually be fun",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "the standup is moving to 9:30 starting next week",
+        "kind": "note",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "stop checking email at midnight",
+        "kind": "task",
+        "context": "I keep telling myself that",
+        "confidence": "medium",
+        "reason": "This is an intended habit change rather than a clearly scheduled, one-time action.",
+        "topic": "Personal"
+      },
+      {
+        "text": "buy running shoes",
+        "kind": "task",
+        "context": "mine are falling apart, I think the gym isn't even the problem, it's the shoes",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Health"
+      }
+    ]
+  },
+  {
+    "id": "brain-03",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "so I've been thinking about whether I should leave this job or not, probably not, but who knows. anyway right now I just need to finish the quarterly report, send it to James by Thursday, no wait Friday, James said Friday. and book the room for the workshop, at least ten people. my back has been killing me so book a doctor appointment, ugh I hate waiting rooms. what if we did the workshop outdoors? probably too cold. ok also sign up for that pottery class Ana mentioned, sounds fun. I really have no idea what I'm doing with my life sometimes lol.",
+    "expected": [
+      {
+        "text": "finish the quarterly report",
+        "kind": "task",
+        "context": "send it to James by Friday, no wait Friday, James said Friday",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "send it to James by Friday",
+        "kind": "task",
+        "context": "the quarterly report",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "book the room for the workshop",
+        "kind": "task",
+        "context": "at least ten people",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "book a doctor appointment",
+        "kind": "task",
+        "context": "my back has been killing me",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Health"
+      },
+      {
+        "text": "what if we did the workshop outdoors?",
+        "kind": "idea",
+        "context": "probably too cold",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "sign up for that pottery class Ana mentioned",
+        "kind": "task",
+        "context": "sounds fun",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Personal"
+      }
+    ]
+  },
+  {
+    "id": "brain-04",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "I can't believe Sam changed the deadline AGAIN. it was Friday, now it's Wednesday, with no warning. so mad. I'm not going to reply until I calm down lol. okay but seriously I need to finish the Q3 slides by Wednesday now, and ping Rui for the revenue numbers today because without them there's nothing. why does this always happen right before a holiday. also Ana's birthday is on the 20th and I haven't got her anything, need to fix that. random thought but the new office coffee machine is amazing.",
+    "expected": [
+      {
+        "text": "I'm not going to reply until I calm down",
+        "kind": "task",
+        "context": "Sam changed the deadline AGAIN. it was Friday, now it's Wednesday, with no warning",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "finish the Q3 slides by Wednesday now",
+        "kind": "task",
+        "context": "Sam changed the deadline AGAIN. it was Friday, now it's Wednesday, with no warning",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "ping Rui for the revenue numbers today",
+        "kind": "task",
+        "context": "because without them there's nothing",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      },
+      {
+        "text": "get Ana a present for her birthday on the 20th",
+        "kind": "task",
+        "context": "I haven't got her anything, need to fix that",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Personal"
+      },
+      {
+        "text": "the new office coffee machine is amazing",
+        "kind": "note",
+        "context": null,
+        "confidence": "high",
+        "reason": null,
+        "topic": "Work"
+      }
+    ]
+  },
+  {
+    "id": "brain-05",
+    "topics": ["Work", "Personal", "Health", "Finance"],
+    "input": "ugh it's Sunday night and I already feel the Monday dread. honestly I don't even know where to start. ok first thing, email the accountant about the invoices before they close the quarter. and I keep meaning to book the dentist, it's been like two years, embarrassing. whatever. oh the car insurance renews on the 3rd I think? need to check that. I wonder if everyone feels this behind all the time. anyway. also maybe I should try meal prepping, idea only, no promises. deep breath. ok.",
+    "expected": [
+      {
+        "text": "email the accountant about the invoices",
+        "kind": "task",
+        "context": "before they close the quarter",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Finance"
+      },
+      {
+        "text": "book the dentist",
+        "kind": "task",
+        "context": "it's been like two years",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Health"
+      },
+      {
+        "text": "check that",
+        "kind": "task",
+        "context": "the car insurance renews on the 3rd I think?",
+        "confidence": "medium",
+        "reason": "The user wants to check the renewal date, but the stated date is uncertain.",
+        "topic": "Finance"
+      },
+      {
+        "text": "maybe I should try meal prepping",
+        "kind": "idea",
+        "context": "idea only, no promises",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Personal"
+      }
+    ]
+  },
+  {
+    "id": "brain-06",
+    "topics": ["Work", "Personal", "Health", "Finance", "House", "Errands"],
+    "input": "ok brain dump. milk. call the plumber, the leak is getting worse omg. what day is it even. dentist? did I book that. no idea. rent due friday i think. hmm. need to figure out christmas flights before prices go crazy. ok bye.",
+    "expected": [
+      {
+        "text": "milk",
+        "kind": "task",
+        "context": null,
+        "confidence": "low",
+        "reason": "This is a single-word fragment, so the intended action is implied rather than explicit.",
+        "topic": "Errands"
+      },
+      {
+        "text": "call the plumber",
+        "kind": "task",
+        "context": "the leak is getting worse omg",
+        "confidence": "high",
+        "reason": null,
+        "topic": "House"
+      },
+      {
+        "text": "dentist? did I book that",
+        "kind": "task",
+        "context": null,
+        "confidence": "medium",
+        "reason": "The user appears to need to check whether a dentist appointment has already been booked.",
+        "topic": "Health"
+      },
+      {
+        "text": "rent due friday i think",
+        "kind": "note",
+        "context": null,
+        "confidence": "medium",
+        "reason": "The due date is uncertain, and the user has not explicitly stated an action to make the payment.",
+        "topic": "Finance"
+      },
+      {
+        "text": "need to figure out christmas flights",
+        "kind": "task",
+        "context": "before prices go crazy",
+        "confidence": "high",
+        "reason": null,
+        "topic": "Personal"
+      }
+    ]
+  }
+]

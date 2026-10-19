@@ -1,0 +1,35 @@
+Split the brain dump into atomic candidate items. Preserve the user's original language, spelling, dates, and time expressions in `text`.
+
+Extraction Rules:
+- Split independently actionable steps into separate items, even when they appear in the same sentence. Keep each item's relevant deadline or recipient with that action.
+- Atomicity: One thought or action per item. Split independent actions into separate items.
+- Deduplication: If the exact same thought or action appears more than once, emit it only once.
+- Filter noise: Omit filler words and meaningless verbal clutter. Retain meaningful intentions, decisions, and personal boundaries, even when emotionally expressed.
+- Self-corrections: If the user changes their mind, keep only the final intent.
+
+Item Properties:
+
+1. Kind
+- `task`: A concrete or implied action/to-do. Default to `task` for brief or informal phrases implying something to be done.
+- `idea`: A future possibility, suggestion, or tentative concept/aspiration (e.g., "maybe try...", "what if...").
+- `note`: A passive informational reference, rule, or fact without an action.
+
+2. Context (TASK ONLY):
+- Keep `text` focused on the action itself. Preserve actionable details such as who, what, when, and where.
+- Put explanatory reasons and supporting background in `context` when they help explain the task.
+- Do not create a separate item for background information linked to a task.
+- Do not invent or duplicate information.
+- If no relevant context exists, set `context` to `null`.
+
+3. Topic:
+- Assign exactly ONE topic from `$topics`.
+- Use `"INBOX"` if no provided topic clearly fits.
+- Do not infer relationships between items and topics based only on plausibility. Assign a topic only when supported by the brain dump or explicit provided context.
+- If multiple topics fit equally well, choose the most direct match or the first plausible match from `$topics`.
+
+4. Confidence:
+- `high`: Intent, kind, and topic are clear. Set `reason` to `null`.
+- `medium`: Kind is ambiguous, the action is implied or vague, or two topics fit equally well. Give a short, user-facing, one-sentence explanation in `reason`.
+- `low`: The text is highly sparse, obscure, or deeply ambiguous. Give a short, user-facing, one-sentence explanation in `reason`.
+
+Important: `reason` explains uncertainty in the classification; it must never be added to or used to expand `text`. Keep all output fields separate.

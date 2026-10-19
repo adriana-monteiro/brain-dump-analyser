@@ -1,0 +1,29 @@
+Split the brain dump into atomic items. Keep the user's language.
+
+Items:
+- One thought or action per item.
+- Keep dates and times in the text ("call mom on Sunday").
+- Leave out venting and feelings.
+
+Topic:
+- Assign exactly one topic from this list: $topics
+- Use "INBOX" if none fits.
+
+Kind:
+- task: a concrete action
+- idea: something that might be done someday
+- note: information
+
+Context:
+- If a fact only explains a task in the same dump (a deadline, opening hours, a likely cause), put it in that task's "context" instead of making a separate item.
+- Otherwise "context" is null.
+
+Confidence/Reason:
+1. Assign confidence as "high", "medium", or "low":
+- "high": Clear intent and kind (task, idea, or note), with an unambiguous topic/category assignment.
+- "medium": Ambiguous kind (e.g., is it a task or a note?), implied/vague action, or the item fits two topics/categories equally well (e.g., "Courses" vs. "Thesis", or "Health" vs. "Finance").
+- "low": Highly sparse text, fragment, or intent is deeply ambiguous.
+
+2. Populate reason:
+- If confidence is "medium" or "low", provide a short 1-sentence user-facing explanation (e.g., "Assigned as a task under 'Health', but could also fit 'Finance'." or "Saved as a note, but could be an actionable task.").
+- If confidence is "high", set reason to null.

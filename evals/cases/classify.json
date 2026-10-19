@@ -1,0 +1,309 @@
+[
+  {
+    "id": "note-01",
+    "input": [
+      "buy milk",
+      "Sam prefers email over calls"
+    ],
+    "expected": [
+      {"text": "buy milk", "kind": "task"},
+      {"text": "Sam prefers email over calls", "kind": "note"}
+    ]
+  },
+  {
+    "id": "note-02",
+    "input": [
+      "the wifi password is on the fridge"
+    ],
+    "expected": [
+      {"text": "the wifi password is on the fridge", "kind": "note"}
+    ]
+  },
+  {
+    "id": "note-03",
+    "input": [
+      "the tax deadline is the 31st"
+    ],
+    "expected": [
+      {"text": "the tax deadline is the 31st", "kind": "note"}
+    ]
+  },
+  {
+    "id": "idea-01",
+    "input": [
+      "what if we added a dark mode to the dashboard"
+    ],
+    "expected": [
+      {"text": "what if we added a dark mode to the dashboard", "kind": "idea"}
+    ]
+  },
+  {
+    "id": "topic-01",
+    "input": [
+      "learn to cook thai food"
+    ],
+    "expected": [
+      {"text": "learn to cook thai food", "kind": "task"}
+    ]
+  },
+  {
+    "id": "topic-02",
+    "input": [
+      "buy milk",
+      "call the bank about the mortgage",
+      "maybe try a standing desk"
+    ],
+    "expected": [
+      {"text": "buy milk", "kind": "task"},
+      {"text": "call the bank about the mortgage", "kind": "task"},
+      {"text": "maybe try a standing desk", "kind": "idea"}
+    ]
+  },
+  {
+    "id": "topic-03",
+    "input": [
+      "buy milk",
+      "call Rui about the pricing page",
+      "renew passport"
+    ],
+    "expected": [
+      {"text": "buy milk", "kind": "task"},
+      {"text": "call Rui about the pricing page", "kind": "task"},
+      {"text": "renew passport", "kind": "task"}
+    ]
+  },
+  {
+    "id": "topic-04",
+    "input": [
+      "renew the car insurance",
+      "invoice Marta for October"
+    ],
+    "expected": [
+      {"text": "renew the car insurance", "kind": "task"},
+      {"text": "invoice Marta for October", "kind": "task"}
+    ]
+  },
+  {
+    "id": "topic-05",
+    "input": [
+      "work on the garden this weekend"
+    ],
+    "expected": [
+      {"text": "work on the garden this weekend", "kind": "task"}
+    ]
+  },
+  {
+    "id": "topic-06",
+    "input": [
+      "renew health insurance"
+    ],
+    "expected": [
+      {"text": "renew health insurance", "kind": "task"}
+    ]
+  },
+  {
+    "id": "topic-07",
+    "input": [
+      "order a gift for Ana",
+      "send Sam the Q3 slides"
+    ],
+    "expected": [
+      {"text": "order a gift for Ana", "kind": "task"},
+      {"text": "send Sam the Q3 slides", "kind": "task"}
+    ]
+  },
+  {
+    "id": "noise-01",
+    "input": [
+      "call the bank about the card",
+      "I should really exercise more"
+    ],
+    "expected": [
+      {"text": "call the bank about the card", "kind": "task"},
+      {"text": "I should really exercise more", "kind": "idea"}
+    ]
+  },
+  {
+    "id": "meta-01a",
+    "input": [
+      "order a gift for Ana",
+      "the energy provider moved the payment date to the 5th",
+      "maybe try a standing desk",
+      "schedule the quarterly review with Sam"
+    ],
+    "expected": [
+      {"text": "order a gift for Ana", "kind": "task"},
+      {"text": "the energy provider moved the payment date to the 5th", "kind": "note"},
+      {"text": "maybe try a standing desk", "kind": "idea"},
+      {"text": "schedule the quarterly review with Sam", "kind": "task"}
+    ]
+  },
+  {
+    "id": "meta-01b",
+    "input": [
+      "order a gift for Ana",
+      "the energy provider moved the payment date to the 5th",
+      "maybe try a standing desk",
+      "schedule the quarterly review with Sam"
+    ],
+    "expected": [
+      {"text": "order a gift for Ana", "kind": "task"},
+      {"text": "the energy provider moved the payment date to the 5th", "kind": "note"},
+      {"text": "maybe try a standing desk", "kind": "idea"},
+      {"text": "schedule the quarterly review with Sam", "kind": "task"}
+    ]
+  },
+  {
+    "id": "meta-01c",
+    "input": [
+      "order a gift for Ana",
+      "the energy provider moved the payment date to the 5th",
+      "maybe try a standing desk",
+      "schedule the quarterly review with Sam"
+    ],
+    "expected": [
+      {"text": "order a gift for Ana", "kind": "task"},
+      {"text": "the energy provider moved the payment date to the 5th", "kind": "note"},
+      {"text": "maybe try a standing desk", "kind": "idea"},
+      {"text": "schedule the quarterly review with Sam", "kind": "task"}
+    ]
+  },
+  {
+    "id": "brain-01",
+    "input": [
+      "double check the revenue figures with Rui first thing; I'm worried the numbers in tomorrow's board slides might be wrong",
+      "call Sam today about the contract",
+      "renew the car insurance before it runs out at the end of the month",
+      "buy a present for Ana for her birthday on the twentieth; she might like ceramics",
+      "start running again",
+      "maybe sign up for that ten k in spring",
+      "the gym will be closed on bank holiday Monday",
+      "pick up the dry cleaning before seven, when they close"
+    ],
+    "expected": [
+      {"text": "double check the revenue figures with Rui first thing; I'm worried the numbers in tomorrow's board slides might be wrong", "kind": "task"},
+      {"text": "call Sam today about the contract", "kind": "task"},
+      {"text": "renew the car insurance before it runs out at the end of the month", "kind": "task"},
+      {"text": "buy a present for Ana for her birthday on the twentieth; she might like ceramics", "kind": "task"},
+      {"text": "start running again", "kind": "task"},
+      {"text": "maybe sign up for that ten k in spring", "kind": "idea"},
+      {"text": "the gym will be closed on bank holiday Monday", "kind": "note"},
+      {"text": "pick up the dry cleaning before seven, when they close", "kind": "task"}
+    ]
+  },
+  {
+    "id": "brain-02",
+    "input": [
+      "pay the electricity bill; it's overdue by a few days",
+      "transfer something to savings; decide the amount later",
+      "call Mum this weekend",
+      "maybe visit Mum",
+      "maybe rewrite the onboarding docs myself because nobody owns them and they are a mess",
+      "the standup is moving to 9:30 starting next week",
+      "stop checking email at midnight",
+      "buy running shoes because mine are falling apart"
+    ],
+    "expected": [
+      {"text": "pay the electricity bill; it's overdue by a few days", "kind": "task"},
+      {"text": "transfer something to savings; decide the amount later", "kind": "task"},
+      {"text": "call Mum this weekend", "kind": "task"},
+      {"text": "maybe visit Mum", "kind": "idea"},
+      {"text": "maybe rewrite the onboarding docs myself because nobody owns them and they are a mess", "kind": "idea"},
+      {"text": "the standup is moving to 9:30 starting next week", "kind": "note"},
+      {"text": "stop checking email at midnight", "kind": "task"},
+      {"text": "buy running shoes because mine are falling apart", "kind": "task"}
+    ]
+  },
+  {
+    "id": "brain-03",
+    "input": [
+      "finish the quarterly report",
+      "send the quarterly report to James by Friday",
+      "book the room for the workshop for at least ten people",
+      "book a doctor appointment because my back has been hurting",
+      "consider doing the workshop outdoors, though it might be too cold",
+      "sign up for the pottery class Ana mentioned"
+    ],
+    "expected": [
+      {"text": "finish the quarterly report", "kind": "task"},
+      {"text": "send the quarterly report to James by Friday", "kind": "task"},
+      {"text": "book the room for the workshop for at least ten people", "kind": "task"},
+      {"text": "book a doctor appointment because my back has been hurting", "kind": "task"},
+      {"text": "consider doing the workshop outdoors, though it might be too cold", "kind": "idea"},
+      {"text": "sign up for the pottery class Ana mentioned", "kind": "task"}
+    ]
+  },
+  {
+    "id": "brain-04",
+    "input": [
+      "don't reply to Sam until I calm down",
+      "finish the Q3 slides by Wednesday",
+      "ping Rui for the revenue numbers today",
+      "get Ana a present for her birthday on the 20th",
+      "the new office coffee machine is amazing"
+    ],
+    "expected": [
+      {"text": "don't reply to Sam until I calm down", "kind": "task"},
+      {"text": "finish the Q3 slides by Wednesday", "kind": "task"},
+      {"text": "ping Rui for the revenue numbers today", "kind": "task"},
+      {"text": "get Ana a present for her birthday on the 20th", "kind": "task"},
+      {"text": "the new office coffee machine is amazing", "kind": "note"}
+    ]
+  },
+  {
+    "id": "brain-05",
+    "input": [
+      "email the accountant about the invoices before the quarter closes",
+      "book the dentist; it's been about two years",
+      "check when the car insurance renews; I think it's on the 3rd",
+      "maybe try meal prepping; just an idea, no promises"
+    ],
+    "expected": [
+      {"text": "email the accountant about the invoices before the quarter closes", "kind": "task"},
+      {"text": "book the dentist; it's been about two years", "kind": "task"},
+      {"text": "check when the car insurance renews; I think it's on the 3rd", "kind": "task"},
+      {"text": "maybe try meal prepping; just an idea, no promises", "kind": "idea"}
+    ]
+  },
+  {
+    "id": "brain-06",
+    "input": [
+      "buy milk",
+      "call the plumber because the leak is getting worse",
+      "check whether I booked a dentist appointment",
+      "rent is due Friday, I think",
+      "figure out Christmas flights before prices go up"
+    ],
+    "expected": [
+      {"text": "buy milk", "kind": "task"},
+      {"text": "call the plumber because the leak is getting worse", "kind": "task"},
+      {"text": "check whether I booked a dentist appointment", "kind": "task"},
+      {"text": "rent is due Friday, I think", "kind": "note"},
+      {"text": "figure out Christmas flights before prices go up", "kind": "task"}
+    ]
+  },
+    {"id": "brain-with-completed-tasks-01",
+    "input":[
+  "bought milk already",
+  "called the plumber, they're coming tomorrow morning",
+  "check whether I booked a dentist appointment",
+  "paid rent this morning",
+  "email my manager about taking Friday off",
+  "booked Christmas flights last night",
+  "pick up my prescription tomorrow",
+  "cleaned the kitchen",
+  "do the laundry"
+],
+  "expected": [
+    {"text": "Already bought milk", "kind": "task"},
+    {"text": "Already called the plumber; they're coming tomorrow morning", "kind": "task"},
+    {"text": "Check whether I booked a dentist appointment", "kind": "task"},
+    {"text": "Already paid rent this morning", "kind": "task"},
+    {"text": "Email my manager about taking Friday off", "kind": "task"},
+    {"text": "Already booked Christmas flights last night", "kind": "task"},
+    {"text": "Pick up my prescription tomorrow", "kind": "task"},
+    {"text": "Finished cleaning the kitchen", "kind": "task"},
+    {"text": "Do the laundry", "kind": "task"}
+  ]
+}
+]

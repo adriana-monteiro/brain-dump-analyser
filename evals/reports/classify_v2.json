@@ -1,0 +1,944 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "classify": {
+      "accuracy": 1.0,
+      "passed": 22,
+      "total": 22,
+      "prompts": "classify_v2",
+      "latency_p50_s": 1.120342000038363,
+      "latency_p95_s": 1.4116334431804716,
+      "cost_usd": 0.005372,
+      "cost_input_usd": 0.0034104,
+      "cost_output_usd": 0.0019616,
+      "prompt_tokens": 8526,
+      "completion_tokens": 1226,
+      "cases": [
+        {
+          "id": "note-01",
+          "output": [
+            {
+              "text": "Buy milk",
+              "kind": "task"
+            },
+            {
+              "text": "Sam prefers email over calls",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 2,
+            "correct": 2,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3415995410177857,
+            "prompt_tokens": 366,
+            "completion_tokens": 27,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001464,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.32e-05,
+            "cost_usd": 0.0001896,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-02",
+          "output": [
+            {
+              "text": "The wifi password is on the fridge",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 1,
+            "correct": 1,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7897147501353174,
+            "prompt_tokens": 364,
+            "completion_tokens": 20,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001456,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.2e-05,
+            "cost_usd": 0.00017759999999999998,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-03",
+          "output": [
+            {
+              "text": "The tax deadline is the 31st",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 1,
+            "correct": 1,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9313914170488715,
+            "prompt_tokens": 365,
+            "completion_tokens": 21,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000146,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.3600000000000004e-05,
+            "cost_usd": 0.0001796,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "idea-01",
+          "output": [
+            {
+              "text": "Consider adding a dark mode to the dashboard",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 1,
+            "correct": 1,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3604313330724835,
+            "prompt_tokens": 367,
+            "completion_tokens": 21,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00014680000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.3600000000000004e-05,
+            "cost_usd": 0.00018040000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-01",
+          "output": [
+            {
+              "text": "Learn to cook Thai food",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 1,
+            "correct": 1,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8934970831032842,
+            "prompt_tokens": 362,
+            "completion_tokens": 18,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00014480000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 2.8800000000000002e-05,
+            "cost_usd": 0.00017360000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-02",
+          "output": [
+            {
+              "text": "Buy milk",
+              "kind": "task"
+            },
+            {
+              "text": "Call the bank about the mortgage",
+              "kind": "task"
+            },
+            {
+              "text": "Consider trying a standing desk",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 3,
+            "correct": 3,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1074970830231905,
+            "prompt_tokens": 374,
+            "completion_tokens": 40,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001496,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.4e-05,
+            "cost_usd": 0.0002136,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-03",
+          "output": [
+            {
+              "text": "Buy milk",
+              "kind": "task"
+            },
+            {
+              "text": "Call Rui about the pricing page",
+              "kind": "task"
+            },
+            {
+              "text": "Renew passport",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 3,
+            "correct": 3,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7644886251073331,
+            "prompt_tokens": 371,
+            "completion_tokens": 37,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001484,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.92e-05,
+            "cost_usd": 0.0002076,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-04",
+          "output": [
+            {
+              "text": "Renew the car insurance",
+              "kind": "task"
+            },
+            {
+              "text": "Invoice Marta for October",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 2,
+            "correct": 2,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7960016659926623,
+            "prompt_tokens": 367,
+            "completion_tokens": 28,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00014680000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.4800000000000005e-05,
+            "cost_usd": 0.00019160000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-05",
+          "output": [
+            {
+              "text": "Work on the garden this weekend",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 1,
+            "correct": 1,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.291730459081009,
+            "prompt_tokens": 363,
+            "completion_tokens": 19,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001452,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.0400000000000004e-05,
+            "cost_usd": 0.0001756,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-06",
+          "output": [
+            {
+              "text": "Renew health insurance",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 1,
+            "correct": 1,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0786221669986844,
+            "prompt_tokens": 360,
+            "completion_tokens": 16,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000144,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 2.5600000000000002e-05,
+            "cost_usd": 0.0001696,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-07",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "kind": "task"
+            },
+            {
+              "text": "Send Sam the Q3 slides",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 2,
+            "correct": 2,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0025646658614278,
+            "prompt_tokens": 370,
+            "completion_tokens": 31,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000148,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.96e-05,
+            "cost_usd": 0.00019759999999999998,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "noise-01",
+          "output": [
+            {
+              "text": "Call the bank about the card",
+              "kind": "task"
+            },
+            {
+              "text": "I should really exercise more",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 2,
+            "correct": 2,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1331869170535356,
+            "prompt_tokens": 370,
+            "completion_tokens": 31,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000148,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.96e-05,
+            "cost_usd": 0.00019759999999999998,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01a",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "kind": "task"
+            },
+            {
+              "text": "The energy provider moved the payment date to the 5th",
+              "kind": "note"
+            },
+            {
+              "text": "Consider trying a standing desk",
+              "kind": "idea"
+            },
+            {
+              "text": "Schedule the quarterly review with Sam",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 4,
+            "correct": 4,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2270806250162423,
+            "prompt_tokens": 391,
+            "completion_tokens": 62,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001564,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.92e-05,
+            "cost_usd": 0.00025560000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01b",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "kind": "task"
+            },
+            {
+              "text": "The energy provider moved the payment date to the 5th",
+              "kind": "note"
+            },
+            {
+              "text": "Consider trying a standing desk",
+              "kind": "idea"
+            },
+            {
+              "text": "Schedule the quarterly review with Sam",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 4,
+            "correct": 4,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9015272920951247,
+            "prompt_tokens": 391,
+            "completion_tokens": 62,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001564,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.92e-05,
+            "cost_usd": 0.00025560000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01c",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "kind": "task"
+            },
+            {
+              "text": "The energy provider moved the payment date to the 5th",
+              "kind": "note"
+            },
+            {
+              "text": "Consider trying a standing desk",
+              "kind": "idea"
+            },
+            {
+              "text": "Schedule the quarterly review with Sam",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 4,
+            "correct": 4,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2467376249842346,
+            "prompt_tokens": 391,
+            "completion_tokens": 62,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001564,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.92e-05,
+            "cost_usd": 0.00025560000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-01",
+          "output": [
+            {
+              "text": "Double check the revenue figures with Rui first thing; I'm worried the numbers in tomorrow's board slides might be wrong",
+              "kind": "task"
+            },
+            {
+              "text": "Call Sam today about the contract",
+              "kind": "task"
+            },
+            {
+              "text": "Renew the car insurance before it runs out at the end of the month",
+              "kind": "task"
+            },
+            {
+              "text": "Buy a present for Ana for her birthday on the twentieth; she might like ceramics",
+              "kind": "task"
+            },
+            {
+              "text": "Start running again",
+              "kind": "task"
+            },
+            {
+              "text": "Consider signing up for that ten k in spring",
+              "kind": "idea"
+            },
+            {
+              "text": "The gym will be closed on bank holiday Monday",
+              "kind": "note"
+            },
+            {
+              "text": "Pick up the dry cleaning before seven, when they close",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 8,
+            "correct": 8,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.7700019581243396,
+            "prompt_tokens": 461,
+            "completion_tokens": 152,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001844,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00024320000000000003,
+            "cost_usd": 0.00042760000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-02",
+          "output": [
+            {
+              "text": "Pay the electricity bill; it's overdue by a few days",
+              "kind": "task"
+            },
+            {
+              "text": "Transfer something to savings; decide the amount later",
+              "kind": "task"
+            },
+            {
+              "text": "Call Mum this weekend",
+              "kind": "task"
+            },
+            {
+              "text": "Consider visiting Mum",
+              "kind": "idea"
+            },
+            {
+              "text": "Consider rewriting the onboarding docs myself because nobody owns them and they are a mess",
+              "kind": "idea"
+            },
+            {
+              "text": "The standup is moving to 9:30 starting next week",
+              "kind": "note"
+            },
+            {
+              "text": "Stop checking email at midnight",
+              "kind": "task"
+            },
+            {
+              "text": "Buy running shoes because mine are falling apart",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 8,
+            "correct": 8,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.414328291080892,
+            "prompt_tokens": 439,
+            "completion_tokens": 130,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001756,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000208,
+            "cost_usd": 0.0003836,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-03",
+          "output": [
+            {
+              "text": "Finish the quarterly report",
+              "kind": "task"
+            },
+            {
+              "text": "Send the quarterly report to James by Friday",
+              "kind": "task"
+            },
+            {
+              "text": "Book the room for the workshop for at least ten people",
+              "kind": "task"
+            },
+            {
+              "text": "Book a doctor appointment because my back has been hurting",
+              "kind": "task"
+            },
+            {
+              "text": "Consider doing the workshop outdoors, though it might be too cold",
+              "kind": "idea"
+            },
+            {
+              "text": "Sign up for the pottery class Ana mentioned",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 6,
+            "correct": 6,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2617650420870632,
+            "prompt_tokens": 420,
+            "completion_tokens": 101,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000168,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00016160000000000002,
+            "cost_usd": 0.0003296,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-04",
+          "output": [
+            {
+              "text": "Don't reply to Sam until I calm down",
+              "kind": "task"
+            },
+            {
+              "text": "Finish the Q3 slides by Wednesday",
+              "kind": "task"
+            },
+            {
+              "text": "Ping Rui for the revenue numbers today",
+              "kind": "task"
+            },
+            {
+              "text": "Get Ana a present for her birthday on the 20th",
+              "kind": "task"
+            },
+            {
+              "text": "The new office coffee machine is amazing",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 5,
+            "correct": 5,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.083344666985795,
+            "prompt_tokens": 406,
+            "completion_tokens": 82,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00016240000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00013120000000000002,
+            "cost_usd": 0.00029360000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-05",
+          "output": [
+            {
+              "text": "Email the accountant about the invoices before the quarter closes",
+              "kind": "task"
+            },
+            {
+              "text": "Book the dentist; it's been about two years",
+              "kind": "task"
+            },
+            {
+              "text": "Check when the car insurance renews; I think it's on the 3rd",
+              "kind": "task"
+            },
+            {
+              "text": "Consider trying meal prepping; just an idea, no promises",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 4,
+            "correct": 4,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.32555270800367,
+            "prompt_tokens": 409,
+            "completion_tokens": 80,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00016360000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000128,
+            "cost_usd": 0.00029160000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-06",
+          "output": [
+            {
+              "text": "Buy milk",
+              "kind": "task"
+            },
+            {
+              "text": "Call the plumber because the leak is getting worse",
+              "kind": "task"
+            },
+            {
+              "text": "Check whether I booked a dentist appointment",
+              "kind": "task"
+            },
+            {
+              "text": "Rent is due Friday",
+              "kind": "note"
+            },
+            {
+              "text": "Figure out Christmas flights before prices go up",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 5,
+            "correct": 5,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0512610839214176,
+            "prompt_tokens": 398,
+            "completion_tokens": 71,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00015920000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00011360000000000001,
+            "cost_usd": 0.0002728,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-with-completed-tasks-01",
+          "output": [
+            {
+              "text": "Bought milk already",
+              "kind": "task"
+            },
+            {
+              "text": "Called the plumber, they're coming tomorrow morning",
+              "kind": "task"
+            },
+            {
+              "text": "Check whether I booked a dentist appointment",
+              "kind": "task"
+            },
+            {
+              "text": "Paid rent this morning",
+              "kind": "task"
+            },
+            {
+              "text": "Email my manager about taking Friday off",
+              "kind": "task"
+            },
+            {
+              "text": "Booked Christmas flights last night",
+              "kind": "task"
+            },
+            {
+              "text": "Pick up my prescription tomorrow",
+              "kind": "task"
+            },
+            {
+              "text": "Cleaned the kitchen",
+              "kind": "task"
+            },
+            {
+              "text": "Do the laundry",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "total": 9,
+            "correct": 9,
+            "missing": 0,
+            "wrong_kind": 0,
+            "extra": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1731192499864846,
+            "prompt_tokens": 421,
+            "completion_tokens": 115,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001684,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000184,
+            "cost_usd": 0.0003524,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

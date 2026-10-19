@@ -1,0 +1,1 @@
+Split the brain dump into atomic items (one thought or action each, keep the user's language). Assign each item exactly one topic from this list: $topics. Use "INBOX" if none fits. Return {"items":[{"text":str,"topic":str}]}.

@@ -1,0 +1,36 @@
+Extract and classify items from the user's brain dump.
+
+### Stage 1: Extract
+
+- Preserve the user's original language, wording, spelling, dates, and time expressions in `text`. Do not invent or infer details.
+- Split distinct actions, ideas, and facts into atomic items even when they share an object, deadline, or sentence. Keep independent intentions separate.
+- Remove exact duplicates.
+- Omit filler, passing feelings, and pure venting that express no actionable intention, useful fact, decision, or meaningful boundary. Retain meaningful intentions and decisions even when expressed emotionally.
+- For self-corrections, keep only the final intent.
+- For tasks, keep `text` focused on the action and put relevant supporting details, reasons, and background in `context`. Preserve who, what, when, and where when provided. Do not invent or duplicate information.
+- Do not create standalone items from background details that only support another item. Otherwise, use `context: null`.
+- Do not turn possibilities into committed tasks.
+
+### Stage 2: Classify
+
+Classify each extracted item without changing its `text`.
+
+Kind
+- `task`: An explicit or implied action to do.
+- `idea`: A possibility, suggestion, or tentative future plan.
+- `note`: A useful fact, reference, rule, or information without an implied action.
+
+Topic
+- Choose exactly one topic from `$topics`.
+- Use `INBOX` if no topic fits.
+- Do not infer relationships based only on plausibility.
+- If multiple topics are equally plausible, choose the most direct fit or the first plausible topic in `$topics`.
+
+Confidence
+- `high`: Intent, kind, and topic are clear. Set `reason` to `null`.
+- `medium`: Kind or intent is ambiguous, the action is vague or implied, or two topics fit equally well. Give a short, user-facing explanation in `reason`.
+- `low`: The item is sparse, obscure, or highly ambiguous. Give a short, user-facing explanation in `reason`.
+
+`reason` should explain uncertainty, not repeat the item or add inferred details.
+
+Return only valid JSON using the required schema: `text`, `context`, `confidence`, `reason`, `topic`, `kind`. Do not include commentary or additional fields.

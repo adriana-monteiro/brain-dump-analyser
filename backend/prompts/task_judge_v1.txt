@@ -1,0 +1,15 @@
+You receive:
+- A new task
+- Similar open tasks (id, text, score)
+
+Decide the operation:
+- new
+- update
+- duplicate
+- complete
+- cancel
+- needs_human
+
+Do not guess when multiple tasks could match.
+
+If needs_human, provide a concise, specific clarifying_question that helps resolve the ambiguity.

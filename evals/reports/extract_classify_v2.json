@@ -1,0 +1,695 @@
+[
+  {
+    "id": "cuefree-01",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "dentist. milk. Rui revenue thing. mortgage??",
+    "expected": [
+      {
+        "text": "dentist",
+        "context": null,
+        "topic": "Health",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "milk",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "Rui revenue thing",
+        "context": null,
+        "topic": "Work",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Vague phrase, treated as a task related to Rui's revenue figures."
+      },
+      {
+        "text": "mortgage??",
+        "context": null,
+        "topic": "Finance",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Punctuation suggests question/review, treated as a task to check mortgage."
+      }
+    ]
+  },
+  {
+    "id": "voice-01",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "um so i need to uh book the flights for christmas and like also schedule the physio for my shoulder you know",
+    "expected": [
+      {
+        "text": "book the flights for christmas",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "schedule the physio for my shoulder",
+        "context": null,
+        "topic": "Health",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "split-01",
+    "topics": [
+      "Thesis",
+      "Courses",
+      "Life"
+    ],
+    "input": "search about Einstein and write essay about Einstein",
+    "expected": [
+      {
+        "text": "search about Einstein",
+        "context": null,
+        "topic": "Courses",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Assigned to 'Courses', but could also fit 'Thesis'."
+      },
+      {
+        "text": "write essay about Einstein",
+        "context": null,
+        "topic": "Courses",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Assigned to 'Courses', but could also fit 'Thesis'."
+      }
+    ]
+  },
+  {
+    "id": "split-02",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "call the plumber and ask if it's the valve",
+    "expected": [
+      {
+        "text": "call the plumber",
+        "context": "ask if it's the valve",
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "shop-01",
+    "topics": [
+      "Kids",
+      "House",
+      "Errands",
+      "Work"
+    ],
+    "input": "buy milk, eggs and bread",
+    "expected": [
+      {
+        "text": "buy milk",
+        "context": null,
+        "topic": "Errands",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "buy eggs",
+        "context": null,
+        "topic": "Errands",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "buy bread",
+        "context": null,
+        "topic": "Errands",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "shop-02",
+    "topics": [
+      "Kids",
+      "House",
+      "Errands",
+      "Work"
+    ],
+    "input": "get wine, cheese and bread for Saturday's dinner",
+    "expected": [
+      {
+        "text": "get wine for Saturday's dinner",
+        "context": null,
+        "topic": "Errands",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "get cheese for Saturday's dinner",
+        "context": null,
+        "topic": "Errands",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "get bread for Saturday's dinner",
+        "context": null,
+        "topic": "Errands",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "dup-01",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "buy milk. oh and buy milk",
+    "expected": [
+      {
+        "text": "buy milk",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "deleg-01",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "ask Rui to send the revenue figures",
+    "expected": [
+      {
+        "text": "ask Rui to send the revenue figures",
+        "context": null,
+        "topic": "Work",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "cond-01",
+    "topics": [
+      "Kids",
+      "House",
+      "Errands",
+      "Work"
+    ],
+    "input": "if it rains Saturday, move the picnic to Sunday",
+    "expected": [
+      {
+        "text": "if it rains Saturday, move the picnic to Sunday",
+        "context": null,
+        "topic": "Kids",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "corr-01",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "remind me to go to the gym tomorrow. actually skip the gym, call the dentist instead",
+    "expected": [
+      {
+        "text": "call the dentist",
+        "context": null,
+        "topic": "Health",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "link-01",
+    "topics": [
+      "Clients",
+      "Admin",
+      "Home",
+      "Health"
+    ],
+    "input": "tax deadline is the 31st. need to file the return",
+    "expected": [
+      {
+        "text": "file the return",
+        "context": "tax deadline is the 31st",
+        "topic": "Admin",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "link-02",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "call the plumber about the leak. it's probably the valve",
+    "expected": [
+      {
+        "text": "call the plumber about the leak",
+        "context": "it's probably the valve",
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "link-03",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "call mom on Sunday. email the accountant. the accountant is closed on Fridays",
+    "expected": [
+      {
+        "text": "call mom on Sunday",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "email the accountant",
+        "context": "the accountant is closed on Fridays",
+        "topic": "Finance",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "link-04",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "tax deadline is the 31st. buy milk. call mom on Sunday. pharmacy opens at 9. file the tax return. refill my prescription",
+    "expected": [
+      {
+        "text": "buy milk",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "call mom on Sunday",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "file the tax return",
+        "context": "tax deadline is the 31st",
+        "topic": "Finance",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "refill my prescription",
+        "context": "pharmacy opens at 9",
+        "topic": "Health",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "link-05",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "the new hire starts on Monday. update the onboarding docs",
+    "expected": [
+      {
+        "text": "update the onboarding docs",
+        "context": "the new hire starts on Monday",
+        "topic": "Work",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "link-06",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "Sam prefers email over calls. schedule the review with Sam. send Sam the report",
+    "expected": [
+      {
+        "text": "schedule the review with Sam",
+        "context": "Sam prefers email over calls",
+        "topic": "Work",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "send Sam the report",
+        "context": "Sam prefers email over calls",
+        "topic": "Work",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "note-01",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "buy milk. Sam prefers email over calls",
+    "expected": [
+      {
+        "text": "buy milk",
+        "context": null,
+        "topic": "Personal",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "Sam prefers email over calls",
+        "context": null,
+        "topic": "Work",
+        "kind": "note",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "note-02",
+    "topics": [
+      "Kids",
+      "House",
+      "Errands",
+      "Work"
+    ],
+    "input": "the wifi password is on the fridge",
+    "expected": [
+      {
+        "text": "the wifi password is on the fridge",
+        "context": null,
+        "topic": "House",
+        "kind": "note",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "note-03",
+    "topics": [
+      "Work",
+      "Personal",
+      "Health",
+      "Finance"
+    ],
+    "input": "the tax deadline is the 31st",
+    "expected": [
+      {
+        "text": "the tax deadline is the 31st",
+        "context": null,
+        "topic": "Finance",
+        "kind": "note",
+        "confidence": "medium",
+        "reason": "Information note, but could imply a task to file taxes."
+      }
+    ]
+  },
+  {
+    "id": "idea-01",
+    "topics": [
+      "Acme Launch",
+      "Hiring",
+      "Fundraising",
+      "Personal"
+    ],
+    "input": "what if we added a dark mode to the dashboard",
+    "expected": [
+      {
+        "text": "what if we added a dark mode to the dashboard",
+        "context": null,
+        "topic": "Acme Launch",
+        "kind": "idea",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "topic-01",
+    "topics": [
+      "Work",
+      "Fitness"
+    ],
+    "input": "it would be nice to learn to cook thai food",
+    "expected": [
+      {
+        "text": "it would be nice to learn to cook thai food",
+        "context": null,
+        "topic": "INBOX",
+        "kind": "idea",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "topic-02",
+    "topics": [],
+    "input": "buy milk. call the bank about the mortgage. maybe try a standing desk",
+    "expected": [
+      {
+        "text": "buy milk",
+        "context": null,
+        "topic": "INBOX",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "call the bank about the mortgage",
+        "context": null,
+        "topic": "INBOX",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "maybe try a standing desk",
+        "context": null,
+        "topic": "INBOX",
+        "kind": "idea",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "topic-03",
+    "topics": [
+      "Acme Launch",
+      "Fitness"
+    ],
+    "input": "buy milk. call Rui about the pricing page. renew passport",
+    "expected": [
+      {
+        "text": "buy milk",
+        "context": null,
+        "topic": "INBOX",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "call Rui about the pricing page",
+        "context": null,
+        "topic": "Acme Launch",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "renew passport",
+        "context": null,
+        "topic": "INBOX",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "topic-04",
+    "topics": [
+      "Clients",
+      "Admin",
+      "Home",
+      "Health"
+    ],
+    "input": "renew the car insurance. invoice Marta for October",
+    "expected": [
+      {
+        "text": "renew the car insurance",
+        "context": null,
+        "topic": "Admin",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "invoice Marta for October",
+        "context": null,
+        "topic": "Clients",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Assigned to 'Clients', but also fits your 'Admin' list."
+      }
+    ]
+  },
+  {
+    "id": "topic-05",
+    "topics": [
+      "Work",
+      "Home"
+    ],
+    "input": "work on the garden this weekend",
+    "expected": [
+      {
+        "text": "work on the garden this weekend",
+        "context": null,
+        "topic": "Home",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      }
+    ]
+  },
+  {
+    "id": "topic-06",
+    "topics": [
+      "Health",
+      "Finance"
+    ],
+    "input": "renew health insurance",
+    "expected": [
+      {
+        "text": "renew health insurance",
+        "context": null,
+        "topic": "Health",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Assigned to 'Health', but also fits your 'Finance' list."
+      }
+    ]
+  },
+  {
+    "id": "topic-07",
+    "topics": [
+      "Ana",
+      "Sam",
+      "Work"
+    ],
+    "input": "order a gift for Ana. send Sam the Q3 slides",
+    "expected": [
+      {
+        "text": "order a gift for Ana",
+        "context": null,
+        "topic": "Ana",
+        "kind": "task",
+        "confidence": "high",
+        "reason": null
+      },
+      {
+        "text": "send Sam the Q3 slides",
+        "context": null,
+        "topic": "Sam",
+        "kind": "task",
+        "confidence": "medium",
+        "reason": "Assigned to 'Sam', but also fits your 'Work' list."
+      }
+    ]
+  }
+]

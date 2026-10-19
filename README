@@ -1,0 +1,61 @@
+# 🧠 Brain Dump
+
+Dump messy thoughts into a chat box and get them back as organised **tasks, notes and ideas**, grouped by topic. An LLM extracts and classifies the items, checks them against what you already have (duplicates, updates, completions), and asks you to confirm before anything is saved.
+
+> **Status:** early MVP / work in progress. 
+
+## Features
+
+- Free-text brain dump → structured items (task / note / idea) with topics
+- Prompt-injection guard on incoming messages
+- Semantic retrieval (ChromaDB + OpenAI embeddings) to detect duplicates and updates to existing items
+- Confirm / edit / reject flow for each proposed item
+- Editable topic list
+- Eval harness to compare prompt versions and models on accuracy, latency and cost
+
+## Project structure
+
+```
+backend/    FastAPI app: API routes, services, SQLite repos, LLM calls, versioned prompts
+frontend/   Streamlit UI (brain dump, tasks, notes, ideas pages)
+evals/      Eval runner, test cases and saved reports
+```
+
+## Tech stack
+
+Python · FastAPI · Streamlit · SQLite · ChromaDB · OpenAI API
+
+## Getting started
+
+**Prerequisites:** [uv](https://docs.astral.sh/uv/) and an OpenAI API key.
+
+```bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+
+uv sync                          # creates .venv and installs dependencies
+cp .env.example .env             # then add your OPENAI_API_KEY
+```
+
+Run the backend (terminal 1):
+
+```bash
+uv run uvicorn backend.main:app --reload
+```
+
+Run the frontend (terminal 2):
+
+```bash
+uv run python -m streamlit run frontend/app.py
+```
+
+The API runs on http://localhost:8000 (docs at `/docs`) and the UI on http://localhost:8501.
+
+## Evals
+
+```bash
+uv run --env-file .env python -m evals.run                    # all steps
+uv run --env-file .env python -m evals.run --step dump -v     # one step, show failures
+uv run --env-file .env python -m evals.run --model gpt-4o --json evals/out/gpt4o.json
+PROMPT_<STEP>=<prompt_file> uv run --env-file .env python -m evals.run --step <step>
+```

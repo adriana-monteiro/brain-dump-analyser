@@ -1,0 +1,233 @@
+[
+  {
+    "id": "dump-01",
+    "size": "XS",
+    "note": "one task, no punctuation",
+    "input": "Call Sam",
+    "expected": true
+  },
+  {
+    "id": "dump-02",
+    "size": "XS",
+    "note": "fragment",
+    "input": "buy milk",
+    "expected": true
+  },
+  {
+    "id": "dump-03",
+    "size": "XS",
+    "note": "idea fragment",
+    "input": "idea: weekly review",
+    "expected": true
+  },
+  {
+    "id": "dump-04",
+    "size": "XS",
+    "note": "note fragment, no verb",
+    "input": "dentist tuesday 10",
+    "expected": true
+  },
+  {
+    "id": "dump-05",
+    "size": "XS",
+    "note": "update to an existing task",
+    "input": "cancel the call with Ana",
+    "expected": true
+  },
+  {
+    "id": "dump-06",
+    "size": "XS",
+    "note": "update: completion",
+    "input": "done with the report",
+    "expected": true
+  },
+  {
+    "id": "dump-07",
+    "size": "S",
+    "note": "single task sentence",
+    "input": "I need to renew my passport before March",
+    "expected": true
+  },
+  {
+    "id": "dump-08",
+    "size": "S",
+    "note": "vague idea, not a concrete task",
+    "input": "Maybe I should start running again in the mornings",
+    "expected": true
+  },
+  {
+    "id": "dump-09",
+    "size": "S",
+    "note": "updates only",
+    "input": "I already called Sam so that's done, and the milk one too",
+    "expected": true
+  },
+  {
+    "id": "dump-10",
+    "size": "M",
+    "note": "comma list of tasks",
+    "input": "Call Sam on Friday, buy milk, pay the rent on the 1st and email the accountant about the Q3 invoices",
+    "expected": true
+  },
+  {
+    "id": "dump-11",
+    "size": "M",
+    "note": "question inside a dump",
+    "input": "Do I still need to renew the car insurance? Also buy milk and call mom",
+    "expected": true
+  },
+  {
+    "id": "dump-12",
+    "size": "M",
+    "note": "notes and reflection, no explicit task",
+    "input": "Thinking about the meeting today. Sam seemed annoyed about the budget, maybe I should prepare numbers earlier next time. Ana's birthday is on the 20th.",
+    "expected": true
+  },
+  {
+    "id": "dump-13",
+    "size": "L",
+    "note": "messy week, mixed kinds",
+    "input": "Ok so this week is a mess. I need to call Sam on Friday about the contract, and also email the accountant about the Q3 invoices before Thursday. Buy milk at continente and pick up the dry cleaning. Idea: build a small app that turns my voice notes into tasks. The dentist is on Tuesday at 10. Book a doctor appointment for my back pain. Prepare the Q3 slides for the work meeting.",
+    "expected": true
+  },
+  {
+    "id": "dump-14",
+    "size": "L",
+    "note": "emotional, reflective, a few implicit items",
+    "input": "Today's meeting went badly. Sam seemed annoyed about the budget and I didn't have the numbers ready, which was embarrassing. Next time I should prepare a one page summary the day before. Maybe I should also ask Rui to review it. I keep forgetting to follow up on things so I want to try a weekly review on Sundays, nothing fancy, just thirty minutes with a coffee. Also the printer is broken again and someone needs to call the repair guy.",
+    "expected": true
+  },
+  {
+    "id": "dump-15",
+    "size": "XL",
+    "note": "stream of consciousness, no structure, updates + ideas + worries",
+    "input": "ok so I have so much going on and my head is spinning. tomorrow I need to finish the Q3 slides for the board and honestly I'm dreading it because the numbers still aren't final, need to ping Rui about the revenue figures first thing. also call Sam about the contract, he said Friday but I think that's the day of the dentist, which is at 10 by the way, so maybe move the call to the afternoon. buy milk and bread, we're out of everything, and pick up the dry cleaning before they close at 7. I keep thinking I should start going to the gym again, the new one opens at 6am which is perfect, maybe sign up this weekend? random idea: an app that takes my voice notes and turns them into a todo list, I would actually use that. oh and Ana's birthday is on the 20th, need to order a gift, she mentioned wanting that blue scarf. I already called the plumber yesterday so that one is done. what else... renew the car insurance, it expires end of the month, don't forget. and I should really sleep more. ok that's it for now",
+    "expected": true
+  },
+  {
+    "id": "dump-16",
+    "size": "XL",
+    "note": "structured but long, headings inline",
+    "input": "Right, brain dump time. Work: finish the quarterly report, send it to Sam by Thursday, he needs it before the board call. Ask Rui whether the new hire starts Monday or the week after. Book a room for the Friday workshop, at least 12 people. Home: the heating is making a weird noise again, call someone. Buy a birthday present for Ana, something small, she likes ceramics. Pay the electricity bill, it's overdue by a few days. Clean out the garage at some point this month. Health: book the dentist, it's been over a year, and the physio follow-up for my shoulder. Ideas: write a short newsletter about what I learned this quarter, maybe a podcast too. Notes: the gym closes early on Fridays now, parking at the office is free after 6pm, Sam prefers email over calls.",
+    "expected": true
+  },
+  {
+    "id": "dump-17",
+    "size": "XS",
+    "note": "greeting",
+    "input": "hello",
+    "expected": false
+  },
+  {
+    "id": "dump-18",
+    "size": "XS",
+    "note": "thanks",
+    "input": "thanks!",
+    "expected": false
+  },
+  {
+    "id": "dump-19",
+    "size": "XS",
+    "note": "chatter",
+    "input": "lol ok",
+    "expected": false
+  },
+  {
+    "id": "dump-20",
+    "size": "XS",
+    "note": "question about the tool",
+    "input": "what can you do?",
+    "expected": false
+  },
+  {
+    "id": "dump-21",
+    "size": "S",
+    "note": "question about the app",
+    "input": "How do I delete a task?",
+    "expected": false
+  },
+  {
+    "id": "dump-22",
+    "size": "S",
+    "note": "general question",
+    "input": "What's the weather today?",
+    "expected": false
+  },
+  {
+    "id": "dump-23",
+    "size": "S",
+    "note": "general question",
+    "input": "Can you explain what a brain dump is?",
+    "expected": false
+  },
+  {
+    "id": "dump-24",
+    "size": "S",
+    "note": "asks the assistant for advice, not capture",
+    "input": "Should I call Sam on Friday or on Monday? What would you recommend?",
+    "expected": false
+  },
+  {
+    "id": "dump-25",
+    "size": "M",
+    "note": "request to the assistant",
+    "input": "Write me a short email to my landlord asking him to fix the heating.",
+    "expected": false
+  },
+  {
+    "id": "dump-26",
+    "size": "M",
+    "note": "question about the tool, with context",
+    "input": "I've been using this for a week now. How do topics work, and can I rename one after tasks are already saved?",
+    "expected": false
+  },
+  {
+    "id": "dump-27",
+    "size": "L",
+    "note": "long message, but all questions to the assistant",
+    "input": "Hi! I'm trying to figure out how to best use this tool. I usually have lots of thoughts during the day, mostly work stuff and some personal things. Is it better to send everything in one message or several small ones, and does the order matter? Also does it remember what I said yesterday or does every chat start from scratch? I'd also like to know if there is a way to export my tasks somewhere.",
+    "expected": false
+  },
+  {
+    "id": "dump-28",
+    "size": "M",
+    "note": "messy true brain dump: D: short fragments, lowercase, no punctuation",
+    "input": "ok brain dump. milk. call the plumber, the leak is getting worse omg. what day is it even. dentist? did I book that. no idea. rent due friday i think. hmm. need to figure out christmas flights before prices go crazy. ok bye",
+    "expected": true
+  },
+  {
+    "id": "dump-29",
+    "size": "L",
+    "note": "messy true brain dump: A: Sunday-night dread, rumination mixed with a few items",
+    "input": "ugh it's Sunday night and I already feel the Monday dread. honestly I don't even know where to start. ok first thing, email the accountant about the invoices before they close the quarter. and I keep meaning to book the dentist, it's been like two years, embarrassing. whatever. oh the car insurance renews on the 3rd I think? need to check that. I wonder if everyone feels this behind all the time. anyway. also maybe I should try meal prepping, idea only, no promises. deep breath. ok.",
+    "expected": true
+  },
+  {
+    "id": "dump-30",
+    "size": "L",
+    "note": "messy true brain dump: B: venting about a colleague, implicit tasks, a tangent",
+    "input": "I can't believe Sam changed the deadline AGAIN. it was Friday, now it's Wednesday, with no warning. so mad. I'm not going to reply until I calm down lol. okay but seriously I need to finish the Q3 slides by Wednesday now, and ping Rui for the revenue numbers today because without them there's nothing. why does this always happen right before a holiday. also Ana's birthday is on the 20th and I haven't got her anything, need to fix that. random thought but the new office coffee machine is amazing.",
+    "expected": true
+  },
+  {
+    "id": "dump-31",
+    "size": "L",
+    "note": "messy true brain dump: E: rumination about the job, a self-correction, a rejected idea",
+    "input": "so I've been thinking about whether I should leave this job or not, probably not, but who knows. anyway right now I just need to finish the quarterly report, send it to James by Thursday, no wait Friday, James said Friday. and book the room for the workshop, at least ten people. my back has been killing me so book a doctor appointment, ugh I hate waiting rooms. what if we did the workshop outdoors? probably too cold. ok also sign up for that pottery class Ana mentioned, sounds fun. I really have no idea what I'm doing with my life sometimes lol.",
+    "expected": true
+  },
+  {
+    "id": "dump-32",
+    "size": "XL",
+    "note": "messy true brain dump: C: 4am money worries, family, work, self-talk; long and loose",
+    "input": "ok so my brain is just loud today. I woke up at 4 thinking about money, like what if the rent goes up again, I can't even. anyway, pay the electricity bill, it's overdue by a few days, ugh. also transfer something to savings, I'll figure out how much later. my sister called yesterday and said mum's knee is getting worse so I should probably call mum this weekend, or maybe go visit? don't know yet. work stuff: the onboarding docs are a mess and nobody owns them, I could just rewrite them myself, idea, might actually be fun. and the standup is moving to 9:30 starting next week, that's actually nice. I should really stop checking email at midnight. I keep telling myself that. funny how the brain works. oh and buy running shoes, mine are falling apart, I think the gym isn't even the problem, it's the shoes. ok that's the dump for now, feeling a bit lighter.",
+    "expected": true
+  },
+  {
+    "id": "dump-33",
+    "size": "XL",
+    "note": "messy true brain dump: F: voice-transcribed style, fillers, panic, a forgotten-something spiral",
+    "input": "um okay so like I just need to get everything out of my head. so tomorrow I have the board thing and I'm kind of freaking out about the slides, like what if the numbers are wrong, I should probably double check the revenue figures with Rui first thing. also I told Sam I'd call him back about the contract and I totally forgot so call Sam today. oh my god the car, the insurance runs out at the end of the month, renew it, don't let me forget again. and I need to buy a present for Ana, her birthday is the twentieth, she likes ceramics I think, or was that someone else. hm. what else. oh I want to start running again, maybe sign up for that ten k in spring, that would be cool. the gym said they'd be closed on bank holiday Monday by the way. also pick up the dry cleaning before seven or they close. I feel like I'm forgetting something huge. ok. I'm gonna go make tea.",
+    "expected": true
+  }
+]

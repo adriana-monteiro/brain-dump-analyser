@@ -1,0 +1,1222 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "extract_classify": {
+      "accuracy": 0.45454545454545453,
+      "passed": 10,
+      "total": 22,
+      "prompts": "extract_classify_v4",
+      "latency_p50_s": 1.408442750107497,
+      "latency_p95_s": 2.207188732910436,
+      "cost_usd": 0.0102848,
+      "cost_input_usd": 0.006449600000000001,
+      "cost_output_usd": 0.0038352000000000004,
+      "prompt_tokens": 16124,
+      "completion_tokens": 2397,
+      "cases": [
+        {
+          "id": "note-01",
+          "output": [
+            {
+              "text": "buy milk",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "task"
+            },
+            {
+              "text": "Sam prefers email over calls",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 2,
+            "topic_ok": 2,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.8659454160369933,
+            "prompt_tokens": 696,
+            "completion_tokens": 60,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00027840000000000005,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.6e-05,
+            "cost_usd": 0.00037440000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-02",
+          "output": [
+            {
+              "text": "the wifi password is on the fridge",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "House",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 1,
+            "topic_ok": 1,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.9354689591564238,
+            "prompt_tokens": 698,
+            "completion_tokens": 36,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002792,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.7600000000000004e-05,
+            "cost_usd": 0.0003368,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-03",
+          "output": [
+            {
+              "text": "the tax deadline is the 31st",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 1,
+            "topic_ok": 1,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5377609999850392,
+            "prompt_tokens": 696,
+            "completion_tokens": 37,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00027840000000000005,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.92e-05,
+            "cost_usd": 0.0003376000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "idea-01",
+          "output": [
+            {
+              "text": "what if we added a dark mode to the dashboard",
+              "context": null,
+              "confidence": "medium",
+              "reason": "This is an idea or suggestion about a feature addition without a committed plan or action.",
+              "topic": "Acme Launch",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 1,
+            "topic_ok": 1,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.726455874973908,
+            "prompt_tokens": 707,
+            "completion_tokens": 56,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002828,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 8.960000000000001e-05,
+            "cost_usd": 0.0003724,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-01",
+          "output": [
+            {
+              "text": "learn to cook thai food",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 1,
+            "topic_ok": 1,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0400744590442628,
+            "prompt_tokens": 684,
+            "completion_tokens": 35,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00027360000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.6e-05,
+            "cost_usd": 0.00032960000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-02",
+          "output": [
+            {
+              "text": "buy milk",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            },
+            {
+              "text": "call the bank about the mortgage",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            },
+            {
+              "text": "try a standing desk",
+              "context": "maybe try",
+              "confidence": "medium",
+              "reason": "The action is tentative and not clearly committed, so classified as idea rather than task.",
+              "topic": "INBOX",
+              "kind": "idea"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 3,
+            "topic_ok": 3,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.166294249938801,
+            "prompt_tokens": 675,
+            "completion_tokens": 106,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00027,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00016960000000000003,
+            "cost_usd": 0.00043960000000000006,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-03",
+          "output": [
+            {
+              "text": "buy milk",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            },
+            {
+              "text": "call Rui about the pricing page",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Acme Launch",
+              "kind": "task"
+            },
+            {
+              "text": "renew passport",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'call Rui about the pricing page': want task/INBOX, got task/Acme Launch",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 3,
+            "topic_ok": 2,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4609202079009265,
+            "prompt_tokens": 692,
+            "completion_tokens": 89,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002768,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00014240000000000002,
+            "cost_usd": 0.0004192,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-04",
+          "output": [
+            {
+              "text": "renew the car insurance",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Admin",
+              "kind": "task"
+            },
+            {
+              "text": "invoice Marta for October",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Clients",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 2,
+            "topic_ok": 2,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9613223748747259,
+            "prompt_tokens": 697,
+            "completion_tokens": 60,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002788,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.6e-05,
+            "cost_usd": 0.0003748,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-05",
+          "output": [
+            {
+              "text": "work on the garden this weekend",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Home",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 1,
+            "topic_ok": 1,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9044117501471192,
+            "prompt_tokens": 680,
+            "completion_tokens": 35,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000272,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.6e-05,
+            "cost_usd": 0.000328,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-06",
+          "output": [
+            {
+              "text": "renew health insurance",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'renew health insurance': want task/Finance, got task/Health",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 1,
+            "topic_ok": 0,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0122157079167664,
+            "prompt_tokens": 677,
+            "completion_tokens": 32,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002708,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.1200000000000004e-05,
+            "cost_usd": 0.000322,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-07",
+          "output": [
+            {
+              "text": "order a gift for Ana",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Ana",
+              "kind": "task"
+            },
+            {
+              "text": "send Sam the Q3 slides",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Sam",
+              "kind": "task"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 2,
+            "topic_ok": 2,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1888502920046449,
+            "prompt_tokens": 693,
+            "completion_tokens": 63,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00027719999999999996,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00010080000000000001,
+            "cost_usd": 0.00037799999999999997,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "noise-01",
+          "output": [
+            {
+              "text": "Call the bank about the card",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "task"
+            },
+            {
+              "text": "Exercise more",
+              "context": "Need to improve physical activity",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'Exercise more': want idea/Health, got task/Health",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 1,
+            "topic_ok": 2,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.5079251248389482,
+            "prompt_tokens": 716,
+            "completion_tokens": 64,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002864,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00010240000000000001,
+            "cost_usd": 0.0003888,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "null-01",
+          "output": [
+            {
+              "text": "so tired today",
+              "context": null,
+              "confidence": "low",
+              "reason": "This expresses a feeling but lacks a clear actionable intention, specific fact, or useful information.",
+              "topic": "INBOX",
+              "kind": "note"
+            }
+          ],
+          "ok": false,
+          "detail": "extra ['so tired today']",
+          "counts": {
+            "exp": 0,
+            "got": 1,
+            "matched": 0,
+            "matched_req": 0,
+            "kind_ok": 0,
+            "topic_ok": 0,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8372042090632021,
+            "prompt_tokens": 707,
+            "completion_tokens": 49,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002828,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 7.840000000000001e-05,
+            "cost_usd": 0.0003612,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01a",
+          "output": [
+            {
+              "text": "order a gift for ana",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "task"
+            },
+            {
+              "text": "try a standing desk",
+              "context": null,
+              "confidence": "medium",
+              "reason": "The item is a suggestion without a clear commitment to act.",
+              "topic": "Health",
+              "kind": "idea"
+            },
+            {
+              "text": "schedule the quarterly review with sam",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "the energy provider moved the payment date to the 5th",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "note"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 4,
+            "topic_ok": 4,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3105765408836305,
+            "prompt_tokens": 739,
+            "completion_tokens": 135,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00029560000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000216,
+            "cost_usd": 0.0005116000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01b",
+          "output": [
+            {
+              "text": "order a gift for ana",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            },
+            {
+              "text": "try a standing desk",
+              "context": null,
+              "confidence": "medium",
+              "reason": "The statement is suggestive but not a committed action.",
+              "topic": "Fitness",
+              "kind": "idea"
+            },
+            {
+              "text": "schedule the quarterly review with sam",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "the energy provider moved the payment date to the 5th",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "note"
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'try a standing desk': want idea/Health, got idea/Fitness",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 4,
+            "topic_ok": 3,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3112886659801006,
+            "prompt_tokens": 725,
+            "completion_tokens": 136,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00029,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00021760000000000003,
+            "cost_usd": 0.0005076,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01c",
+          "output": [
+            {
+              "text": "order a gift for ana",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            },
+            {
+              "text": "try a standing desk",
+              "context": null,
+              "confidence": "medium",
+              "reason": "This is more a suggestion or idea rather than a committed task.",
+              "topic": "INBOX",
+              "kind": "idea"
+            },
+            {
+              "text": "schedule the quarterly review with sam",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "INBOX",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['energy provider payment date moved to the 5th']",
+          "counts": {
+            "exp": 4,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 3,
+            "topic_ok": 3,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.141896750079468,
+            "prompt_tokens": 711,
+            "completion_tokens": 104,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00028440000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001664,
+            "cost_usd": 0.0004508,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-01",
+          "output": [
+            {
+              "text": "Double check the revenue figures with Rui first thing tomorrow",
+              "context": "To ensure the numbers for the board presentation slides are correct",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "Call Sam today about the contract",
+              "context": "You promised to call him back regarding the contract but forgot",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "Renew the car insurance before the end of the month",
+              "context": "The insurance runs out at the end of the month, don't let it be forgotten again",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "task"
+            },
+            {
+              "text": "Buy a present for Ana's birthday on the twentieth",
+              "context": "She likes ceramics, but unsure if that is correct",
+              "confidence": "medium",
+              "reason": "Uncertainty if ceramics is the correct preference for Ana's gift",
+              "topic": "Personal",
+              "kind": "task"
+            },
+            {
+              "text": "Start running again",
+              "context": "Consider signing up for a 10k race in spring",
+              "confidence": "medium",
+              "reason": "Future plan, not yet a committed task",
+              "topic": "Health",
+              "kind": "idea"
+            },
+            {
+              "text": "Gym will be closed on bank holiday Monday",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "note"
+            },
+            {
+              "text": "Pick up the dry cleaning before seven or they close",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Errands",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['call Sam today', 'maybe sign up for that ten k in spring']; extra ['Call Sam today about the contract']; wrong 'Start running again': want task/Health, got idea/Health",
+          "counts": {
+            "exp": 8,
+            "got": 7,
+            "matched": 6,
+            "matched_req": 6,
+            "kind_ok": 5,
+            "topic_ok": 6,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.1775397080928087,
+            "prompt_tokens": 894,
+            "completion_tokens": 298,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003576,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0004768,
+            "cost_usd": 0.0008344,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-02",
+          "output": [
+            {
+              "text": "Pay the electricity bill",
+              "context": "The electricity bill is overdue by a few days.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "task"
+            },
+            {
+              "text": "Transfer something to savings",
+              "context": "Will figure out how much later.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "task"
+            },
+            {
+              "text": "Call mum this weekend",
+              "context": "Sister said mum's knee is getting worse.",
+              "confidence": "medium",
+              "reason": "The action is uncertain since user also considers visiting instead of calling.",
+              "topic": "Personal",
+              "kind": "task"
+            },
+            {
+              "text": "Maybe go visit mum this weekend",
+              "context": "Sister said mum's knee is getting worse, user is unsure whether to call or visit.",
+              "confidence": "medium",
+              "reason": "The action is tentative and not decided yet; user is considering alternatives.",
+              "topic": "Personal",
+              "kind": "idea"
+            },
+            {
+              "text": "Rewrite onboarding docs myself",
+              "context": "Onboarding docs are a mess and nobody owns them; rewriting might be fun.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "idea"
+            },
+            {
+              "text": "Note standup is moving to 9:30 starting next week",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "note"
+            },
+            {
+              "text": "Stop checking email at midnight",
+              "context": "User has repeatedly told themselves to do this due to it being a problematic habit.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "task"
+            },
+            {
+              "text": "Buy running shoes",
+              "context": "Current shoes are falling apart; gym is likely not the cause of damage.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "extra ['Maybe go visit mum this weekend']",
+          "counts": {
+            "exp": 7,
+            "got": 8,
+            "matched": 7,
+            "matched_req": 7,
+            "kind_ok": 7,
+            "topic_ok": 7,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.208749207900837,
+            "prompt_tokens": 883,
+            "completion_tokens": 335,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003532,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000536,
+            "cost_usd": 0.0008892,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-03",
+          "output": [
+            {
+              "text": "Finish the quarterly report",
+              "context": "Send it to James by Friday according to James's instruction",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "Book the room for the workshop",
+              "context": "The room should accommodate at least ten people",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "Book a doctor appointment",
+              "context": "Back pain is severe, dislike waiting rooms",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "task"
+            },
+            {
+              "text": "Consider having the workshop outdoors",
+              "context": "Concern that it might be too cold",
+              "confidence": "medium",
+              "reason": "This is a tentative idea and not a committed task",
+              "topic": "Work",
+              "kind": "idea"
+            },
+            {
+              "text": "Sign up for the pottery class Ana mentioned",
+              "context": "It sounds fun",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['send it to James by Friday']",
+          "counts": {
+            "exp": 6,
+            "got": 5,
+            "matched": 5,
+            "matched_req": 5,
+            "kind_ok": 5,
+            "topic_ok": 5,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5791552080772817,
+            "prompt_tokens": 807,
+            "completion_tokens": 189,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003228,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00030240000000000003,
+            "cost_usd": 0.0006252,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-04",
+          "output": [
+            {
+              "text": "Finish the Q3 slides by Wednesday",
+              "context": "Deadline changed from Friday to Wednesday without warning",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "Ping Rui for the revenue numbers today",
+              "context": "Revenue numbers are needed to complete the Q3 slides",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "Get a gift for Ana's birthday on the 20th",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "task"
+            },
+            {
+              "text": "The new office coffee machine is amazing",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "note"
+            }
+          ],
+          "ok": false,
+          "detail": "missing [\"I'm not going to reply until I calm down\"]",
+          "counts": {
+            "exp": 5,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 4,
+            "topic_ok": 4,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3803228330798447,
+            "prompt_tokens": 794,
+            "completion_tokens": 147,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003176,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00023520000000000002,
+            "cost_usd": 0.0005528,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-05",
+          "output": [
+            {
+              "text": "email the accountant about the invoices before they close the quarter",
+              "context": "The accountant needs to be contacted regarding invoices before the quarter closes.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Work",
+              "kind": "task"
+            },
+            {
+              "text": "book the dentist",
+              "context": "It's been like two years since the last appointment, needs to book a dentist visit.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "task"
+            },
+            {
+              "text": "check the car insurance renewal date",
+              "context": "Car insurance possibly renews on the 3rd, need to confirm the exact date.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Finance",
+              "kind": "task"
+            },
+            {
+              "text": "try meal prepping",
+              "context": "Considering meal prepping as an idea, not a committed plan yet.",
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "idea"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['check that']; extra ['check the car insurance renewal date']; wrong 'email the accountant about the invoices before they close the quarter': want task/Finance, got task/Work",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 3,
+            "topic_ok": 2,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4722762920428067,
+            "prompt_tokens": 794,
+            "completion_tokens": 174,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003176,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00027840000000000005,
+            "cost_usd": 0.0005960000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-06",
+          "output": [
+            {
+              "text": "buy milk",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Errands",
+              "kind": "task"
+            },
+            {
+              "text": "call the plumber",
+              "context": "the leak is getting worse",
+              "confidence": "high",
+              "reason": null,
+              "topic": "House",
+              "kind": "task"
+            },
+            {
+              "text": "check if dentist appointment is booked",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Health",
+              "kind": "task"
+            },
+            {
+              "text": "pay rent",
+              "context": "due Friday, I think",
+              "confidence": "medium",
+              "reason": "Uncertainty about the exact due date",
+              "topic": "Finance",
+              "kind": "task"
+            },
+            {
+              "text": "figure out Christmas flights before prices go crazy",
+              "context": null,
+              "confidence": "high",
+              "reason": null,
+              "topic": "Personal",
+              "kind": "task"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['dentist? did I book that', 'rent due friday i think']; extra ['check if dentist appointment is booked', 'pay rent']",
+          "counts": {
+            "exp": 5,
+            "got": 5,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 3,
+            "topic_ok": 3,
+            "noise_total": 0,
+            "noise_leaked": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4365626671351492,
+            "prompt_tokens": 759,
+            "completion_tokens": 157,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003036,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00025120000000000003,
+            "cost_usd": 0.0005548,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

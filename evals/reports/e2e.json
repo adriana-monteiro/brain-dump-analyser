@@ -1,0 +1,480 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "e2e": {
+      "accuracy": 0.6666666666666666,
+      "passed": 8,
+      "total": 12,
+      "prompts": "task_judge_v1",
+      "latency_p50_s": 1.1792421040590852,
+      "latency_p95_s": 2.033431918628047,
+      "cost_usd": 0.0020616000000000002,
+      "cost_input_usd": 0.001404,
+      "cost_output_usd": 0.0006576,
+      "prompt_tokens": 3510,
+      "completion_tokens": 411,
+      "cases": [
+        {
+          "id": "E001",
+          "output": {
+            "operation": "duplicate",
+            "task_id": "T004",
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 1,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T002",
+            "T003",
+            "T004"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1246915000956506,
+            "prompt_tokens": 307,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001228,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.00016120000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E002",
+          "output": {
+            "operation": "duplicate",
+            "task_id": "T001",
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 1,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T001",
+            "T002",
+            "T003",
+            "T010"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9754860419780016,
+            "prompt_tokens": 338,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001352,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.00017360000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E003",
+          "output": {
+            "operation": "needs_human",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": "Should the new task implement an automatic dark mode that follows the system theme, or a manual toggle independent of system settings?"
+          },
+          "ok": false,
+          "detail": "op needs_human, expected duplicate",
+          "counts": {
+            "op_ok": 0,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 1,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T005",
+            "T006"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3302045408636332,
+            "prompt_tokens": 283,
+            "completion_tokens": 48,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001132,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 7.680000000000001e-05,
+            "cost_usd": 0.00019,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E004",
+          "output": {
+            "operation": "new",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 0,
+            "retrieval_target_total": 0
+          },
+          "retrieved_ids": [],
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.7660541248042136,
+            "prompt_tokens": 215,
+            "completion_tokens": 23,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.6e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.680000000000001e-05,
+            "cost_usd": 0.0001228,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E005",
+          "output": {
+            "operation": "duplicate",
+            "task_id": "T013",
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 1,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T013"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2167370410170406,
+            "prompt_tokens": 250,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.0001384,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E006",
+          "output": {
+            "operation": "needs_human",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": "Does 'Improve the login experience' refer to UI/UX improvements, performance enhancements, or adding new login features like social login?"
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 0,
+            "retrieval_target_total": 0
+          },
+          "retrieved_ids": [
+            "T001",
+            "T002",
+            "T003",
+            "T004"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.14174716710113,
+            "prompt_tokens": 335,
+            "completion_tokens": 50,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000134,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 8e-05,
+            "cost_usd": 0.000214,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E007",
+          "output": {
+            "operation": "complete",
+            "task_id": "T007",
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T007",
+            "T008",
+            "T009",
+            "T015"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.11988850007765,
+            "prompt_tokens": 336,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00013440000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.00017280000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E008",
+          "output": {
+            "operation": "needs_human",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": "Do you want to cancel the task 'Add API rate limiting' (T009) or a different task related to API rate limiting?"
+          },
+          "ok": false,
+          "detail": "op needs_human, expected cancel",
+          "counts": {
+            "op_ok": 0,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T003",
+            "T008",
+            "T009"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4340137499384582,
+            "prompt_tokens": 304,
+            "completion_tokens": 51,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00012160000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 8.16e-05,
+            "cost_usd": 0.0002032,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E009",
+          "output": {
+            "operation": "new",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": false,
+          "detail": "op new, expected update",
+          "counts": {
+            "op_ok": 0,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T007",
+            "T008",
+            "T009",
+            "T015"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.929391749901697,
+            "prompt_tokens": 338,
+            "completion_tokens": 23,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001352,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.680000000000001e-05,
+            "cost_usd": 0.000172,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E010",
+          "output": {
+            "operation": "needs_human",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": "Does 'Improve the API' specifically refer to performance, adding features like rate limiting, documentation, or something else?"
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 0,
+            "retrieval_target_total": 0
+          },
+          "retrieved_ids": [
+            "T003",
+            "T007",
+            "T008",
+            "T009"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2248424580320716,
+            "prompt_tokens": 329,
+            "completion_tokens": 47,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001316,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 7.52e-05,
+            "cost_usd": 0.00020679999999999999,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E011",
+          "output": {
+            "operation": "needs_human",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": "Should the notification be only an email, or can it include other types of notifications (e.g., in-app, push)?"
+          },
+          "ok": false,
+          "detail": "op needs_human, expected duplicate",
+          "counts": {
+            "op_ok": 0,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 1,
+            "wrong_task": 0,
+            "retrieval_target_found": 1,
+            "retrieval_target_total": 1
+          },
+          "retrieved_ids": [
+            "T012"
+          ],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.305094082839787,
+            "prompt_tokens": 255,
+            "completion_tokens": 50,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000102,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 8e-05,
+            "cost_usd": 0.000182,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E012",
+          "output": {
+            "operation": "new",
+            "task_id": null,
+            "proposed_text": null,
+            "clarifying_question": null
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "retrieval_target_found": 0,
+            "retrieval_target_total": 0
+          },
+          "retrieved_ids": [],
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0480855000205338,
+            "prompt_tokens": 220,
+            "completion_tokens": 23,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.8e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.680000000000001e-05,
+            "cost_usd": 0.0001248,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

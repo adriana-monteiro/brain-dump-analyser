@@ -1,0 +1,812 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "dump": {
+      "accuracy": 1.0,
+      "passed": 33,
+      "total": 33,
+      "prompts": "dump_v4",
+      "latency_p50_s": 0.8261138750240207,
+      "latency_p95_s": 1.431546116573736,
+      "cost_usd": 0.006180000000000001,
+      "cost_input_usd": 0.0057576,
+      "cost_output_usd": 0.0004224,
+      "prompt_tokens": 14394,
+      "completion_tokens": 264,
+      "cases": [
+        {
+          "id": "dump-01",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4132660829927772,
+            "prompt_tokens": 388,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001552,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016800000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-02",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4127079998143017,
+            "prompt_tokens": 388,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001552,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016800000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-03",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4589661669451743,
+            "prompt_tokens": 390,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000156,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001688,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-04",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.466009708121419,
+            "prompt_tokens": 392,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00015680000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016960000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-05",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8490448750089854,
+            "prompt_tokens": 391,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001564,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016920000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-06",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8496222079265863,
+            "prompt_tokens": 390,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000156,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001688,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-07",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9109341250732541,
+            "prompt_tokens": 394,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00015760000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00017040000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-08",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7993668748531491,
+            "prompt_tokens": 395,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000158,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001708,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-09",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8516712081618607,
+            "prompt_tokens": 399,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00015960000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00017240000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-10",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8429740420542657,
+            "prompt_tokens": 411,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001644,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00017720000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-11",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8073082079645246,
+            "prompt_tokens": 402,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001608,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00017360000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-12",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.793025708058849,
+            "prompt_tokens": 418,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00016720000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00018000000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-13",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7825912500265986,
+            "prompt_tokens": 471,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001884,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0002012,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-14",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7754269170109183,
+            "prompt_tokens": 476,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001904,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0002032,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-15",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9479717079084367,
+            "prompt_tokens": 618,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002472,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00026,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-16",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.5603665420785546,
+            "prompt_tokens": 558,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002232,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00023600000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-17",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.6417976249940693,
+            "prompt_tokens": 387,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00015480000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016760000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-18",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7944729579612613,
+            "prompt_tokens": 388,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001552,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016800000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-19",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7808442499954253,
+            "prompt_tokens": 388,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001552,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016800000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-20",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.6592521672137082,
+            "prompt_tokens": 391,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001564,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016920000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-21",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8919576250482351,
+            "prompt_tokens": 393,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00015720000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00017000000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-22",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8413976670708507,
+            "prompt_tokens": 391,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001564,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00016920000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-23",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0300142499618232,
+            "prompt_tokens": 395,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000158,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001708,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-24",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8717706250026822,
+            "prompt_tokens": 401,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001604,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001732,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-25",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9535006249789149,
+            "prompt_tokens": 401,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001604,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001732,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-26",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8048544169869274,
+            "prompt_tokens": 411,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001644,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00017720000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-27",
+          "output": false,
+          "ok": true,
+          "detail": "expected False, got False",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7848228749353439,
+            "prompt_tokens": 470,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000188,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0002008,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-28",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7796142918523401,
+            "prompt_tokens": 440,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000176,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0001888,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-29",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8261138750240207,
+            "prompt_tokens": 493,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00019720000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00021000000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-30",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.6307231250684708,
+            "prompt_tokens": 493,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00019720000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00021000000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-31",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.84537816606462,
+            "prompt_tokens": 506,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00020240000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.00021520000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-32",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.6603550829458982,
+            "prompt_tokens": 582,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00023280000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.0002456,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "dump-33",
+          "output": true,
+          "ok": true,
+          "detail": "expected True, got True",
+          "counts": {
+            "fp": 0,
+            "fn": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7162547500338405,
+            "prompt_tokens": 583,
+            "completion_tokens": 8,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00023320000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 1.2800000000000001e-05,
+            "cost_usd": 0.000246,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

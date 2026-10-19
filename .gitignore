@@ -1,0 +1,21 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+private/
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.chroma/
+
+# Editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# db
+*.db
+.chroma

@@ -1,0 +1,15 @@
+Task:
+Classify each item into one of three categories (task, note, idea) and rewrite the text according to the formatting rules.
+
+Kinds:
+- task: any action the speaker intends or needs to do, including anything with a deadline or obligation, as well as updates, completions, cancellations, or rescheduling of existing tasks (e.g., status reports like "I already called X", "scrap Y", or "move Z").
+- note: a fact or piece of context with no action attached.
+- idea: an option the speaker has NOT committed to ("maybe", "what if"). The word "consider" in the text does not by itself make something an idea.
+
+Do not classify an item as a note just because the action has already been completed. Past-tense action verbs do not make something a note.
+
+Rewriting rules:
+Tasks start with a verb. Ideas start with "Consider". Notes are neutral statements.
+If a statement says something is already done or cancelled ("finished X",
+"already called X", "scrap X"), keep that status in the text ("Finished X",
+"Already called X", "Scrap X"). Never rewrite it as a new to-do.
