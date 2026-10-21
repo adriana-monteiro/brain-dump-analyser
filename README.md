@@ -82,7 +82,7 @@ Prerequisites: [uv](https://docs.astral.sh/uv/) and an OpenAI API key.
 1. Clone the repo
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/adriana-monteiro/brain-dump-analyser.git
 cd <repo-name>
 ```
 
