@@ -23,6 +23,12 @@ def sync_chat_response(response):
         st.session_state["msgs"].append(
             ("assistant", response["reply"])
         )
+        # Key the trace by the message's index so the UI can render it beneath
+        # that reply. Only chat responses carry one; resolve/reset leave None.
+        trace = response.get("trace")
+        if trace:
+            traces = st.session_state.setdefault("traces", {})
+            traces[len(st.session_state["msgs"]) - 1] = trace
     st.session_state["conv"] = (
         None if response["closed"]
         else response["conversation_id"]

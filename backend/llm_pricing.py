@@ -1,12 +1,10 @@
 """LLM price table and cost arithmetic. Shared by the app (usage recording) and the evals."""
 
 # USD per 1M tokens: (input, cached input, output). Checked against OpenAI's published list prices in Oct 2026;
-# prices change, so edit here. A snapshot name such as gpt-4.1-mini-2025-04-14 matches its longest prefix.
-# cached=None bills cached tokens at the input price (an overestimate).
+# prices change, so this needs to be updated
 PRICES = {
     "gpt-4.1-mini": (0.40, 0.10, 1.60),
-    "gpt-4o-mini": (0.15, 0.075, 0.60),
-    "gpt-4.1": (2.00, None, 8.00),
+    "gpt-4.1": (2.00, 0.50, 8.00),
 }
 OVERRIDE = None        # (in, cached, out) applied to every model; set by the eval CLI (--price-in / --price-out)
 

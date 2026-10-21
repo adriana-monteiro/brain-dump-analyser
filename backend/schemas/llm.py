@@ -4,10 +4,9 @@ from pydantic import BaseModel
 
 Kind = Literal["note", "idea", "task"]
 JudgeOp = Literal["new", "update", "duplicate", "complete", "cancel", "needs_human"]
-InterpretOp = Literal["confirm", "reject", "update_candidate", "update_task",
-                      "complete_task", "cancel_task", "needs_human"]
+PlanOp = Literal["confirm", "reject", "change_text", "change_kind", "change_topic",
+                 "needs_human"]
 
-Confidence = Literal["high", "low", "medium"]
 
 class DumpOut(BaseModel):
     is_brain_dump: bool
@@ -17,16 +16,8 @@ class Item(BaseModel):
     topic: str
     alternative_topic: str | None = None
 
-class ItemWithKind(Item):
-    kind: Kind
-    confidence: Confidence
-    reason: str | None = None
-
 class ExtractOut(BaseModel):
     items: list[Item]
-
-class ExtractClassifyOut(BaseModel):
-    items: list[ItemWithKind]
 
 class ItemClassifyOut(BaseModel):
     text: str
@@ -41,16 +32,21 @@ class JudgeOut(BaseModel):
     proposed_text: str | None
     clarifying_question: str | None
 
-class Action(BaseModel):
+class PlanAction(BaseModel):
     display_no: int
-    operation: InterpretOp
+    operation: PlanOp
     text: str | None
+    kind: Kind | None
+    topic: str | None
     question: str | None
 
-class InterpretOut(BaseModel):
-    actions: list[Action]
-    questions_answered: bool
-    other_content: str
+class SubmitPlan(BaseModel):
+    actions: list[PlanAction]
+    new_dump: str | None
+    unrelated: str | None
 
-SCHEMAS = {"dump": DumpOut, "extract": ExtractOut, "extract_classify": ExtractClassifyOut,
-           "classify": ClassifyOut, "judge": JudgeOut, "interpret": InterpretOut}
+class GetHistoryArgs(BaseModel):
+    n: int
+
+SCHEMAS = {"dump": DumpOut, "extract": ExtractOut,
+           "classify": ClassifyOut, "judge": JudgeOut}

@@ -21,6 +21,7 @@ pages = [
     st.Page("pages/tasks.py", title="Tasks", icon="✅"),
     st.Page("pages/notes.py", title="Notes", icon="📝"),
     st.Page("pages/ideas.py", title="Ideas", icon="💡"),
+    st.Page("pages/metrics.py", title="Metrics", icon="📊"),
 ]
 
 navigation = st.navigation(pages, position="sidebar")
@@ -35,7 +36,10 @@ with st.sidebar:
             topic_text = st.text_area(
                 "One topic per line",
                 value="\n".join(topics),
-                help="INBOX is the fallback topic.",
+                help=(
+                    "INBOX is the fallback topic. Keep each topic short "
+                    "(at most 3 words)."
+                ),
                 key="topic_editor",
             )
 

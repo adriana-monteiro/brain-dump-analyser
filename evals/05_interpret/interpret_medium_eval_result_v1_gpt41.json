@@ -1,0 +1,1230 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "interpret": {
+      "accuracy": 1.0,
+      "passed": 19,
+      "total": 19,
+      "prompts": "",
+      "latency_p50_s": 1.1726646001916379,
+      "latency_p95_s": 1.8627084200037645,
+      "cost_usd": 0.04193,
+      "cost_input_usd": 0.030657999999999998,
+      "cost_output_usd": 0.011272,
+      "prompt_tokens": 19937,
+      "completion_tokens": 1409,
+      "cases": [
+        {
+          "id": "medium-nl-confirm-subset-reject-subset",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 3,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 4,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 5,
+            "routing_total": 5,
+            "action_ok": 4,
+            "action_total": 4,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.0098055000416934,
+            "prompt_tokens": 1171,
+            "completion_tokens": 125,
+            "cached_tokens": 1024,
+            "cost_input_usd": 0.000294,
+            "cost_cached_input_usd": 0.000512,
+            "cost_output_usd": 0.001,
+            "cost_usd": 0.0018059999999999999,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-complete-existing-task",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3967028001789004,
+            "prompt_tokens": 978,
+            "completion_tokens": 50,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.001956,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0004,
+            "cost_usd": 0.002356,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-cancel-existing-task",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.84636429999955,
+            "prompt_tokens": 975,
+            "completion_tokens": 50,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00195,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0004,
+            "cost_usd": 0.00235,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-update-existing-task-with-refinement",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Renew gym membership and book an induction session",
+                "kind": "task",
+                "topic": "Fitness",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3889794999267906,
+            "prompt_tokens": 983,
+            "completion_tokens": 58,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.001966,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000464,
+            "cost_usd": 0.00243,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-agree-duplicate-is-reject",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9580092001706362,
+            "prompt_tokens": 1069,
+            "completion_tokens": 75,
+            "cached_tokens": 1024,
+            "cost_input_usd": 9e-05,
+            "cost_cached_input_usd": 0.000512,
+            "cost_output_usd": 0.0006,
+            "cost_usd": 0.001202,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-edit-questioned-candidate",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "rewrite the onboarding email copy",
+                "kind": "task",
+                "topic": "Projects",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8746275999583304,
+            "prompt_tokens": 981,
+            "completion_tokens": 55,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.001962,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00044,
+            "cost_usd": 0.002402,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-nl-target-change-kind",
+          "output": {
+            "actions": [
+              {
+                "display_no": 2,
+                "operation": "change_kind",
+                "text": null,
+                "kind": "idea",
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1126894000917673,
+            "prompt_tokens": 1034,
+            "completion_tokens": 51,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.002068,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000408,
+            "cost_usd": 0.002476,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-mixed-ops-with-task-complete",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 3,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 4,
+            "routing_total": 4,
+            "action_ok": 3,
+            "action_total": 3,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1000309998635203,
+            "prompt_tokens": 1112,
+            "completion_tokens": 100,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.002224,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0008,
+            "cost_usd": 0.0030239999999999998,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-resolve-some-and-route-new",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 3,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": "Call the dentist tomorrow.",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 5,
+            "routing_total": 5,
+            "action_ok": 3,
+            "action_total": 3,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3213653999846429,
+            "prompt_tokens": 1106,
+            "completion_tokens": 105,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.002212,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00084,
+            "cost_usd": 0.003052,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-partial-with-reason",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0369136000517756,
+            "prompt_tokens": 1098,
+            "completion_tokens": 75,
+            "cached_tokens": 1024,
+            "cost_input_usd": 0.000148,
+            "cost_cached_input_usd": 0.000512,
+            "cost_output_usd": 0.0006,
+            "cost_usd": 0.0012599999999999998,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-change-topic-nl-target",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_topic",
+                "text": null,
+                "kind": null,
+                "topic": "Finance",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5641097999177873,
+            "prompt_tokens": 1036,
+            "completion_tokens": 51,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.002072,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000408,
+            "cost_usd": 0.00248,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-exclusion-confirm-all-but-one",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 3,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1726646001916379,
+            "prompt_tokens": 1088,
+            "completion_tokens": 100,
+            "cached_tokens": 1024,
+            "cost_input_usd": 0.000128,
+            "cost_cached_input_usd": 0.000512,
+            "cost_output_usd": 0.0008,
+            "cost_usd": 0.00144,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-ordinal-target",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 3,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 4,
+            "routing_total": 4,
+            "action_ok": 3,
+            "action_total": 3,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1816000000108033,
+            "prompt_tokens": 1091,
+            "completion_tokens": 100,
+            "cached_tokens": 1024,
+            "cost_input_usd": 0.000134,
+            "cost_cached_input_usd": 0.000512,
+            "cost_output_usd": 0.0008,
+            "cost_usd": 0.001446,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-kind-based-bulk",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 3,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 4,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 5,
+            "routing_total": 5,
+            "action_ok": 4,
+            "action_total": 4,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1943268000613898,
+            "prompt_tokens": 1154,
+            "completion_tokens": 125,
+            "cached_tokens": 1024,
+            "cost_input_usd": 0.00026,
+            "cost_cached_input_usd": 0.000512,
+            "cost_output_usd": 0.001,
+            "cost_usd": 0.001772,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-needs-human-ambiguous-reply",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "needs_human",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": "User asked for a suggestion on what to do with this task and did not make a decision."
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1554168001748621,
+            "prompt_tokens": 1035,
+            "completion_tokens": 70,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00207,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00056,
+            "cost_usd": 0.0026299999999999995,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-garbled-input-ignored",
+          "output": {
+            "actions": [],
+            "new_dump": "",
+            "unrelated": "",
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 1,
+            "routing_total": 1,
+            "action_ok": 0,
+            "action_total": 0,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2886256999336183,
+            "prompt_tokens": 1031,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.002062,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000192,
+            "cost_usd": 0.002254,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-multi-topic-retag",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_topic",
+                "text": null,
+                "kind": null,
+                "topic": "Finance",
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "change_topic",
+                "text": null,
+                "kind": null,
+                "topic": "Health",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 2,
+            "content_total": 2,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.092792799929157,
+            "prompt_tokens": 1039,
+            "completion_tokens": 93,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.002078,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000744,
+            "cost_usd": 0.002822,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-change-kind-idea-to-task",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_kind",
+                "text": null,
+                "kind": "task",
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8650873999577016,
+            "prompt_tokens": 979,
+            "completion_tokens": 51,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.001958,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000408,
+            "cost_usd": 0.002366,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "medium-change-kind-task-to-note",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_kind",
+                "text": null,
+                "kind": "note",
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.992682300042361,
+            "prompt_tokens": 977,
+            "completion_tokens": 51,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.001954,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000408,
+            "cost_usd": 0.002362,
+            "models": [
+              "gpt-4.1-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

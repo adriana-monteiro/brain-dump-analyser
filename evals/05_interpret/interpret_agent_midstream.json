@@ -1,0 +1,66 @@
+[
+  {
+    "id": "midstream-new-task-between-confirms",
+    "message": "confirm the rent, oh and add buy milk on the way home, and yeah keep the dentist one too",
+    "topics": ["Bills", "Errands", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Pay rent", "topic": "Bills", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Book dentist appointment", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "confirm" },
+    "expected_new_dump_contains": ["milk"],
+    "expected_other": true
+  },
+  {
+    "id": "midstream-new-idea-between-confirm-reject",
+    "message": "keep the proposal, also jot down a thought — maybe start a newsletter, and drop the yacht idea",
+    "topics": ["Clients", "Dreams"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Send the client proposal", "topic": "Clients", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "idea", "text": "Buy a yacht", "topic": "Dreams", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "reject" },
+    "expected_new_dump_contains": ["newsletter"],
+    "expected_other": true
+  },
+  {
+    "id": "midstream-new-content-buried-in-filler",
+    "message": "um hang on, where was I — right, also remember to call the plumber about the leak, anyway yeah confirm the standup prep",
+    "topics": ["Home", "Meetings"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Prep for the standup", "topic": "Meetings", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "confirm" },
+    "expected_new_dump_contains": ["plumber"],
+    "expected_other": true
+  },
+  {
+    "id": "midstream-new-note-between-action-and-retopic",
+    "message": "confirm the leaky tap, side note the landlord's number is 555 0199, and move the invoice task to Finance",
+    "topics": ["Home", "Work", "Finance"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Fix the leaky tap", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Chase the overdue invoice", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "change_topic" },
+    "expected_topic": { "2": "Finance" },
+    "expected_new_dump_contains": ["555 0199"],
+    "expected_other": true
+  },
+  {
+    "id": "midstream-two-new-items-around-reject",
+    "message": "add book flights to Lisbon, drop the rewrite-in-Rust idea, and also note down: cancel the Netflix subscription",
+    "topics": ["Travel", "Projects", "Subscriptions"],
+    "candidates": [
+      { "display_no": 1, "kind": "idea", "text": "Rewrite the whole app in Rust", "topic": "Projects", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "reject" },
+    "expected_new_dump_contains": ["Lisbon", "Netflix"],
+    "expected_other": true
+  }
+]

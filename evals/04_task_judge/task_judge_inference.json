@@ -1,0 +1,191 @@
+
+[
+  {
+    "id": "J001",
+    "task": "Email users whenever their account password changes",
+    "existing": [
+      {"id": "T025", "text": "Notify users by email after their password is changed"},
+      {"id": "T027", "text": "Notify users when their account email address changes"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T025"
+  },
+  {
+    "id": "J002",
+    "task": "Add a coupon code field to checkout",
+    "existing": [
+      {"id": "T001", "text": "Add coupon code support to checkout"},
+      {"id": "T002", "text": "Validate discount codes during checkout"},
+      {"id": "T003", "text": "Improve checkout page loading speed"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T001"
+  },
+  {
+    "id": "J003",
+    "task": "Fix the endless loading spinner on the dashboard",
+    "existing": [
+      {"id": "T004", "text": "Fix dashboard spinner that never stops"},
+      {"id": "T005", "text": "Investigate dashboard loading performance"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T004"
+  },
+  {
+    "id": "J004",
+    "task": "Allow exporting reports as PDF files",
+    "existing": [
+      {"id": "T039", "text": "Improve report generation performance"},
+      {"id": "T059", "text": "Generate PDF invoices for customers"}
+    ],
+    "expected_op": "new"
+  },
+  {
+    "id": "J005",
+    "task": "Send an email when a user changes their account email address",
+    "existing": [
+      {"id": "T025", "text": "Notify users by email after their password is changed"},
+      {"id": "T027", "text": "Notify users when their account email address changes"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T027"
+  },
+  {
+    "id": "J006",
+    "task": "Add two-factor authentication using email codes",
+    "existing": [
+      {"id": "T101", "text": "Allow users to sign in using a passwordless email link"}
+    ],
+    "expected_op": "new"
+  },
+  {
+    "id": "J007",
+    "task": "Let customers pay using their store credit balance",
+    "existing": [
+      {"id": "T102", "text": "Allow customers to apply discount codes to orders"}
+    ],
+    "expected_op": "new"
+  },
+  {
+    "id": "J008",
+    "task": "Book a dentist appointment",
+    "existing": [
+      {"id": "T103", "text": "Schedule an annual general practitioner checkup"}
+    ],
+    "expected_op": "new"
+  },
+  {
+    "id": "J009",
+    "task": "Start learning Spanish",
+    "existing": [],
+    "expected_op": "new"
+  },
+  {
+    "id": "J010",
+    "task": "Add dark mode to the settings page",
+    "existing": [
+      {"id": "T104", "text": "Add a dark theme option to application settings"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T104"
+  },
+  {
+    "id": "J011",
+    "task": "Change the deadline for the dashboard redesign to Friday",
+    "existing": [
+      {"id": "T105", "text": "Redesign the analytics dashboard until Wednesday", "status": "open"},
+      {"id": "T106", "text": "Fix dashboard loading performance", "status": "open"}
+    ],
+    "expected_op": "update",
+    "expected_task_id": "T105"
+  },
+  {
+    "id": "J012",
+    "task": "Mark the password reset implementation task as complete",
+    "existing": [
+      {"id": "T107", "text": "Implement password reset flow", "status": "open"},
+      {"id": "T108", "text": "Improve login page styling", "status": "open"}
+    ],
+    "expected_op": "complete",
+    "expected_task_id": "T107"
+  },
+  {
+    "id": "J013",
+    "task": "Cancel the old mobile onboarding redesign task",
+    "existing": [
+      {"id": "T109", "text": "Redesign onboarding for mobile users", "status": "open"},
+      {"id": "T110", "text": "Redesign desktop dashboard", "status": "open"}
+    ],
+    "expected_op": "cancel",
+    "expected_task_id": "T109"
+  },
+  {
+    "id": "J014",
+    "task": "Update the API task",
+    "existing": [
+      {"id": "T111", "text": "Document the public API"},
+      {"id": "T112", "text": "Improve API response performance"},
+      {"id": "T113", "text": "Add API rate limiting"}
+    ],
+    "expected_op": "needs_human"
+  },
+  {
+    "id": "J015",
+    "task": "Improve the login experience",
+    "existing": [
+      {"id": "T114", "text": "Fix login page alignment"},
+      {"id": "T115", "text": "Add passwordless login"},
+      {"id": "T116", "text": "Reduce login API latency"}
+    ],
+    "expected_op": "needs_human"
+  },
+  {
+    "id": "J016",
+    "task": "Add an option to reset a forgotten password",
+    "existing": [
+      {"id": "T117", "text": "Implement forgot-password and password reset flow"},
+      {"id": "T118", "text": "Add email verification during registration"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T117"
+  },
+  {
+    "id": "J017",
+    "task": "Notify customers when their order ships",
+    "existing": [
+      {"id": "T119", "text": "Send shipping confirmation notifications to customers"},
+      {"id": "T120", "text": "Send customers an order receipt after checkout"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T119"
+  },
+  {
+    "id": "J018",
+    "task": "Add automatic dark mode based on the user's system preference",
+    "existing": [
+      {"id": "T121", "text": "Add a manual dark mode toggle"},
+      {"id": "T122", "text": "Respect system theme preference throughout the app"}
+    ],
+    "expected_op": "needs_human"
+  },
+  {
+    "id": "J019",
+    "task": "new a weekly email digest of project activity",
+    "existing": [
+      {"id": "T123", "text": "Send immediate email notifications for project updates"},
+      {"id": "T124", "text": "new a weekly project activity digest"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T124"
+  },
+  {
+    "id": "J020",
+    "task": "Add support for uploading profile pictures",
+    "existing": [
+      {"id": "T125", "text": "Allow users to change their display name"},
+      {"id": "T126", "text": "Allow users to upload profile avatars"}
+    ],
+    "expected_op": "duplicate",
+    "expected_task_id": "T126"
+  }
+]

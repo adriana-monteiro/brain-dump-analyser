@@ -1,0 +1,91 @@
+
+{
+  "existing_tasks": [
+    {"id": "T001", "text": "Add Google login support", "status": "open"},
+    {"id": "T002", "text": "Fix login page alignment", "status": "open"},
+    {"id": "T003", "text": "Reduce login API latency", "status": "open"},
+    {"id": "T004", "text": "Fix the endless loading spinner on the dashboard", "status": "open"},
+    {"id": "T005", "text": "Add a dark mode toggle to settings", "status": "open"},
+    {"id": "T006", "text": "Respect system theme preference throughout the app", "status": "open"},
+    {"id": "T007", "text": "Document the public API", "status": "open"},
+    {"id": "T008", "text": "Improve API response performance", "status": "open"},
+    {"id": "T009", "text": "Add API rate limiting", "status": "open"},
+    {"id": "T010", "text": "Allow users to upload a profile picture", "status": "open"},
+    {"id": "T011", "text": "Add pagination to the projects page", "status": "open"},
+    {"id": "T012", "text": "Send an email notification when a task is assigned", "status": "open"},
+    {"id": "T013", "text": "Add CSV export for reports", "status": "open"},
+    {"id": "T014", "text": "Fix timezone handling in calendar events", "status": "open"},
+    {"id": "T015", "text": "Add unit tests for payment processing", "status": "open"}
+  ],
+  "cases": [
+    {
+      "id": "E001",
+      "task": "The dashboard spinner never stops loading",
+      "expected_op": "duplicate",
+      "expected_task_id": "T004"
+    },
+    {
+      "id": "E002",
+      "task": "Let users sign in with their Google account",
+      "expected_op": "duplicate",
+      "expected_task_id": "T001"
+    },
+    {
+      "id": "E003",
+      "task": "Add dark mode that follows the computer's theme",
+      "expected_op": "duplicate",
+      "accept": ["duplicate", "update"],
+      "expected_task_id": "T006"
+    },
+    {
+      "id": "E004",
+      "task": "Start learning Italian",
+      "expected_op": "new"
+    },
+    {
+      "id": "E005",
+      "task": "Add a way to export reports as CSV files",
+      "expected_op": "duplicate",
+      "expected_task_id": "T013"
+    },
+    {
+      "id": "E006",
+      "task": "Improve the login experience",
+      "expected_op": "needs_human"
+    },
+    {
+      "id": "E007",
+      "task": "Mark the public API documentation task as complete",
+      "expected_op": "complete",
+      "expected_task_id": "T007"
+    },
+    {
+      "id": "E008",
+      "task": "Cancel the API rate limiting task",
+      "expected_op": "cancel",
+      "expected_task_id": "T009"
+    },
+    {
+      "id": "E009",
+      "task": "Change the API documentation task to cover authentication too",
+      "expected_op": "update",
+      "expected_task_id": "T007"
+    },
+    {
+      "id": "E010",
+      "task": "Improve the API",
+      "expected_op": "needs_human"
+    },
+    {
+      "id": "E011",
+      "task": "Add a notification when someone assigns a task to me",
+      "expected_op": "duplicate",
+      "expected_task_id": "T012"
+    },
+    {
+      "id": "E012",
+      "task": "Build a mobile app for tracking personal workouts",
+      "expected_op": "new"
+    }
+  ]
+}

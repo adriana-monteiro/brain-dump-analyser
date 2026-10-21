@@ -22,12 +22,11 @@ class RetrievalService:
     ) -> None:
         self.embedding_model = settings.openai_embedding_model
 
-        # Initialize the OpenAI client.
         self.openai_client = openai_client or OpenAI(
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-        # Use configured production defaults unless explicitly overridden.
+        # Fall back to configured defaults when not overridden.
         persist_directory = (
             persist_directory or settings.chroma_persist_directory
         )
@@ -163,24 +162,6 @@ class RetrievalService:
             ids=[record_id],
             metadatas=[metadata],
         )
-
-    def update_content(
-        self,
-        record_id: str,
-        new_text: str,
-        new_metadata: dict[str, Any] | None = None,
-    ) -> None:
-        record = self.collection.get(
-            ids=[record_id],
-            include=["metadatas"],
-        )
-        if not record["ids"]:
-            raise ValueError(f"Record {record_id!r} not found.")
-
-        metadata = dict(record["metadatas"][0] or {})
-        metadata.update(new_metadata or {})
-
-        self.upsert(record_id, new_text, metadata)
 
     def delete(self, record_id: str) -> None:
         self.collection.delete(ids=[record_id])

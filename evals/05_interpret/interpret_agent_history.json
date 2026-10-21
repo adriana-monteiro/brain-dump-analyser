@@ -1,0 +1,747 @@
+[
+  {
+    "id": "hist-attach-landlord-detail",
+    "history": [
+      {
+        "role": "user",
+        "content": "email the landlord about the heating, it's been broken a week. landlord is Mr Okafor, flat is 14 Oak Street"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Email the landlord about the heating _(Home)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "change #1 to include the landlord's name and the flat address I gave",
+    "topics": [
+      "Home",
+      "Errands",
+      "Bills"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Email the landlord about the heating",
+        "topic": "Home",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "Okafor",
+        "Oak Street"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-disambiguate-two-sarahs-confirm-contractor",
+    "history": [
+      {
+        "role": "user",
+        "content": "call Sarah about the quote, and call Sarah about the weekend. (Sarah K is the contractor doing the quote, Sarah M is my sister)"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Call Sarah about the quote _(Renovation)_\n- **#2** [task] Call Sarah about the weekend _(Social)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "confirm the one for the contractor, reject the other",
+    "topics": [
+      "Renovation",
+      "Social",
+      "Home"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Call Sarah about the quote",
+        "topic": "Renovation",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      },
+      {
+        "display_no": 2,
+        "kind": "task",
+        "text": "Call Sarah about the weekend",
+        "topic": "Social",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1,
+      2
+    ],
+    "expected_operations": {
+      "1": "confirm",
+      "2": "reject"
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-expand-usual-order",
+    "history": [
+      {
+        "role": "user",
+        "content": "place the usual coffee order (the usual = 2 oat flat whites and a plain croissant)"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Place the usual coffee order _(Errands)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "rewrite #1 to spell out the usual order instead of just saying 'usual'",
+    "topics": [
+      "Errands",
+      "Home",
+      "Health"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Place the usual coffee order",
+        "topic": "Errands",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "oat flat white",
+        "croissant"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-attach-account-number",
+    "history": [
+      {
+        "role": "user",
+        "content": "pay the electricity bill. the account number is 88-204-771"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Pay the electricity bill _(Bills)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "add the account number I mentioned to the bill task",
+    "topics": [
+      "Bills",
+      "Home",
+      "Work"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Pay the electricity bill",
+        "topic": "Bills",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "88-204-771"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-disambiguate-two-reports-confirm-work",
+    "history": [
+      {
+        "role": "user",
+        "content": "finish the report, and help with the other report. (the quarterly one is for work, the other is the school PTA one)"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Finish the report _(Work)_\n- **#2** [task] Help with the other report _(School)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "confirm the work one and drop the school one",
+    "topics": [
+      "Work",
+      "School",
+      "Home"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Finish the report",
+        "topic": "Work",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      },
+      {
+        "display_no": 2,
+        "kind": "task",
+        "text": "Help with the other report",
+        "topic": "School",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_action_nos": [
+      1,
+      2
+    ],
+    "expected_operations": {
+      "1": "confirm",
+      "2": "reject"
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-apply-deadline-constraint",
+    "history": [
+      {
+        "role": "user",
+        "content": "write the launch press release. everything tied to the product launch has to be done before the 15th"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Write the launch press release _(Marketing)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "add the launch deadline I mentioned to the press release task",
+    "topics": [
+      "Marketing",
+      "Work",
+      "Admin"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Write the launch press release",
+        "topic": "Marketing",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "15th"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-disambiguate-two-flights-cancel-earlier",
+    "history": [
+      {
+        "role": "user",
+        "content": "book the Lisbon flights and book the Tokyo flights. Lisbon is in March, Tokyo is in September"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Book the Lisbon flights _(Travel)_\n- **#2** [task] Book the Tokyo flights _(Travel)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "cancel the March one, keep the other",
+    "topics": [
+      "Travel",
+      "Leisure"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Book the Lisbon flights",
+        "topic": "Travel",
+        "op": "cancel",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": "Book the Lisbon flights",
+        "existing_item_status": "open"
+      },
+      {
+        "display_no": 2,
+        "kind": "task",
+        "text": "Book the Tokyo flights",
+        "topic": "Travel",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1,
+      2
+    ],
+    "expected_operations": {
+      "1": "confirm",
+      "2": "confirm"
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-attach-room-dimensions",
+    "history": [
+      {
+        "role": "user",
+        "content": "buy a rug for the spare room. the spare room is 3.2m by 4m"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Buy a rug for the spare room _(Decor)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "put the room measurements I gave into the rug-buying task",
+    "topics": [
+      "Decor",
+      "Home",
+      "Shopping"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Buy a rug for the spare room",
+        "topic": "Decor",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "3.2",
+        "4m"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-disambiguate-two-daves-confirm-plumber",
+    "history": [
+      {
+        "role": "user",
+        "content": "call Dave about the invoice, and call Dave about the bathroom. (Dave about the invoice is Dave from accounting; Dave about the bathroom is Dave the plumber)"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Call Dave about the invoice _(Accounts)_\n- **#2** [task] Call Dave about the bathroom _(Home)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "keep the plumber Dave one, that's the only one I need",
+    "topics": [
+      "Accounts",
+      "Home",
+      "Work"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Call Dave about the invoice",
+        "topic": "Accounts",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      },
+      {
+        "display_no": 2,
+        "kind": "task",
+        "text": "Call Dave about the bathroom",
+        "topic": "Home",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      2
+    ],
+    "expected_operations": {
+      "2": "confirm"
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-expand-project-codename",
+    "history": [
+      {
+        "role": "user",
+        "content": "draft the Project Falcon timeline. ('Project Falcon' is the internal name for the mobile app rewrite)"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Draft the Project Falcon timeline _(Engineering)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "change #1 so it says what Project Falcon actually is, not the codename",
+    "topics": [
+      "Engineering",
+      "Work",
+      "Admin"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Draft the Project Falcon timeline",
+        "topic": "Engineering",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "mobile app rewrite"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-attach-medication-name",
+    "history": [
+      {
+        "role": "user",
+        "content": "pick up my prescription from the pharmacy. it's Metformin, 500mg"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Pick up prescription from the pharmacy _(Health)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "add the medication name and dose I told you to the pharmacy task",
+    "topics": [
+      "Health",
+      "Errands"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Pick up prescription from the pharmacy",
+        "topic": "Health",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "Metformin",
+        "500mg"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-disambiguate-two-meetings-complete-standup",
+    "history": [
+      {
+        "role": "user",
+        "content": "prep for the standup and prep for the client sync. the standup is in the morning, the client sync is in the afternoon"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Prep for the standup _(Meetings)_\n- **#2** [task] Prep for the client sync _(Meetings)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "the morning one is already done, mark it complete",
+    "topics": [
+      "Meetings",
+      "Work"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Prep for the standup",
+        "topic": "Meetings",
+        "op": "complete",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": "Prep for the standup",
+        "existing_item_status": "open"
+      },
+      {
+        "display_no": 2,
+        "kind": "task",
+        "text": "Prep for the client sync",
+        "topic": "Meetings",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "confirm"
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-attach-guest-count",
+    "history": [
+      {
+        "role": "user",
+        "content": "buy groceries for the dinner party. it's 8 people, two of them vegetarian"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Buy groceries for the dinner party _(Hosting)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "add the guest count and dietary note I mentioned to the groceries task",
+    "topics": [
+      "Hosting",
+      "Social",
+      "Errands"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Buy groceries for the dinner party",
+        "topic": "Hosting",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "8",
+        "vegetarian"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-disambiguate-two-cars-update-with-plate",
+    "history": [
+      {
+        "role": "user",
+        "content": "book the car in for a service. the one due is the blue Golf, plate GF21 XYZ, not the red one"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Book the car in for a service _(Vehicles)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "update the service task to name the specific car I told you about",
+    "topics": [
+      "Vehicles",
+      "Home",
+      "Admin"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Book the car in for a service",
+        "topic": "Vehicles",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "Golf",
+        "GF21"
+      ]
+    },
+    "expected_other": false
+  },
+  {
+    "id": "hist-attach-detail-and-route-new",
+    "history": [
+      {
+        "role": "user",
+        "content": "email the landlord about the heating. landlord is Mr Okafor at 14 Oak Street"
+      },
+      {
+        "role": "assistant",
+        "content": "I have gathered these items from your brain dump:\n\n- **#1** [task] Email the landlord about the heating _(Home)_\n\n_Reply e.g. `confirm all`, `reject #2`, or answer the questions — or use the panel._"
+      }
+    ],
+    "message": "add the landlord's name and address I gave to #1, and also jot down: renew the parking permit",
+    "topics": [
+      "Home",
+      "Errands",
+      "Bills"
+    ],
+    "candidates": [
+      {
+        "display_no": 1,
+        "kind": "task",
+        "text": "Email the landlord about the heating",
+        "topic": "Home",
+        "op": "new",
+        "proposed_text": null,
+        "question": null,
+        "existing_item_text": null,
+        "existing_item_status": null
+      }
+    ],
+    "expected_tools": [
+      "get_history"
+    ],
+    "expected_action_nos": [
+      1
+    ],
+    "expected_operations": {
+      "1": "change_text"
+    },
+    "expected_text_contains": {
+      "1": [
+        "Okafor",
+        "Oak Street"
+      ]
+    },
+    "expected_new_dump_contains": [
+      "parking permit"
+    ],
+    "expected_other": true
+  }
+]

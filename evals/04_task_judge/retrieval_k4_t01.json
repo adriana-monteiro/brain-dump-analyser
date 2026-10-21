@@ -1,0 +1,1769 @@
+{
+  "summary": {
+    "k": 4,
+    "total_queries": 25,
+    "labeled_queries": 24,
+    "unlabeled_queries": 1,
+    "hit_at_k": 1,
+    "recall_at_k": 1.0,
+    "precision_at_k": 0.53125,
+    "mrr": 1.0,
+    "false_positive_count": 45,
+    "false_positive_rate": 0.46875
+  },
+  "results": [
+    {
+      "id": "The checkout coupon bug is still happening after the fix",
+      "candidate_task": "The checkout coupon bug is still happening after the fix",
+      "expected_retrieved_tasks": [
+        "T001",
+        "T002"
+      ],
+      "retrieved_ids": [
+        "T001",
+        "T003",
+        "T002",
+        "T044"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T001",
+          "text": "Fix discount code application failing during checkout",
+          "metadata": {
+            "topic": "Work",
+            "task_id": "T001",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.5863202214241028
+        },
+        {
+          "id": "T003",
+          "text": "Fix payment errors when applying store credit at checkout",
+          "metadata": {
+            "status": "open",
+            "task_id": "T003",
+            "topic": "Work",
+            "record_type": "task"
+          },
+          "similarity": 0.49968475103378296
+        },
+        {
+          "id": "T002",
+          "text": "Resolve checkout validation errors when customers enter promotional codes",
+          "metadata": {
+            "task_id": "T002",
+            "status": "open",
+            "topic": "Work",
+            "record_type": "task"
+          },
+          "similarity": 0.4836522936820984
+        },
+        {
+          "id": "T044",
+          "text": "Fix duplicate payment confirmation emails",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T044",
+            "topic": "Work"
+          },
+          "similarity": 0.3840104937553406
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T003",
+        "T044"
+      ]
+    },
+    {
+      "id": "Add a spinner while dashboard analytics are loading",
+      "candidate_task": "Add a spinner while dashboard analytics are loading",
+      "expected_retrieved_tasks": [
+        "T004",
+        "T005"
+      ],
+      "retrieved_ids": [
+        "T004",
+        "T005",
+        "T038",
+        "T006"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T004",
+          "text": "Display a loading indicator while dashboard analytics load",
+          "metadata": {
+            "topic": "Work",
+            "task_id": "T004",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.7911784648895264
+        },
+        {
+          "id": "T005",
+          "text": "Replace dashboard loading spinners with skeleton placeholders",
+          "metadata": {
+            "task_id": "T005",
+            "topic": "Work",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.6822829842567444
+        },
+        {
+          "id": "T038",
+          "text": "Reduce analytics dashboard loading time",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T038",
+            "topic": "Work"
+          },
+          "similarity": 0.6530957221984863
+        },
+        {
+          "id": "T006",
+          "text": "Reduce dashboard analytics API response time",
+          "metadata": {
+            "task_id": "T006",
+            "topic": "Work",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.5536413192749023
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T038",
+        "T006"
+      ]
+    },
+    {
+      "id": "Change the login screen logo to our updated brand logo",
+      "candidate_task": "Change the login screen logo to our updated brand logo",
+      "expected_retrieved_tasks": [
+        "T007"
+      ],
+      "retrieved_ids": [
+        "T007",
+        "T008",
+        "T009",
+        "T005"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T007",
+          "text": "Replace the old company logo on the login screen",
+          "metadata": {
+            "task_id": "T007",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.7701247930526733
+        },
+        {
+          "id": "T008",
+          "text": "Update the company logo on the registration page",
+          "metadata": {
+            "topic": "Work",
+            "record_type": "task",
+            "task_id": "T008",
+            "status": "open"
+          },
+          "similarity": 0.6405791640281677
+        },
+        {
+          "id": "T009",
+          "text": "Refresh the login page layout and colors",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "record_type": "task",
+            "task_id": "T009"
+          },
+          "similarity": 0.5995137691497803
+        },
+        {
+          "id": "T005",
+          "text": "Replace dashboard loading spinners with skeleton placeholders",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T005",
+            "record_type": "task"
+          },
+          "similarity": 0.32536280155181885
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.25,
+      "false_positive_count": 3,
+      "false_positive_ids": [
+        "T008",
+        "T009",
+        "T005"
+      ]
+    },
+    {
+      "id": "Prevent duplicate welcome emails after a customer signs up",
+      "candidate_task": "Prevent duplicate welcome emails after a customer signs up",
+      "expected_retrieved_tasks": [
+        "T010",
+        "T011"
+      ],
+      "retrieved_ids": [
+        "T011",
+        "T010",
+        "T044",
+        "T043"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T011",
+          "text": "Fix duplicate welcome emails triggered during account creation",
+          "metadata": {
+            "task_id": "T011",
+            "topic": "Work",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.7472673654556274
+        },
+        {
+          "id": "T010",
+          "text": "Prevent multiple registration confirmation emails from being sent",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "record_type": "task",
+            "task_id": "T010"
+          },
+          "similarity": 0.64362633228302
+        },
+        {
+          "id": "T044",
+          "text": "Fix duplicate payment confirmation emails",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "task_id": "T044",
+            "record_type": "task"
+          },
+          "similarity": 0.5326240062713623
+        },
+        {
+          "id": "T043",
+          "text": "Prevent duplicate invoices from being generated for one payment",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "topic": "Work",
+            "task_id": "T043"
+          },
+          "similarity": 0.49783599376678467
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T044",
+        "T043"
+      ]
+    },
+    {
+      "id": "Add page navigation to the admin user management table",
+      "candidate_task": "Add page navigation to the admin user management table",
+      "expected_retrieved_tasks": [
+        "T013",
+        "T014"
+      ],
+      "retrieved_ids": [
+        "T013",
+        "T015",
+        "T014",
+        "T009"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T013",
+          "text": "Implement pagination for the user management table in the admin panel",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "task_id": "T013",
+            "record_type": "task"
+          },
+          "similarity": 0.6810405850410461
+        },
+        {
+          "id": "T015",
+          "text": "Add sorting and filtering to the admin users table",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Work",
+            "task_id": "T015",
+            "status": "open"
+          },
+          "similarity": 0.5745918154716492
+        },
+        {
+          "id": "T014",
+          "text": "Add pagination to the customer directory",
+          "metadata": {
+            "status": "open",
+            "task_id": "T014",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.46321743726730347
+        },
+        {
+          "id": "T009",
+          "text": "Refresh the login page layout and colors",
+          "metadata": {
+            "task_id": "T009",
+            "topic": "Work",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.3686084747314453
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T015",
+        "T009"
+      ]
+    },
+    {
+      "id": "Set the report export endpoint timeout to 60 seconds",
+      "candidate_task": "Set the report export endpoint timeout to 60 seconds",
+      "expected_retrieved_tasks": [
+        "T016",
+        "T017"
+      ],
+      "retrieved_ids": [
+        "T016",
+        "T018",
+        "T017",
+        "T037"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T016",
+          "text": "Increase the report generation API timeout to prevent gateway errors",
+          "metadata": {
+            "task_id": "T016",
+            "record_type": "task",
+            "status": "open",
+            "topic": "Work"
+          },
+          "similarity": 0.6537764072418213
+        },
+        {
+          "id": "T018",
+          "text": "Increase the default timeout for all API endpoints",
+          "metadata": {
+            "status": "open",
+            "task_id": "T018",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.6035863757133484
+        },
+        {
+          "id": "T017",
+          "text": "Investigate slow report generation requests timing out",
+          "metadata": {
+            "task_id": "T017",
+            "topic": "Work",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.5379283428192139
+        },
+        {
+          "id": "T037",
+          "text": "Optimize report generation queries to reduce page load time",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work",
+            "task_id": "T037"
+          },
+          "similarity": 0.42124098539352417
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T018",
+        "T037"
+      ]
+    },
+    {
+      "id": "Let customers download their billing history invoices in PDF format",
+      "candidate_task": "Let customers download their billing history invoices in PDF format",
+      "expected_retrieved_tasks": [
+        "T019",
+        "T020",
+        "T021"
+      ],
+      "retrieved_ids": [
+        "T019",
+        "T021",
+        "T020",
+        "T059"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T019",
+          "text": "Add PDF download functionality for invoices in billing history",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T019"
+          },
+          "similarity": 0.7840067744255066
+        },
+        {
+          "id": "T021",
+          "text": "Allow customers to export billing statements as PDF files",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T021"
+          },
+          "similarity": 0.7775552272796631
+        },
+        {
+          "id": "T020",
+          "text": "Add invoice download links to the payment details page",
+          "metadata": {
+            "status": "open",
+            "task_id": "T020",
+            "topic": "Work",
+            "record_type": "task"
+          },
+          "similarity": 0.6228985786437988
+        },
+        {
+          "id": "T059",
+          "text": "Pay the monthly electricity invoice",
+          "metadata": {
+            "task_id": "T059",
+            "topic": "Personal",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.4255009889602661
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.75,
+      "false_positive_count": 1,
+      "false_positive_ids": [
+        "T059"
+      ]
+    },
+    {
+      "id": "Fix profile photo uploads for large PNG images",
+      "candidate_task": "Fix profile photo uploads for large PNG images",
+      "expected_retrieved_tasks": [
+        "T022",
+        "T023",
+        "T024"
+      ],
+      "retrieved_ids": [
+        "T022",
+        "T024",
+        "T023",
+        "T008"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T022",
+          "text": "Fix profile image uploads failing for large PNG files",
+          "metadata": {
+            "task_id": "T022",
+            "topic": "Work",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.9188243746757507
+        },
+        {
+          "id": "T024",
+          "text": "Support PNG and WebP formats in the profile image uploader",
+          "metadata": {
+            "record_type": "task",
+            "task_id": "T024",
+            "status": "open",
+            "topic": "Work"
+          },
+          "similarity": 0.6646888852119446
+        },
+        {
+          "id": "T023",
+          "text": "Increase the maximum file size allowed for profile picture uploads",
+          "metadata": {
+            "task_id": "T023",
+            "record_type": "task",
+            "topic": "Work",
+            "status": "open"
+          },
+          "similarity": 0.6561729311943054
+        },
+        {
+          "id": "T008",
+          "text": "Update the company logo on the registration page",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T008",
+            "record_type": "task"
+          },
+          "similarity": 0.3369547128677368
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.75,
+      "false_positive_count": 1,
+      "false_positive_ids": [
+        "T008"
+      ]
+    },
+    {
+      "id": "Email users whenever their account password changes",
+      "candidate_task": "Email users whenever their account password changes",
+      "expected_retrieved_tasks": [
+        "T025",
+        "T026"
+      ],
+      "retrieved_ids": [
+        "T025",
+        "T027",
+        "T042",
+        "T026"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T025",
+          "text": "Notify users by email after their password is changed",
+          "metadata": {
+            "task_id": "T025",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.8326455950737
+        },
+        {
+          "id": "T027",
+          "text": "Notify users when their account email address changes",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T027",
+            "topic": "Work"
+          },
+          "similarity": 0.7979496121406555
+        },
+        {
+          "id": "T042",
+          "text": "Allow users to reset passwords through emailed links",
+          "metadata": {
+            "task_id": "T042",
+            "status": "open",
+            "topic": "Work",
+            "record_type": "task"
+          },
+          "similarity": 0.626947283744812
+        },
+        {
+          "id": "T026",
+          "text": "Send a security alert after password reset completion",
+          "metadata": {
+            "status": "open",
+            "task_id": "T026",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.6244513392448425
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T027",
+        "T042"
+      ]
+    },
+    {
+      "id": "Fix the mobile menu overlay hiding content on iOS",
+      "candidate_task": "Fix the mobile menu overlay hiding content on iOS",
+      "expected_retrieved_tasks": [
+        "T028",
+        "T029"
+      ],
+      "retrieved_ids": [
+        "T028",
+        "T029",
+        "T030",
+        "T005"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T028",
+          "text": "Fix mobile sidebar overlay covering the main content on iOS",
+          "metadata": {
+            "task_id": "T028",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.779250979423523
+        },
+        {
+          "id": "T029",
+          "text": "Resolve responsive navigation menu layout issues on small screens",
+          "metadata": {
+            "status": "open",
+            "task_id": "T029",
+            "topic": "Work",
+            "record_type": "task"
+          },
+          "similarity": 0.5502813458442688
+        },
+        {
+          "id": "T030",
+          "text": "Fix header alignment on iPhone Safari",
+          "metadata": {
+            "task_id": "T030",
+            "topic": "Work",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.5417163968086243
+        },
+        {
+          "id": "T005",
+          "text": "Replace dashboard loading spinners with skeleton placeholders",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T005",
+            "topic": "Work"
+          },
+          "similarity": 0.3270087242126465
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T030",
+        "T005"
+      ]
+    },
+    {
+      "id": "Add a manual retry option to the failed payment screen",
+      "candidate_task": "Add a manual retry option to the failed payment screen",
+      "expected_retrieved_tasks": [
+        "T031",
+        "T032"
+      ],
+      "retrieved_ids": [
+        "T032",
+        "T033",
+        "T031",
+        "T045"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T032",
+          "text": "Add a retry action to the payment failure screen",
+          "metadata": {
+            "task_id": "T032",
+            "topic": "Work",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.8701604604721069
+        },
+        {
+          "id": "T033",
+          "text": "Automatically retry failed payment requests after transient errors",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T033",
+            "topic": "Work"
+          },
+          "similarity": 0.6824702024459839
+        },
+        {
+          "id": "T031",
+          "text": "Allow customers to retry failed payments caused by network interruptions",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T031"
+          },
+          "similarity": 0.679416298866272
+        },
+        {
+          "id": "T045",
+          "text": "Ensure invoice creation is idempotent during payment retries",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T045",
+            "record_type": "task"
+          },
+          "similarity": 0.5372635126113892
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T033",
+        "T045"
+      ]
+    },
+    {
+      "id": "Stop work on the billing v2 migration because the partner integration is being r",
+      "candidate_task": "Stop work on the billing v2 migration because the partner integration is being retired",
+      "expected_retrieved_tasks": [
+        "T034",
+        "T035"
+      ],
+      "retrieved_ids": [
+        "T035",
+        "T034",
+        "T036",
+        "T019"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T035",
+          "text": "Migrate mobile clients from billing API v1 to v2",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T035"
+          },
+          "similarity": 0.6125698685646057
+        },
+        {
+          "id": "T034",
+          "text": "Deprecate the v1 billing API after confirming all consumers use v2",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "record_type": "task",
+            "task_id": "T034"
+          },
+          "similarity": 0.5992832183837891
+        },
+        {
+          "id": "T036",
+          "text": "Remove deprecated authentication endpoints",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work",
+            "task_id": "T036"
+          },
+          "similarity": 0.42893922328948975
+        },
+        {
+          "id": "T019",
+          "text": "Add PDF download functionality for invoices in billing history",
+          "metadata": {
+            "task_id": "T019",
+            "record_type": "task",
+            "status": "open",
+            "topic": "Work"
+          },
+          "similarity": 0.3555506467819214
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T036",
+        "T019"
+      ]
+    },
+    {
+      "id": "The invoice PDF download feature is live. Mark the task as done.",
+      "candidate_task": "The invoice PDF download feature is live. Mark the task as done.",
+      "expected_retrieved_tasks": [
+        "T019",
+        "T020",
+        "T021"
+      ],
+      "retrieved_ids": [
+        "T019",
+        "T020",
+        "T021",
+        "T059"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T019",
+          "text": "Add PDF download functionality for invoices in billing history",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T019",
+            "record_type": "task"
+          },
+          "similarity": 0.6488988399505615
+        },
+        {
+          "id": "T020",
+          "text": "Add invoice download links to the payment details page",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work",
+            "task_id": "T020"
+          },
+          "similarity": 0.5656173229217529
+        },
+        {
+          "id": "T021",
+          "text": "Allow customers to export billing statements as PDF files",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T021"
+          },
+          "similarity": 0.4228907823562622
+        },
+        {
+          "id": "T059",
+          "text": "Pay the monthly electricity invoice",
+          "metadata": {
+            "status": "open",
+            "task_id": "T059",
+            "record_type": "task",
+            "topic": "Personal"
+          },
+          "similarity": 0.3497997522354126
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.75,
+      "false_positive_count": 1,
+      "false_positive_ids": [
+        "T059"
+      ]
+    },
+    {
+      "id": "Improve the reports page performance",
+      "candidate_task": "Improve the reports page performance",
+      "expected_retrieved_tasks": [
+        "T037",
+        "T038",
+        "T039"
+      ],
+      "retrieved_ids": [
+        "T037",
+        "T017",
+        "T038",
+        "T039"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T037",
+          "text": "Optimize report generation queries to reduce page load time",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T037",
+            "topic": "Work"
+          },
+          "similarity": 0.7532643675804138
+        },
+        {
+          "id": "T017",
+          "text": "Investigate slow report generation requests timing out",
+          "metadata": {
+            "topic": "Work",
+            "record_type": "task",
+            "task_id": "T017",
+            "status": "open"
+          },
+          "similarity": 0.5681045055389404
+        },
+        {
+          "id": "T038",
+          "text": "Reduce analytics dashboard loading time",
+          "metadata": {
+            "topic": "Work",
+            "status": "open",
+            "task_id": "T038",
+            "record_type": "task"
+          },
+          "similarity": 0.566094160079956
+        },
+        {
+          "id": "T039",
+          "text": "Cache report data to improve response times",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T039",
+            "topic": "Work"
+          },
+          "similarity": 0.5430256128311157
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.75,
+      "false_positive_count": 1,
+      "false_positive_ids": [
+        "T017"
+      ]
+    },
+    {
+      "id": "Implement login using passwordless email links",
+      "candidate_task": "Implement login using passwordless email links",
+      "expected_retrieved_tasks": [
+        "T040",
+        "T042"
+      ],
+      "retrieved_ids": [
+        "T040",
+        "T042",
+        "T041",
+        "T025"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T040",
+          "text": "Implement passwordless authentication through email links",
+          "metadata": {
+            "status": "open",
+            "task_id": "T040",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.911700963973999
+        },
+        {
+          "id": "T042",
+          "text": "Allow users to reset passwords through emailed links",
+          "metadata": {
+            "status": "open",
+            "task_id": "T042",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.6924061179161072
+        },
+        {
+          "id": "T041",
+          "text": "Add email-based two-factor authentication",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Work",
+            "task_id": "T041",
+            "status": "open"
+          },
+          "similarity": 0.5909774899482727
+        },
+        {
+          "id": "T025",
+          "text": "Notify users by email after their password is changed",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "task_id": "T025",
+            "record_type": "task"
+          },
+          "similarity": 0.5108550190925598
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T041",
+        "T025"
+      ]
+    },
+    {
+      "id": "Make sure one successful payment creates only one invoice",
+      "candidate_task": "Make sure one successful payment creates only one invoice",
+      "expected_retrieved_tasks": [
+        "T043",
+        "T045"
+      ],
+      "retrieved_ids": [
+        "T043",
+        "T045",
+        "T044",
+        "T020"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T043",
+          "text": "Prevent duplicate invoices from being generated for one payment",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T043",
+            "topic": "Work"
+          },
+          "similarity": 0.7709611654281616
+        },
+        {
+          "id": "T045",
+          "text": "Ensure invoice creation is idempotent during payment retries",
+          "metadata": {
+            "task_id": "T045",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Work"
+          },
+          "similarity": 0.6985961198806763
+        },
+        {
+          "id": "T044",
+          "text": "Fix duplicate payment confirmation emails",
+          "metadata": {
+            "task_id": "T044",
+            "record_type": "task",
+            "status": "open",
+            "topic": "Work"
+          },
+          "similarity": 0.5177346467971802
+        },
+        {
+          "id": "T020",
+          "text": "Add invoice download links to the payment details page",
+          "metadata": {
+            "status": "open",
+            "task_id": "T020",
+            "topic": "Work",
+            "record_type": "task"
+          },
+          "similarity": 0.49089741706848145
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T044",
+        "T020"
+      ]
+    },
+    {
+      "id": "Schedule my annual checkup with my GP",
+      "candidate_task": "Schedule my annual checkup with my GP",
+      "expected_retrieved_tasks": [
+        "T046",
+        "T047"
+      ],
+      "retrieved_ids": [
+        "T046",
+        "T047",
+        "T048",
+        "T051"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T046",
+          "text": "Book an annual health check with my general practitioner",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Health",
+            "status": "open",
+            "task_id": "T046"
+          },
+          "similarity": 0.830573558807373
+        },
+        {
+          "id": "T047",
+          "text": "Schedule a routine physical examination with my doctor",
+          "metadata": {
+            "topic": "Health",
+            "task_id": "T047",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.7653788328170776
+        },
+        {
+          "id": "T048",
+          "text": "Book a dentist appointment for a routine cleaning",
+          "metadata": {
+            "topic": "Health",
+            "task_id": "T048",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.5321101546287537
+        },
+        {
+          "id": "T051",
+          "text": "Ask my doctor whether my prescription needs renewing",
+          "metadata": {
+            "record_type": "task",
+            "task_id": "T051",
+            "topic": "Health",
+            "status": "open"
+          },
+          "similarity": 0.49527621269226074
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T048",
+        "T051"
+      ]
+    },
+    {
+      "id": "Pick up my renewed medication from the pharmacy",
+      "candidate_task": "Pick up my renewed medication from the pharmacy",
+      "expected_retrieved_tasks": [
+        "T049",
+        "T050"
+      ],
+      "retrieved_ids": [
+        "T049",
+        "T050",
+        "T051",
+        "T047"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T049",
+          "text": "Pick up my prescription from the pharmacy",
+          "metadata": {
+            "task_id": "T049",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Health"
+          },
+          "similarity": 0.8683597445487976
+        },
+        {
+          "id": "T050",
+          "text": "Collect my medication refill from the local pharmacy",
+          "metadata": {
+            "task_id": "T050",
+            "record_type": "task",
+            "topic": "Health",
+            "status": "open"
+          },
+          "similarity": 0.791624903678894
+        },
+        {
+          "id": "T051",
+          "text": "Ask my doctor whether my prescription needs renewing",
+          "metadata": {
+            "record_type": "task",
+            "task_id": "T051",
+            "status": "open",
+            "topic": "Health"
+          },
+          "similarity": 0.6102694272994995
+        },
+        {
+          "id": "T047",
+          "text": "Schedule a routine physical examination with my doctor",
+          "metadata": {
+            "status": "open",
+            "task_id": "T047",
+            "topic": "Health",
+            "record_type": "task"
+          },
+          "similarity": 0.47155648469924927
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T051",
+        "T047"
+      ]
+    },
+    {
+      "id": "Do three cardio sessions this week",
+      "candidate_task": "Do three cardio sessions this week",
+      "expected_retrieved_tasks": [
+        "T052",
+        "T053"
+      ],
+      "retrieved_ids": [
+        "T053",
+        "T052",
+        "T056",
+        "T055"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T053",
+          "text": "Complete three cardio workouts this week",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Health",
+            "status": "open",
+            "task_id": "T053"
+          },
+          "similarity": 0.8681507110595703
+        },
+        {
+          "id": "T052",
+          "text": "Go for a 30-minute run three times this week",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Health",
+            "status": "open",
+            "task_id": "T052"
+          },
+          "similarity": 0.6903104782104492
+        },
+        {
+          "id": "T056",
+          "text": "Plan and prep nutritious meals for next week",
+          "metadata": {
+            "task_id": "T056",
+            "record_type": "task",
+            "topic": "Health",
+            "status": "open"
+          },
+          "similarity": 0.4363064765930176
+        },
+        {
+          "id": "T055",
+          "text": "Prepare healthy lunches for the working week",
+          "metadata": {
+            "status": "open",
+            "task_id": "T055",
+            "record_type": "task",
+            "topic": "Health"
+          },
+          "similarity": 0.4148693084716797
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T056",
+        "T055"
+      ]
+    },
+    {
+      "id": "Prepare lunches and healthy meals for next week",
+      "candidate_task": "Prepare lunches and healthy meals for next week",
+      "expected_retrieved_tasks": [
+        "T055",
+        "T056"
+      ],
+      "retrieved_ids": [
+        "T055",
+        "T056",
+        "T057",
+        "T053"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T055",
+          "text": "Prepare healthy lunches for the working week",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "topic": "Health",
+            "task_id": "T055"
+          },
+          "similarity": 0.8521807193756104
+        },
+        {
+          "id": "T056",
+          "text": "Plan and prep nutritious meals for next week",
+          "metadata": {
+            "topic": "Health",
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T056"
+          },
+          "similarity": 0.8350915312767029
+        },
+        {
+          "id": "T057",
+          "text": "Buy groceries for the weekly meal plan",
+          "metadata": {
+            "topic": "Personal",
+            "task_id": "T057",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.623449444770813
+        },
+        {
+          "id": "T053",
+          "text": "Complete three cardio workouts this week",
+          "metadata": {
+            "record_type": "task",
+            "task_id": "T053",
+            "status": "open",
+            "topic": "Health"
+          },
+          "similarity": 0.42671024799346924
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T057",
+        "T053"
+      ]
+    },
+    {
+      "id": "Pay this month's electricity bill",
+      "candidate_task": "Pay this month's electricity bill",
+      "expected_retrieved_tasks": [
+        "T058",
+        "T059"
+      ],
+      "retrieved_ids": [
+        "T059",
+        "T058",
+        "T060",
+        "T067"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T059",
+          "text": "Pay the monthly electricity invoice",
+          "metadata": {
+            "topic": "Personal",
+            "task_id": "T059",
+            "record_type": "task",
+            "status": "open"
+          },
+          "similarity": 0.8105157613754272
+        },
+        {
+          "id": "T058",
+          "text": "Pay the electricity bill before the due date",
+          "metadata": {
+            "topic": "Personal",
+            "record_type": "task",
+            "task_id": "T058",
+            "status": "open"
+          },
+          "similarity": 0.728811502456665
+        },
+        {
+          "id": "T060",
+          "text": "Renew my home internet subscription",
+          "metadata": {
+            "status": "open",
+            "task_id": "T060",
+            "record_type": "task",
+            "topic": "Personal"
+          },
+          "similarity": 0.44067203998565674
+        },
+        {
+          "id": "T067",
+          "text": "Review monthly subscriptions and remove unnecessary services",
+          "metadata": {
+            "topic": "Personal",
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T067"
+          },
+          "similarity": 0.35922205448150635
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T060",
+        "T067"
+      ]
+    },
+    {
+      "id": "Find a hotel and book accommodation for my weekend away",
+      "candidate_task": "Find a hotel and book accommodation for my weekend away",
+      "expected_retrieved_tasks": [
+        "T061",
+        "T062"
+      ],
+      "retrieved_ids": [
+        "T062",
+        "T061",
+        "T048",
+        "T046"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T062",
+          "text": "Find and reserve accommodation for my weekend getaway",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T062",
+            "topic": "Personal"
+          },
+          "similarity": 0.8422772288322449
+        },
+        {
+          "id": "T061",
+          "text": "Book a weekend hotel for the upcoming trip",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T061",
+            "topic": "Personal"
+          },
+          "similarity": 0.7410452365875244
+        },
+        {
+          "id": "T048",
+          "text": "Book a dentist appointment for a routine cleaning",
+          "metadata": {
+            "status": "open",
+            "topic": "Health",
+            "record_type": "task",
+            "task_id": "T048"
+          },
+          "similarity": 0.3491165041923523
+        },
+        {
+          "id": "T046",
+          "text": "Book an annual health check with my general practitioner",
+          "metadata": {
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T046",
+            "topic": "Health"
+          },
+          "similarity": 0.34352344274520874
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T048",
+        "T046"
+      ]
+    },
+    {
+      "id": "Back up the pictures stored on my phone",
+      "candidate_task": "Back up the pictures stored on my phone",
+      "expected_retrieved_tasks": [
+        "T064",
+        "T065"
+      ],
+      "retrieved_ids": [
+        "T065",
+        "T064",
+        "T049",
+        "T023"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T065",
+          "text": "Back up my phone pictures to cloud storage",
+          "metadata": {
+            "status": "open",
+            "topic": "Personal",
+            "task_id": "T065",
+            "record_type": "task"
+          },
+          "similarity": 0.84639573097229
+        },
+        {
+          "id": "T064",
+          "text": "Organize and back up photos from my phone",
+          "metadata": {
+            "record_type": "task",
+            "task_id": "T064",
+            "topic": "Personal",
+            "status": "open"
+          },
+          "similarity": 0.750601589679718
+        },
+        {
+          "id": "T049",
+          "text": "Pick up my prescription from the pharmacy",
+          "metadata": {
+            "topic": "Health",
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T049"
+          },
+          "similarity": 0.24942541122436523
+        },
+        {
+          "id": "T023",
+          "text": "Increase the maximum file size allowed for profile picture uploads",
+          "metadata": {
+            "status": "open",
+            "topic": "Work",
+            "task_id": "T023",
+            "record_type": "task"
+          },
+          "similarity": 0.23861443996429443
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T049",
+        "T023"
+      ]
+    },
+    {
+      "id": "Get a birthday present for my sister",
+      "candidate_task": "Get a birthday present for my sister",
+      "expected_retrieved_tasks": [
+        "T068",
+        "T069"
+      ],
+      "retrieved_ids": [
+        "T068",
+        "T069",
+        "T049",
+        "T063"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T068",
+          "text": "Buy a birthday present for my sister",
+          "metadata": {
+            "record_type": "task",
+            "topic": "Personal",
+            "status": "open",
+            "task_id": "T068"
+          },
+          "similarity": 0.9173120260238647
+        },
+        {
+          "id": "T069",
+          "text": "Choose and order a birthday gift for my sister",
+          "metadata": {
+            "topic": "Personal",
+            "status": "open",
+            "record_type": "task",
+            "task_id": "T069"
+          },
+          "similarity": 0.8528257012367249
+        },
+        {
+          "id": "T049",
+          "text": "Pick up my prescription from the pharmacy",
+          "metadata": {
+            "task_id": "T049",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Health"
+          },
+          "similarity": 0.25899767875671387
+        },
+        {
+          "id": "T063",
+          "text": "Renew my passport before the summer holiday",
+          "metadata": {
+            "record_type": "task",
+            "status": "open",
+            "task_id": "T063",
+            "topic": "Personal"
+          },
+          "similarity": 0.2541625499725342
+        }
+      ],
+      "labeled": true,
+      "hit_at_4": 1,
+      "recall_at_4": 1.0,
+      "reciprocal_rank": 1.0,
+      "precision_at_k": 0.5,
+      "false_positive_count": 2,
+      "false_positive_ids": [
+        "T049",
+        "T063"
+      ]
+    },
+    {
+      "id": "Start learning Spanish",
+      "candidate_task": "Start learning Spanish",
+      "expected_retrieved_tasks": [],
+      "retrieved_ids": [
+        "T054",
+        "T056",
+        "T052",
+        "T053"
+      ],
+      "retrieved_tasks": [
+        {
+          "id": "T054",
+          "text": "Start a daily stretching routine in the morning",
+          "metadata": {
+            "task_id": "T054",
+            "status": "open",
+            "record_type": "task",
+            "topic": "Health"
+          },
+          "similarity": 0.2464103102684021
+        },
+        {
+          "id": "T056",
+          "text": "Plan and prep nutritious meals for next week",
+          "metadata": {
+            "task_id": "T056",
+            "topic": "Health",
+            "status": "open",
+            "record_type": "task"
+          },
+          "similarity": 0.23175585269927979
+        },
+        {
+          "id": "T052",
+          "text": "Go for a 30-minute run three times this week",
+          "metadata": {
+            "status": "open",
+            "topic": "Health",
+            "task_id": "T052",
+            "record_type": "task"
+          },
+          "similarity": 0.2187860608100891
+        },
+        {
+          "id": "T053",
+          "text": "Complete three cardio workouts this week",
+          "metadata": {
+            "status": "open",
+            "task_id": "T053",
+            "record_type": "task",
+            "topic": "Health"
+          },
+          "similarity": 0.21357935667037964
+        }
+      ],
+      "labeled": false,
+      "hit_at_4": null,
+      "recall_at_4": null,
+      "reciprocal_rank": null,
+      "precision_at_k": null,
+      "false_positive_count": null,
+      "false_positive_ids": []
+    }
+  ],
+  "metadata": {
+    "benchmark_file": "evals\\04_task_judge\\task_retrieval.json",
+    "chroma_directory": "C:\\Users\\AdrianaMonteiro\\personal\\brain-dump-analyser-master\\evals\\data\\chroma_retrieval",
+    "collection": "retrieval_benchmark_tasks",
+    "embedding_model": "text-embedding-3-small",
+    "top_k": 4,
+    "threshold": 0.1,
+    "corpus_task_count": 70
+  }
+}

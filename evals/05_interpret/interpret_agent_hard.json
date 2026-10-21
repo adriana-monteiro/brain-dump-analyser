@@ -1,0 +1,190 @@
+[
+  {
+    "id": "hard-same-existing-task-dup-or-update",
+    "message": "yeah that's the same appointment I already have — go with the dentist on Friday",
+    "topics": ["Health", "Family"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Dentist Friday", "topic": "Health", "op": "duplicate", "proposed_text": null, "question": "Looks like your existing 'Book dentist appointment' — keep as a duplicate?", "existing_item_text": "Book dentist appointment", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": ["reject", "confirm"] },
+    "expected_other": false
+  },
+  {
+    "id": "hard-reword-matched-task",
+    "message": "the gym task should also include booking an induction session",
+    "topics": ["Fitness"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "update", "proposed_text": "Renew gym membership and book an induction session", "question": null, "existing_item_text": "Renew gym membership", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": ["confirm", "change_text"] },
+    "expected_other": false
+  },
+  {
+    "id": "hard-vague-do-something",
+    "message": "hmm, do something with the first one",
+    "topics": ["Home", "Work"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Deal with the car", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Email the accountant", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": ["needs_human", "confirm"] },
+    "expected_other": false
+  },
+  {
+    "id": "hard-duplicate-override",
+    "message": "I know it's basically a duplicate but keep it anyway, I want the separate reminder",
+    "topics": ["Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Call the plumber about the leak", "topic": "Home", "op": "duplicate", "proposed_text": null, "question": "Looks like your existing 'Call the plumber about the leak' — keep as a duplicate?", "existing_item_text": "Call the plumber about the leak", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": ["needs_human", "reject"] },
+    "expected_other": false
+  },
+  {
+    "id": "hard-non-answer-to-question",
+    "message": "sorry, hang on — I completely lost my train of thought",
+    "topics": ["Projects"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Improve the login page", "topic": "Projects", "op": "needs_human", "proposed_text": null, "question": "This is broad — do you mean performance, bug fixes, or the redesign?", "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_other": false
+  },
+  {
+    "id": "hard-answers-different-question",
+    "message": "ignore that question — actually just change it to 'call the plumber about the upstairs leak'",
+    "topics": ["Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Call the plumber", "topic": "Home", "op": "needs_human", "proposed_text": null, "question": "Is this the same as your existing plumber task?", "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_text" },
+    "expected_text_contains": { "1": ["upstairs", "leak"] },
+    "expected_other": false
+  },
+  {
+    "id": "hard-self-contradiction",
+    "message": "confirm all of them — no wait, reject the second one",
+    "topics": ["Money", "Dreams"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Pay rent", "topic": "Money", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "idea", "text": "Learn to skydive", "topic": "Dreams", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "hard-emotional-non-task",
+    "message": "honestly I'm so overwhelmed, I don't even know where to start",
+    "topics": ["Work", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Finish the quarterly report", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Book dentist appointment", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_other": false
+  },
+  {
+    "id": "hard-impossible-disambiguation-needs-human",
+    "message": "confirm the call one",
+    "topics": ["Money", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Call the bank", "topic": "Money", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Call the dentist", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_other": false
+  },
+  {
+    "id": "hard-recategorise-not-a-task-make-it-idea",
+    "message": "that's not a task really, keep it but make it an idea instead",
+    "topics": ["Projects", "Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Build an app that reminds me to drink water", "topic": "Projects", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_kind" },
+    "expected_other": false
+  },
+  {
+    "id": "hard-retract-mid-sentence",
+    "message": "reject #1 and #2 — actually no, leave #2 exactly as it is, just reject #1",
+    "topics": ["Fitness", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Cancel the gym membership", "topic": "Fitness", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Book the dentist", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "hard-dup-flagged-untouched-while-rewording-other",
+    "message": "change the dance one to 'book ballet class'",
+    "topics": ["Fitness", "Hobbies"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "duplicate", "proposed_text": null, "question": "Looks like your existing 'Renew gym membership' — keep as a duplicate?", "existing_item_text": "Renew gym membership", "existing_item_status": "open" },
+      { "display_no": 2, "kind": "task", "text": "Book dance class", "topic": "Hobbies", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [2],
+    "expected_operations": { "2": "change_text" },
+    "expected_text_contains": { "2": ["ballet"] },
+    "expected_other": false
+  },
+  {
+    "id": "hard-bare-new-content-with-one-pending",
+    "message": "book dance class",
+    "topics": ["Fitness", "Hobbies"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "duplicate", "proposed_text": null, "question": "Looks like your existing 'Renew gym membership' — keep as a duplicate?", "existing_item_text": "Renew gym membership", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_new_dump_contains": ["dance"],
+    "expected_other": true
+  },
+  {
+    "id": "hard-complete-task-not-a-candidate-routes-to-dump",
+    "message": "oh I already submitted the tax return, that's done",
+    "topics": ["Fitness", "Money"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_new_dump_contains": ["tax return"],
+    "expected_other": true
+  },
+  {
+    "id": "hard-cancel-task-not-a-candidate-routes-to-dump",
+    "message": "forget the conference trip, it's off",
+    "topics": ["Fitness", "Travel"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_new_dump_contains": ["conference"],
+    "expected_other": true
+  },
+  {
+    "id": "hard-resolve-candidate-and-route-done-task",
+    "message": "confirm the gym one, and by the way I already paid the electricity bill",
+    "topics": ["Fitness", "Bills"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "confirm" },
+    "expected_new_dump_contains": ["electricity"],
+    "expected_other": true
+  }
+]

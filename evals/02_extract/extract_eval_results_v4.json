@@ -1,0 +1,1307 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "extract": {
+      "accuracy": 0.8571428571428571,
+      "passed": 24,
+      "total": 28,
+      "prompts": "extract_v4",
+      "latency_p50_s": 1.0847419500350952,
+      "latency_p95_s": 1.656299740052782,
+      "cost_usd": 0.0096612,
+      "cost_input_usd": 0.0067908000000000005,
+      "cost_output_usd": 0.0028704000000000004,
+      "prompt_tokens": 16977,
+      "completion_tokens": 1794,
+      "cases": [
+        {
+          "id": "note-01",
+          "output": [
+            {
+              "text": "Buy milk",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "Sam prefers email over calls",
+              "topic": "INBOX",
+              "alternative_topic": "Work"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5574510002043098,
+            "prompt_tokens": 574,
+            "completion_tokens": 39,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00022960000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.240000000000001e-05,
+            "cost_usd": 0.00029200000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-02",
+          "output": [
+            {
+              "text": "The wifi password is on the fridge",
+              "topic": "House",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4312279000878334,
+            "prompt_tokens": 576,
+            "completion_tokens": 25,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00023040000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4e-05,
+            "cost_usd": 0.0002704,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-03",
+          "output": [
+            {
+              "text": "The tax deadline is the 31st",
+              "topic": "Finance",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.41823669988662,
+            "prompt_tokens": 574,
+            "completion_tokens": 26,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00022960000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.16e-05,
+            "cost_usd": 0.00027120000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "idea-01",
+          "output": [
+            {
+              "text": "Consider adding a dark mode to the dashboard",
+              "topic": "Acme Launch",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'Consider adding a dark mode to the dashboard': topic wanted INBOX, got Acme Launch",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 0,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4000178999267519,
+            "prompt_tokens": 585,
+            "completion_tokens": 29,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000234,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.64e-05,
+            "cost_usd": 0.0002804,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-01",
+          "output": [
+            {
+              "text": "Learn to cook Thai food",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9567203000187874,
+            "prompt_tokens": 564,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00022560000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.000264,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-02",
+          "output": [
+            {
+              "text": "Buy milk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "Call the bank about the mortgage",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "Maybe try a standing desk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0768581999000162,
+            "prompt_tokens": 555,
+            "completion_tokens": 58,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000222,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.28e-05,
+            "cost_usd": 0.0003148,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-03",
+          "output": [
+            {
+              "text": "Buy milk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "Call Rui about the pricing page",
+              "topic": "INBOX",
+              "alternative_topic": "Acme Launch"
+            },
+            {
+              "text": "Renew passport",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2278821000363678,
+            "prompt_tokens": 572,
+            "completion_tokens": 57,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002288,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.120000000000001e-05,
+            "cost_usd": 0.00032,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-04",
+          "output": [
+            {
+              "text": "Renew the car insurance",
+              "topic": "Home",
+              "alternative_topic": "Admin"
+            },
+            {
+              "text": "Invoice Marta for October",
+              "topic": "Clients",
+              "alternative_topic": "Admin"
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'Renew the car insurance': topic wanted Admin, got Home",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8824336000252515,
+            "prompt_tokens": 575,
+            "completion_tokens": 38,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00023,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.080000000000001e-05,
+            "cost_usd": 0.0002908,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-05",
+          "output": [
+            {
+              "text": "Work on the garden this weekend",
+              "topic": "Home",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0631128000095487,
+            "prompt_tokens": 560,
+            "completion_tokens": 25,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000224,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4e-05,
+            "cost_usd": 0.000264,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-06",
+          "output": [
+            {
+              "text": "Renew health insurance",
+              "topic": "Health",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7986886999569833,
+            "prompt_tokens": 557,
+            "completion_tokens": 21,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00022280000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.3600000000000004e-05,
+            "cost_usd": 0.00025640000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-07",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "topic": "Ana",
+              "alternative_topic": null
+            },
+            {
+              "text": "Send Sam the Q3 slides",
+              "topic": "Sam",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7964398998301476,
+            "prompt_tokens": 572,
+            "completion_tokens": 43,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002288,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.879999999999999e-05,
+            "cost_usd": 0.00029759999999999997,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "noise-01",
+          "output": [
+            {
+              "text": "Call the bank about the card",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "Exercise more",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.839941400103271,
+            "prompt_tokens": 594,
+            "completion_tokens": 39,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00023760000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.240000000000001e-05,
+            "cost_usd": 0.00030000000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "null-01",
+          "output": [],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 0,
+            "got": 0,
+            "matched": 0,
+            "matched_req": 0,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 0,
+            "topic_total": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.6170708001591265,
+            "prompt_tokens": 585,
+            "completion_tokens": 5,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000234,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 8e-06,
+            "cost_usd": 0.000242,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01a",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "Try a standing desk",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Schedule the quarterly review with Sam",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Energy provider moved the payment date to the 5th",
+              "topic": "Finance",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0926257001701742,
+            "prompt_tokens": 617,
+            "completion_tokens": 83,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00024680000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001328,
+            "cost_usd": 0.0003796,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01b",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "topic": "INBOX",
+              "alternative_topic": "Work"
+            },
+            {
+              "text": "Try a standing desk",
+              "topic": "Fitness",
+              "alternative_topic": null
+            },
+            {
+              "text": "Schedule the quarterly review with Sam",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Note that the energy provider moved the payment date to the 5th",
+              "topic": "INBOX",
+              "alternative_topic": "Work"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1421710001304746,
+            "prompt_tokens": 605,
+            "completion_tokens": 87,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000242,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00013920000000000002,
+            "cost_usd": 0.00038120000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01c",
+          "output": [
+            {
+              "text": "Order a gift for Ana",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "Try a standing desk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "Schedule the quarterly review with Sam",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "The energy provider moved the payment date to the 5th",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0725219999440014,
+            "prompt_tokens": 591,
+            "completion_tokens": 85,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002364,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000136,
+            "cost_usd": 0.0003724,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-01",
+          "output": [
+            {
+              "text": "Double check the revenue figures with Rui first thing tomorrow",
+              "topic": "Work",
+              "alternative_topic": "Finance"
+            },
+            {
+              "text": "Call Sam today about the contract",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Renew the car insurance before the end of the month",
+              "topic": "Finance",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Buy a present for Ana's birthday on the twentieth, consider ceramics",
+              "topic": "Personal",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Start running again",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Maybe sign up for a ten k race in spring",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Note that the gym will be closed on bank holiday Monday",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Pick up the dry cleaning before seven",
+              "topic": "Errands",
+              "alternative_topic": "Personal"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 8,
+            "got": 8,
+            "matched": 8,
+            "matched_req": 8,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 8,
+            "topic_total": 8
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6119655000511557,
+            "prompt_tokens": 772,
+            "completion_tokens": 176,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003088,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0002816,
+            "cost_usd": 0.0005904,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-02",
+          "output": [
+            {
+              "text": "Pay the electricity bill, it's overdue by a few days",
+              "topic": "Finance",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Transfer something to savings, figure out how much later",
+              "topic": "Finance",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Call mum this weekend about her worsening knee",
+              "topic": "Personal",
+              "alternative_topic": "Health"
+            },
+            {
+              "text": "Maybe visit mum this weekend",
+              "topic": "Personal",
+              "alternative_topic": "Health"
+            },
+            {
+              "text": "Rewrite the onboarding docs at work because they are a mess and nobody owns them",
+              "topic": "Work",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Note that the work standup is moving to 9:30 starting next week",
+              "topic": "Work",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Stop checking email at midnight",
+              "topic": "Personal",
+              "alternative_topic": "Work"
+            },
+            {
+              "text": "Buy running shoes because current ones are falling apart",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 8,
+            "got": 8,
+            "matched": 8,
+            "matched_req": 8,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 8,
+            "topic_total": 8
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6801128999795765,
+            "prompt_tokens": 762,
+            "completion_tokens": 181,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00030480000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00028960000000000005,
+            "cost_usd": 0.0005944000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-03",
+          "output": [
+            {
+              "text": "Finish the quarterly report",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Send the quarterly report to James by Friday",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Book the room for the workshop for at least ten people",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Book a doctor appointment for back pain",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "Consider holding the workshop outdoors but probably too cold",
+              "topic": "Work",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Sign up for the pottery class Ana mentioned",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 6,
+            "got": 6,
+            "matched": 6,
+            "matched_req": 6,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 6,
+            "topic_total": 6
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3642991001252085,
+            "prompt_tokens": 686,
+            "completion_tokens": 130,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00027440000000000006,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000208,
+            "cost_usd": 0.0004824,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-04",
+          "output": [
+            {
+              "text": "Finish the Q3 slides by Wednesday",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Ping Rui for the revenue numbers today",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Buy a gift for Ana's birthday on the 20th",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "The new office coffee machine is amazing",
+              "topic": "Work",
+              "alternative_topic": "Personal"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['get Ana a present for her birthday on the 20th']; extra [\"Buy a gift for Ana's birthday on the 20th\"]",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.0357260000891984,
+            "prompt_tokens": 673,
+            "completion_tokens": 90,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002692,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000144,
+            "cost_usd": 0.00041319999999999996,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-05",
+          "output": [
+            {
+              "text": "Email the accountant about the invoices before they close the quarter",
+              "topic": "Finance",
+              "alternative_topic": "Work"
+            },
+            {
+              "text": "Book the dentist appointment",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Check the car insurance renewal date, possibly on the 3rd",
+              "topic": "Finance",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Consider trying meal prepping as an idea only, no promises",
+              "topic": "Health",
+              "alternative_topic": "Personal"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1354296000208706,
+            "prompt_tokens": 673,
+            "completion_tokens": 93,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002692,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001488,
+            "cost_usd": 0.00041799999999999997,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-06",
+          "output": [
+            {
+              "text": "Buy milk",
+              "topic": "Errands",
+              "alternative_topic": "House"
+            },
+            {
+              "text": "Call the plumber because the leak is getting worse",
+              "topic": "House",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Check if the dentist appointment is booked",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "Rent is due Friday",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "Figure out Christmas flights before prices increase",
+              "topic": "Personal",
+              "alternative_topic": "Finance"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 5,
+            "got": 5,
+            "matched": 5,
+            "matched_req": 5,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 5,
+            "topic_total": 5
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2429261000361294,
+            "prompt_tokens": 636,
+            "completion_tokens": 99,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002544,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001584,
+            "cost_usd": 0.0004128,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-with-completed-tasks-01",
+          "output": [
+            {
+              "text": "Bought milk",
+              "topic": "Errands",
+              "alternative_topic": "House"
+            },
+            {
+              "text": "Called the plumber, they're coming tomorrow morning",
+              "topic": "House",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Check if I booked the dentist",
+              "topic": "Health",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Paid rent this morning",
+              "topic": "Finance",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Email my manager about taking Friday off",
+              "topic": "Work",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Booked Christmas flights last night",
+              "topic": "Personal",
+              "alternative_topic": "Finance"
+            },
+            {
+              "text": "Pick up my prescription tomorrow",
+              "topic": "Health",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Cleaned the kitchen",
+              "topic": "House",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Laundry is still waiting for me",
+              "topic": "House",
+              "alternative_topic": "Personal"
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['do the laundry']; extra ['Laundry is still waiting for me']",
+          "counts": {
+            "exp": 9,
+            "got": 9,
+            "matched": 8,
+            "matched_req": 8,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 8,
+            "topic_total": 8
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6120753001887351,
+            "prompt_tokens": 651,
+            "completion_tokens": 165,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00026040000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000264,
+            "cost_usd": 0.0005244000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "completed-01",
+          "output": [
+            {
+              "text": "Watered the plants",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7912606000900269,
+            "prompt_tokens": 565,
+            "completion_tokens": 22,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000226,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.52e-05,
+            "cost_usd": 0.0002612,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "completed-02",
+          "output": [
+            {
+              "text": "Paid the rent this morning",
+              "topic": "Finance",
+              "alternative_topic": "Personal"
+            },
+            {
+              "text": "Finished the Q3 report",
+              "topic": "Work",
+              "alternative_topic": "Finance"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8294011000543833,
+            "prompt_tokens": 573,
+            "completion_tokens": 40,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00022920000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.4e-05,
+            "cost_usd": 0.0002932,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "cancelled-01",
+          "output": [
+            {
+              "text": "Booked my ballet class",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7659458999987692,
+            "prompt_tokens": 566,
+            "completion_tokens": 22,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002264,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.52e-05,
+            "cost_usd": 0.0002616,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "cancelled-02",
+          "output": [
+            {
+              "text": "No longer need to send Sam the contract because the deal fell through",
+              "topic": "Work",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9755826999899,
+            "prompt_tokens": 573,
+            "completion_tokens": 32,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00022920000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.1200000000000004e-05,
+            "cost_usd": 0.00028040000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "mixed-completed-01",
+          "output": [
+            {
+              "text": "Booked the flights",
+              "topic": "Personal",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Pack my bags",
+              "topic": "Personal",
+              "alternative_topic": "Errands"
+            },
+            {
+              "text": "Cancel the hotel I reserved due to changed plans",
+              "topic": "Personal",
+              "alternative_topic": "Errands"
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0285030999220908,
+            "prompt_tokens": 591,
+            "completion_tokens": 60,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002364,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.6e-05,
+            "cost_usd": 0.0003324,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

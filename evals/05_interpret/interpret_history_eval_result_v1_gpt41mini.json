@@ -1,0 +1,952 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "interpret": {
+      "accuracy": 0.4,
+      "passed": 6,
+      "total": 15,
+      "prompts": "",
+      "latency_p50_s": 1.4704764999914914,
+      "latency_p95_s": 2.203616380156018,
+      "cost_usd": 0.0099456,
+      "cost_input_usd": 0.008208,
+      "cost_output_usd": 0.0017376,
+      "prompt_tokens": 20520,
+      "completion_tokens": 1086,
+      "cases": [
+        {
+          "id": "hist-attach-landlord-detail",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Email the landlord John Smith about the heating issue at 123 Maple Street, Flat 4B",
+                "kind": "task",
+                "topic": "Home",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "#1: text missing ['Okafor', 'Oak Street']; missing tool get_history",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.386994499946013,
+            "prompt_tokens": 982,
+            "completion_tokens": 69,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003928,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001104,
+            "cost_usd": 0.0005032,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-disambiguate-two-sarahs-confirm-contractor",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "missing tool get_history",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4704764999914914,
+            "prompt_tokens": 1040,
+            "completion_tokens": 91,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000416,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001456,
+            "cost_usd": 0.0005616,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-expand-usual-order",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Place the usual coffee order: one latte, one cappuccino, and one espresso",
+                "kind": "task",
+                "topic": "Errands",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "#1: text missing ['oat flat white', 'croissant']; missing tool get_history",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3617247000802308,
+            "prompt_tokens": 982,
+            "completion_tokens": 67,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003928,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001072,
+            "cost_usd": 0.0005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-attach-account-number",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Pay the electricity bill, account number 88-204-771",
+                "kind": "task",
+                "topic": "Bills",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "get_history",
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "get_history",
+                "status": "ok",
+                "args": {
+                  "n": 10
+                }
+              },
+              {
+                "step": 2,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 1,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 1,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 1
+          },
+          "usage": {
+            "calls": 2,
+            "latency_s": 2.278904600068927,
+            "prompt_tokens": 2072,
+            "completion_tokens": 78,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0008288000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001248,
+            "cost_usd": 0.0009536000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-disambiguate-two-reports-confirm-work",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2235093999188393,
+            "prompt_tokens": 1033,
+            "completion_tokens": 75,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00041320000000000007,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00012,
+            "cost_usd": 0.0005332000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-apply-deadline-constraint",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Write the launch press release before the 15th",
+                "kind": "task",
+                "topic": "Marketing",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "get_history",
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "get_history",
+                "status": "ok",
+                "args": {
+                  "n": 5
+                }
+              },
+              {
+                "step": 2,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 1,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 1,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 1
+          },
+          "usage": {
+            "calls": 2,
+            "latency_s": 2.1713500001933426,
+            "prompt_tokens": 2083,
+            "completion_tokens": 75,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0008332000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00012,
+            "cost_usd": 0.0009532000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-disambiguate-two-flights-cancel-earlier",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "#1: op wanted confirm, got reject; missing tool get_history",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 1,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6503914999775589,
+            "prompt_tokens": 1035,
+            "completion_tokens": 75,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000414,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00012,
+            "cost_usd": 0.000534,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-attach-room-dimensions",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Buy a rug for the spare room with the room measurements I gave",
+                "kind": "task",
+                "topic": "Decor",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "#1: text missing ['3.2', '4m']; missing tool get_history",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5204479000531137,
+            "prompt_tokens": 979,
+            "completion_tokens": 63,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00039160000000000003,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00010080000000000001,
+            "cost_usd": 0.0004924,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-disambiguate-two-daves-confirm-plumber",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "missing tool get_history",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3832998001016676,
+            "prompt_tokens": 1038,
+            "completion_tokens": 75,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00041520000000000006,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00012,
+            "cost_usd": 0.0005352000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-expand-project-codename",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Draft the timeline for the new product launch",
+                "kind": "task",
+                "topic": "Engineering",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "#1: text missing ['mobile app rewrite']; missing tool get_history",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2048669999931008,
+            "prompt_tokens": 981,
+            "completion_tokens": 58,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00039240000000000005,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.28e-05,
+            "cost_usd": 0.0004852000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-attach-medication-name",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Pick up prescription from the pharmacy: Metformin, 500mg",
+                "kind": "task",
+                "topic": "Health",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "get_history",
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "get_history",
+                "status": "ok",
+                "args": {
+                  "n": 5
+                }
+              },
+              {
+                "step": 2,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 1,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 1,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 1
+          },
+          "usage": {
+            "calls": 2,
+            "latency_s": 2.094790400005877,
+            "prompt_tokens": 2080,
+            "completion_tokens": 78,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0008320000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001248,
+            "cost_usd": 0.0009568000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-disambiguate-two-meetings-complete-standup",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "missing tool get_history",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2850516999606043,
+            "prompt_tokens": 1042,
+            "completion_tokens": 50,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0004168,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 8e-05,
+            "cost_usd": 0.0004968,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-attach-guest-count",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Buy groceries for the dinner party for 8 people, including 2 vegetarians",
+                "kind": "task",
+                "topic": "Hosting",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "get_history",
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "get_history",
+                "status": "ok",
+                "args": {
+                  "n": 5
+                }
+              },
+              {
+                "step": 2,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 1,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 1,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 1
+          },
+          "usage": {
+            "calls": 2,
+            "latency_s": 2.1032033001538366,
+            "prompt_tokens": 2087,
+            "completion_tokens": 81,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0008348,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001296,
+            "cost_usd": 0.0009644,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-disambiguate-two-cars-update-with-plate",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Book the blue Golf (plate GF21 XYZ) in for a service",
+                "kind": "task",
+                "topic": "Vehicles",
+                "question": null
+              }
+            ],
+            "new_dump": null,
+            "unrelated": null,
+            "tools_used": [
+              "get_history",
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "get_history",
+                "status": "ok",
+                "args": {
+                  "n": 10
+                }
+              },
+              {
+                "step": 2,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 2,
+            "routing_total": 2,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 1,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 1,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 1
+          },
+          "usage": {
+            "calls": 2,
+            "latency_s": 2.0306106000207365,
+            "prompt_tokens": 2097,
+            "completion_tokens": 79,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0008388,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001264,
+            "cost_usd": 0.0009652,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "hist-attach-detail-and-route-new",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "change_text",
+                "text": "Email the landlord about the heating. Landlord's name and address: [please specify].",
+                "kind": "task",
+                "topic": "Home",
+                "question": null
+              }
+            ],
+            "new_dump": "Renew the parking permit.",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": false,
+          "detail": "#1: text missing ['Okafor', 'Oak Street']; missing tool get_history",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 1,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1907862999942154,
+            "prompt_tokens": 989,
+            "completion_tokens": 72,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003956,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00011520000000000001,
+            "cost_usd": 0.0005108000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

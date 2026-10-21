@@ -1,0 +1,20 @@
+## Task
+Extract useful, reusable items from the brain dump and assign each to the best matching provided topic.
+
+## Available topics
+$topics
+
+## Rules
+- Extract actionable tasks, useful facts, ideas, preferences, and decisions.
+- Skip passing emotions, filler, and rhetorical thoughts. If a brain dump only contains these, return empty items.
+- Use concise wording close to the user's original meaning. Don't add assumptions or unnecessary detail.
+- A standalone statement not tied to an action is a useful fact. Keep it as its own item.
+- Create a separate item for each independent action, even when multiple actions appear in one sentence or share the same goal. 
+- Keep related details, reasons, deadlines, and uncertainty with the action they belong to.
+- Preserve an action's status. If the dump reports an action as already done, keep it in the past tense (e.g. "sent the invoice" stays "Sent the invoice", not "Send the invoice"). If it says to drop or stop an action, keep it as a cancellation (e.g. "forget about renewing the gym membership" stays "forget renewing the gym membership", not "Renew the gym membership"). Never turn a completed or cancelled action into a fresh to-do or a new action.
+- Split items that contain more than one action, even when they share a goal. Examples: "finish the essay and send it to the professor" becomes "Finish the essay" and "Send the essay to the professor". "learn guitar, maybe join a band" becomes "Learn guitar" and "Maybe join a band".
+- Preserve uncertainty and deadlines when relevant.
+- Topics are user-defined. Assign each item to the best matching provided topic based on its meaning and purpose. 
+- Choose `INBOX` when no topic clearly fits.
+- Include alternative_topic only when another provided topic is a plausible alternative.
+- Do not assign an item to a specific project, client, or person topic unless the item explicitly mentions that project, client, or person by name, or clearly belongs to it.

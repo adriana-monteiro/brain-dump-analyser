@@ -1,6 +1,4 @@
 
-# frontend/client.py
-
 import os
 
 import requests
@@ -72,6 +70,44 @@ class APIClient:
 
         return self.request("GET", "/items", params=params)
 
+    def get_metrics(
+        self,
+        step: str | None = None,
+        model: str | None = None,
+        status: str | None = None,
+        limit: int | None = None,
+    ):
+        params = {}
+
+        if step is not None:
+            params["step"] = step
+
+        if model is not None:
+            params["model"] = model
+
+        if status is not None:
+            params["status"] = status
+
+        if limit is not None:
+            params["limit"] = limit
+
+        return self.request("GET", "/metrics", params=params)
+
+    def get_metrics_summary(
+        self,
+        step: str | None = None,
+        model: str | None = None,
+    ):
+        params = {}
+
+        if step is not None:
+            params["step"] = step
+
+        if model is not None:
+            params["model"] = model
+
+        return self.request("GET", "/metrics/summary", params=params)
+
     def chat(self, message: str, conversation_id: str | None = None):
         return self.request(
             "POST",
@@ -102,10 +138,46 @@ class APIClient:
             json={"action": action, "text": text},
         )
 
+    def update_candidate_kind(self, candidate_id: int, kind: str):
+        return self.request(
+            "PATCH",
+            f"/candidates/{candidate_id}/kind",
+            json={"kind": kind},
+        )
+
+    def update_candidate_topic(self, candidate_id: int, topic: str):
+        return self.request(
+            "PATCH",
+            f"/candidates/{candidate_id}/topic",
+            json={"topic": topic},
+        )
+
+    def force_new_candidate(self, candidate_id: int):
+        return self.request(
+            "POST",
+            f"/candidates/{candidate_id}/force-new",
+        )
+
     def get_pending(self, conversation_id: str | None):
         return self.request(
             "GET",
             f"/conversations/{conversation_id}/candidates",
+        )
+
+    def get_conversation(self, conversation_id):
+        """Full conversation state for rehydrating the UI after a refresh:
+        messages, pending candidates, and closed flag."""
+        return self.request(
+            "GET",
+            f"/conversations/{conversation_id}/messages",
+        )
+
+    def get_latest_open_conversation(self):
+        """Most recent open conversation with pending items (hydrated), or
+        {"conversation_id": None} when there is nothing to resume."""
+        return self.request(
+            "GET",
+            "/conversations/latest-open",
         )
 
     

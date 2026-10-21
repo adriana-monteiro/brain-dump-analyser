@@ -1,0 +1,237 @@
+[
+  {
+    "id": "medium-nl-confirm-subset-reject-subset",
+    "message": "the Sam call and the milk are good, but drop the weekly review idea and the wifi note",
+    "topics": ["Work", "Errands", "Routines", "Office"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Call Sam Friday about the invoice", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Buy milk", "topic": "Errands", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "idea", "text": "Weekly review ritual", "topic": "Routines", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 4, "kind": "note", "text": "Wifi password is hunter2", "topic": "INBOX", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2, 3, 4],
+    "expected_operations": { "1": "confirm", "2": "confirm", "3": "reject", "4": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-complete-existing-task",
+    "message": "I already submitted the tax return, that one's done",
+    "topics": ["Work", "Home", "Money"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Submit tax return", "topic": "Money", "op": "complete", "proposed_text": null, "question": null, "existing_item_text": "Submit tax return", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "confirm" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-cancel-existing-task",
+    "message": "forget the conference trip, it's off — cancel that",
+    "topics": ["Work", "Travel"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Book conference travel", "topic": "Travel", "op": "cancel", "proposed_text": null, "question": null, "existing_item_text": "Book conference travel", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "confirm" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-update-existing-task-with-refinement",
+    "message": "the gym task should also include booking an induction session",
+    "topics": ["Fitness", "Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "update", "proposed_text": "Renew gym membership and book an induction session", "question": null, "existing_item_text": "Renew gym membership", "existing_item_status": "open" }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": ["confirm", "change_text"] },
+    "expected_other": false
+  },
+  {
+    "id": "medium-agree-duplicate-is-reject",
+    "message": "yeah number 1 is a duplicate, I already have that one — just keep the quote note",
+    "topics": ["Work", "Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Call the plumber about the leak", "topic": "Home", "op": "duplicate", "proposed_text": null, "question": "Looks like your existing 'Call the plumber about the leak' — keep it as a duplicate?", "existing_item_text": "Call the plumber about the leak", "existing_item_status": "open" },
+      { "display_no": 2, "kind": "note", "text": "Plumber quoted 300 dollars", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "reject", "2": "confirm" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-edit-questioned-candidate",
+    "message": "change #1 to 'rewrite the onboarding email copy'",
+    "topics": ["Projects"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Improve the website", "topic": "Projects", "op": "needs_human", "proposed_text": null, "question": "This is broad — which part of the website do you mean?", "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_text" },
+    "expected_text_contains": { "1": ["onboarding", "email"] },
+    "expected_other": false
+  },
+  {
+    "id": "medium-nl-target-change-kind",
+    "message": "the onboarding redesign is more of an idea than a task really",
+    "topics": ["Projects", "Admin"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Fix the login bug", "topic": "Projects", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Redesign the onboarding flow", "topic": "Projects", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [2],
+    "expected_operations": { "2": "change_kind" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-mixed-ops-with-task-complete",
+    "message": "confirm the dentist, I already did the standup prep so mark it done, and drop the yacht idea",
+    "topics": ["Health", "Work", "Dreams"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Book dentist appointment", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Prep for the standup", "topic": "Work", "op": "complete", "proposed_text": null, "question": null, "existing_item_text": "Prep for the standup", "existing_item_status": "open" },
+      { "display_no": 3, "kind": "idea", "text": "Buy a yacht", "topic": "Dreams", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2, 3],
+    "expected_operations": { "1": "confirm", "2": "confirm", "3": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-resolve-some-and-route-new",
+    "message": "confirm the rent and the milk, drop the yacht, and also jot down: call the dentist tomorrow",
+    "topics": ["Money", "Errands", "Dreams", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Pay rent", "topic": "Money", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Buy milk", "topic": "Errands", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "idea", "text": "Buy a yacht", "topic": "Dreams", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2, 3],
+    "expected_operations": { "1": "confirm", "2": "confirm", "3": "reject" },
+    "expected_new_dump_contains": ["dentist"],
+    "expected_other": true
+  },
+  {
+    "id": "medium-partial-with-reason",
+    "message": "just save the two work tasks for now, I'll sort the personal one later",
+    "topics": ["Work", "Outdoors"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Send the client proposal", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Fix the production bug", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "task", "text": "Plan the weekend hike", "topic": "Outdoors", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "confirm" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-change-topic-nl-target",
+    "message": "the invoice one belongs under Finance, not Work",
+    "topics": ["Work", "Home", "Finance"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Chase the overdue invoice from Sam", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Prepare the board deck", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_topic" },
+    "expected_topic": { "1": "Finance" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-exclusion-confirm-all-but-one",
+    "message": "confirm everything except the yacht idea",
+    "topics": ["Money", "Health", "Dreams"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Pay rent", "topic": "Money", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Book dentist appointment", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "idea", "text": "Buy a yacht", "topic": "Dreams", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "confirm" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-ordinal-target",
+    "message": "keep the first two, drop the rest",
+    "topics": ["Work", "Projects"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Send the client proposal", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Fix the production bug", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "idea", "text": "Rewrite the whole app in Rust", "topic": "Projects", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2, 3],
+    "expected_operations": { "1": "confirm", "2": "confirm", "3": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-kind-based-bulk",
+    "message": "keep the tasks, drop the ideas",
+    "topics": ["Home", "Ventures", "Hobbies"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Fix the leaky tap", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "idea", "text": "Start a side business", "topic": "Ventures", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "task", "text": "Renew car insurance", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 4, "kind": "idea", "text": "Learn to paint", "topic": "Hobbies", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2, 3, 4],
+    "expected_operations": { "1": "confirm", "2": "reject", "3": "confirm", "4": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-needs-human-ambiguous-reply",
+    "message": "I can't decide what to do with the first one — what would you suggest?",
+    "topics": ["Home", "Work"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Deal with the car", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Email the accountant", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "needs_human" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-garbled-input-ignored",
+    "message": "asdkjf ok the uh the thing with the",
+    "topics": ["Work", "Errands"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Finish the quarterly report", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Buy milk", "topic": "Errands", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_other": false
+  },
+  {
+    "id": "medium-multi-topic-retag",
+    "message": "the invoice one goes under Finance and the gym one under Health",
+    "topics": ["Work", "Fitness", "Finance", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Chase the overdue invoice", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Renew gym membership", "topic": "Fitness", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "change_topic", "2": "change_topic" },
+    "expected_topic": { "1": "Finance", "2": "Health" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-change-kind-idea-to-task",
+    "message": "the side business one isn't just an idea anymore, make it a task",
+    "topics": ["Ventures", "Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "idea", "text": "Start a side business selling jam", "topic": "Ventures", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_kind" },
+    "expected_other": false
+  },
+  {
+    "id": "medium-change-kind-task-to-note",
+    "message": "the wifi password one isn't really a task, just keep it as a note",
+    "topics": ["Office", "Admin"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Wifi password is hunter2", "topic": "Office", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_kind" },
+    "expected_other": false
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "interpret": {
+      "accuracy": 1.0,
+      "passed": 5,
+      "total": 5,
+      "prompts": "",
+      "latency_p50_s": 1.6136936000548303,
+      "latency_p95_s": 1.7189615000505,
+      "cost_usd": 0.002634,
+      "cost_input_usd": 0.0020468,
+      "cost_output_usd": 0.0005872,
+      "prompt_tokens": 5117,
+      "completion_tokens": 367,
+      "cases": [
+        {
+          "id": "midstream-new-task-between-confirms",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": "Buy milk on the way home.",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 4,
+            "routing_total": 4,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6762983000371605,
+            "prompt_tokens": 1043,
+            "completion_tokens": 81,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00041720000000000006,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001296,
+            "cost_usd": 0.0005468000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "midstream-new-idea-between-confirm-reject",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": "Thought: maybe start a newsletter.",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 4,
+            "routing_total": 4,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.729627300053835,
+            "prompt_tokens": 1042,
+            "completion_tokens": 81,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0004168,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001296,
+            "cost_usd": 0.0005464,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "midstream-new-content-buried-in-filler",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": "Remember to call the plumber about the leak.",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4849817999638617,
+            "prompt_tokens": 991,
+            "completion_tokens": 58,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00039640000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.28e-05,
+            "cost_usd": 0.0004892000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "midstream-new-note-between-action-and-retopic",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "confirm",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              },
+              {
+                "display_no": 2,
+                "operation": "change_topic",
+                "text": null,
+                "kind": null,
+                "topic": "Finance",
+                "question": null
+              }
+            ],
+            "new_dump": "Landlord's number is 555 0199.",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 4,
+            "routing_total": 4,
+            "action_ok": 2,
+            "action_total": 2,
+            "content_ok": 1,
+            "content_total": 1,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6136936000548303,
+            "prompt_tokens": 1052,
+            "completion_tokens": 86,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00042080000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00013759999999999998,
+            "cost_usd": 0.0005584,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "midstream-two-new-items-around-reject",
+          "output": {
+            "actions": [
+              {
+                "display_no": 1,
+                "operation": "reject",
+                "text": null,
+                "kind": null,
+                "topic": null,
+                "question": null
+              }
+            ],
+            "new_dump": "Book flights to Lisbon\nCancel the Netflix subscription (Subscriptions)",
+            "unrelated": null,
+            "tools_used": [
+              "submit_plan"
+            ],
+            "trace": [
+              {
+                "step": 1,
+                "tool": "submit_plan",
+                "status": "ok"
+              }
+            ]
+          },
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "routing_ok": 3,
+            "routing_total": 3,
+            "action_ok": 1,
+            "action_total": 1,
+            "content_ok": 0,
+            "content_total": 0,
+            "tool_get_history": 0,
+            "tool_submit_plan": 1,
+            "multi_step_turns": 0,
+            "stalled_turns": 0,
+            "tool_expect_total": 0,
+            "tool_expect_ok": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.3036577999591827,
+            "prompt_tokens": 989,
+            "completion_tokens": 61,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0003956,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.760000000000001e-05,
+            "cost_usd": 0.0004932000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

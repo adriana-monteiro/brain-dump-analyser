@@ -1,0 +1,1448 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "extract": {
+      "accuracy": 0.4642857142857143,
+      "passed": 13,
+      "total": 28,
+      "prompts": "extract_v1",
+      "latency_p50_s": 1.374040700145997,
+      "latency_p95_s": 1.959345279983245,
+      "cost_usd": 0.006973200000000001,
+      "cost_input_usd": 0.0027588,
+      "cost_output_usd": 0.0042144,
+      "prompt_tokens": 6897,
+      "completion_tokens": 2634,
+      "cases": [
+        {
+          "id": "note-01",
+          "output": [
+            {
+              "text": "buy milk",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "Sam prefers email over calls",
+              "topic": "Work",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5858542998321354,
+            "prompt_tokens": 214,
+            "completion_tokens": 40,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.560000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.4e-05,
+            "cost_usd": 0.0001496,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-02",
+          "output": [
+            {
+              "text": "the wifi password is on the fridge",
+              "topic": "House",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5943185000214726,
+            "prompt_tokens": 216,
+            "completion_tokens": 28,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.64e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.4800000000000005e-05,
+            "cost_usd": 0.0001312,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "note-03",
+          "output": [
+            {
+              "text": "the tax deadline is the 31st",
+              "topic": "Finance",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.590792499948293,
+            "prompt_tokens": 214,
+            "completion_tokens": 29,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.560000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.64e-05,
+            "cost_usd": 0.000132,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "idea-01",
+          "output": [
+            {
+              "text": "what if we added a dark mode to the dashboard",
+              "topic": "Acme Launch",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'what if we added a dark mode to the dashboard': topic wanted INBOX, got Acme Launch",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 0,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5767642999999225,
+            "prompt_tokens": 225,
+            "completion_tokens": 33,
+            "cached_tokens": 0,
+            "cost_input_usd": 9e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 5.28e-05,
+            "cost_usd": 0.0001428,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-01",
+          "output": [
+            {
+              "text": "learn to cook thai food",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7665321999229491,
+            "prompt_tokens": 204,
+            "completion_tokens": 27,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.16e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.32e-05,
+            "cost_usd": 0.0001248,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-02",
+          "output": [
+            {
+              "text": "buy milk.",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "call the bank about the mortgage.",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "maybe try a standing desk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2666920002084225,
+            "prompt_tokens": 195,
+            "completion_tokens": 59,
+            "cached_tokens": 0,
+            "cost_input_usd": 7.8e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 9.44e-05,
+            "cost_usd": 0.00017240000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-03",
+          "output": [
+            {
+              "text": "buy milk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "call Rui about the pricing page",
+              "topic": "Acme Launch",
+              "alternative_topic": null
+            },
+            {
+              "text": "renew passport",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "wrong 'call Rui about the pricing page': topic wanted INBOX, got Acme Launch",
+          "counts": {
+            "exp": 3,
+            "got": 3,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0784146999940276,
+            "prompt_tokens": 212,
+            "completion_tokens": 65,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.480000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000104,
+            "cost_usd": 0.0001888,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-04",
+          "output": [
+            {
+              "text": "renew the car insurance",
+              "topic": "Admin",
+              "alternative_topic": null
+            },
+            {
+              "text": "invoice Marta for October",
+              "topic": "Clients",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0610194001346827,
+            "prompt_tokens": 215,
+            "completion_tokens": 41,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.6e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.560000000000001e-05,
+            "cost_usd": 0.0001516,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-05",
+          "output": [
+            {
+              "text": "work on the garden this weekend",
+              "topic": "Home",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7767066000960767,
+            "prompt_tokens": 200,
+            "completion_tokens": 27,
+            "cached_tokens": 0,
+            "cost_input_usd": 8e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.32e-05,
+            "cost_usd": 0.0001232,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-06",
+          "output": [
+            {
+              "text": "renew health insurance",
+              "topic": "Health",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1808804001193494,
+            "prompt_tokens": 197,
+            "completion_tokens": 69,
+            "cached_tokens": 0,
+            "cost_input_usd": 7.880000000000002e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001104,
+            "cost_usd": 0.00018920000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "topic-07",
+          "output": [
+            {
+              "text": "order a gift for Ana",
+              "topic": "Ana",
+              "alternative_topic": null
+            },
+            {
+              "text": "send Sam the Q3 slides",
+              "topic": "Sam",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0014500999823213,
+            "prompt_tokens": 212,
+            "completion_tokens": 44,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.480000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 7.04e-05,
+            "cost_usd": 0.00015520000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "noise-01",
+          "output": [
+            {
+              "text": "I'm so tired and my head is spinning",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "need to call the bank about the card",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "I should really exercise more",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "what a week",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra [\"I'm so tired and my head is spinning\", 'what a week']",
+          "counts": {
+            "exp": 2,
+            "got": 4,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5198890999890864,
+            "prompt_tokens": 234,
+            "completion_tokens": 91,
+            "cached_tokens": 0,
+            "cost_input_usd": 9.360000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001456,
+            "cost_usd": 0.00023920000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "null-01",
+          "output": [
+            {
+              "text": "so tired today",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "honestly who even knows what I'm doing with my life",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "ugh mondays",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra ['so tired today', \"honestly who even knows what I'm doing with my life\", 'ugh mondays']",
+          "counts": {
+            "exp": 0,
+            "got": 3,
+            "matched": 0,
+            "matched_req": 0,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 0,
+            "topic_total": 0
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9758218999486417,
+            "prompt_tokens": 225,
+            "completion_tokens": 68,
+            "cached_tokens": 0,
+            "cost_input_usd": 9e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00010880000000000002,
+            "cost_usd": 0.0001988,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01a",
+          "output": [
+            {
+              "text": "i should order a gift for ana",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "i can't even explain how tired i am",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "what even is time",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "the energy provider moved the payment date to the 5th",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "maybe try a standing desk",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "ok also schedule the quarterly review with sam",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "ugh",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra [\"i can't even explain how tired i am\", 'what even is time', 'ugh']",
+          "counts": {
+            "exp": 4,
+            "got": 7,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5942690998781472,
+            "prompt_tokens": 257,
+            "completion_tokens": 158,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001028,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0002528,
+            "cost_usd": 0.0003556,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01b",
+          "output": [
+            {
+              "text": "i should order a gift for ana",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "i can't even explain how tired i am",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "what even is time",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "the energy provider moved the payment date to the 5th",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "maybe try a standing desk",
+              "topic": "Fitness",
+              "alternative_topic": null
+            },
+            {
+              "text": "also schedule the quarterly review with sam",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "ugh",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra [\"i can't even explain how tired i am\", 'what even is time', 'ugh']",
+          "counts": {
+            "exp": 4,
+            "got": 7,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.7166071999818087,
+            "prompt_tokens": 245,
+            "completion_tokens": 142,
+            "cached_tokens": 0,
+            "cost_input_usd": 9.8e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00022720000000000002,
+            "cost_usd": 0.0003252,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "meta-01c",
+          "output": [
+            {
+              "text": "i should order a gift for ana...",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "i can't even explain how tired i am",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "what even is time",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "the energy provider moved the payment date to the 5th",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "maybe try a standing desk",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "also schedule the quarterly review with sam",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "ugh",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra [\"i can't even explain how tired i am\", 'what even is time', 'ugh']",
+          "counts": {
+            "exp": 4,
+            "got": 7,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.4813894000835717,
+            "prompt_tokens": 231,
+            "completion_tokens": 145,
+            "cached_tokens": 0,
+            "cost_input_usd": 9.240000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.000232,
+            "cost_usd": 0.0003244,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-01",
+          "output": [
+            {
+              "text": "Tomorrow I have the board thing and I'm kind of freaking out about the slides, like what if the numbers are wrong",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "I should probably double check the revenue figures with Rui first thing",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "I told Sam I'd call him back about the contract and I totally forgot so call Sam today",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "The car insurance runs out at the end of the month, renew it, don't let me forget again",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "I need to buy a present for Ana, her birthday is the twentieth, she likes ceramics I think",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "I want to start running again, maybe sign up for that ten k in spring, that would be cool",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "The gym said they'd be closed on bank holiday Monday by the way",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "Pick up the dry cleaning before seven or they close",
+              "topic": "Errands",
+              "alternative_topic": null
+            },
+            {
+              "text": "I'm gonna go make tea",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "missing [\"double check the revenue figures with Rui first thing; I'm worried the numbers in tomorrow's board slides might be wrong\", 'call Sam today about the contract', 'start running again', 'maybe sign up for that ten k in spring']; extra [\"Tomorrow I have the board thing and I'm kind of freaking out about the slides, like what if the numbers are wrong\", 'I should probably double check the revenue figures with Rui first thing', \"I told Sam I'd call him back about the contract and I totally forgot so call Sam today\", 'I want to start running again, maybe sign up for that ten k in spring, that would be cool', \"I'm gonna go make tea\"]",
+          "counts": {
+            "exp": 8,
+            "got": 9,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 2.4238716000691056,
+            "prompt_tokens": 412,
+            "completion_tokens": 284,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00016480000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00045440000000000004,
+            "cost_usd": 0.0006192000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-02",
+          "output": [
+            {
+              "text": "I woke up at 4 thinking about money, like what if the rent goes up again",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "pay the electricity bill, it's overdue by a few days",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "transfer something to savings, I'll figure out how much later",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "my sister called yesterday and said mum's knee is getting worse so I should probably call mum this weekend",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "maybe go visit mum this weekend",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "the onboarding docs are a mess and nobody owns them",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "I could just rewrite the onboarding docs myself, might actually be fun",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "the standup is moving to 9:30 starting next week",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "I should really stop checking email at midnight",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "buy running shoes, mine are falling apart",
+              "topic": "Health",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra ['I woke up at 4 thinking about money, like what if the rent goes up again', 'the onboarding docs are a mess and nobody owns them']",
+          "counts": {
+            "exp": 8,
+            "got": 10,
+            "matched": 8,
+            "matched_req": 8,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 8,
+            "topic_total": 8
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.962234599981457,
+            "prompt_tokens": 402,
+            "completion_tokens": 247,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001608,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00039520000000000007,
+            "cost_usd": 0.0005560000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-03",
+          "output": [
+            {
+              "text": "I've been thinking about whether I should leave this job or not, probably not, but who knows.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "I need to finish the quarterly report.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Send the quarterly report to James by Friday.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Book the room for the workshop for at least ten people.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "My back has been killing me so book a doctor appointment.",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "I hate waiting rooms.",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "Consider doing the workshop outdoors, but probably too cold.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Sign up for the pottery class Ana mentioned, sounds fun.",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "I really have no idea what I'm doing with my life sometimes lol.",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['book a doctor appointment because my back has been hurting']; extra [\"I've been thinking about whether I should leave this job or not, probably not, but who knows.\", 'My back has been killing me so book a doctor appointment.', 'I hate waiting rooms.', \"I really have no idea what I'm doing with my life sometimes lol.\"]",
+          "counts": {
+            "exp": 6,
+            "got": 9,
+            "matched": 5,
+            "matched_req": 5,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 5,
+            "topic_total": 5
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.9539793999865651,
+            "prompt_tokens": 326,
+            "completion_tokens": 211,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001304,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0003376,
+            "cost_usd": 0.000468,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-04",
+          "output": [
+            {
+              "text": "I can't believe Sam changed the deadline AGAIN.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "It was Friday, now it's Wednesday, with no warning.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "So mad.",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "I'm not going to reply until I calm down lol.",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "I need to finish the Q3 slides by Wednesday now.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Ping Rui for the revenue numbers today because without them there's nothing.",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "Why does this always happen right before a holiday.",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "Ana's birthday is on the 20th and I haven't got her anything, need to fix that.",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "The new office coffee machine is amazing.",
+              "topic": "Work",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['get Ana a present for her birthday on the 20th']; extra [\"I can't believe Sam changed the deadline AGAIN.\", \"It was Friday, now it's Wednesday, with no warning.\", 'So mad.', \"I'm not going to reply until I calm down lol.\", 'Why does this always happen right before a holiday.', \"Ana's birthday is on the 20th and I haven't got her anything, need to fix that.\"]",
+          "counts": {
+            "exp": 4,
+            "got": 9,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.8658912000246346,
+            "prompt_tokens": 313,
+            "completion_tokens": 207,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001252,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00033120000000000003,
+            "cost_usd": 0.00045640000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-05",
+          "output": [
+            {
+              "text": "email the accountant about the invoices before they close the quarter",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "book the dentist, it's been like two years",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "check when the car insurance renews",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "try meal prepping, idea only, no promises",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 4,
+            "got": 4,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1655734998639673,
+            "prompt_tokens": 313,
+            "completion_tokens": 93,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001252,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0001488,
+            "cost_usd": 0.00027400000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-06",
+          "output": [
+            {
+              "text": "milk",
+              "topic": "Errands",
+              "alternative_topic": null
+            },
+            {
+              "text": "call the plumber, the leak is getting worse omg",
+              "topic": "House",
+              "alternative_topic": null
+            },
+            {
+              "text": "what day is it even",
+              "topic": "INBOX",
+              "alternative_topic": null
+            },
+            {
+              "text": "dentist? did I book that",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "rent due friday i think",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "need to figure out christmas flights before prices go crazy",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['check whether I booked a dentist appointment']; extra ['what day is it even', 'dentist? did I book that']",
+          "counts": {
+            "exp": 5,
+            "got": 6,
+            "matched": 4,
+            "matched_req": 4,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 4,
+            "topic_total": 4
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6435047001577914,
+            "prompt_tokens": 276,
+            "completion_tokens": 121,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0001104,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00019360000000000002,
+            "cost_usd": 0.000304,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "brain-with-completed-tasks-01",
+          "output": [
+            {
+              "text": "bought milk already",
+              "topic": "Errands",
+              "alternative_topic": null
+            },
+            {
+              "text": "called the plumber, they're coming tomorrow morning",
+              "topic": "House",
+              "alternative_topic": null
+            },
+            {
+              "text": "still need to check if I booked the dentist",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "paid rent this morning",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "need to email my manager about taking friday off",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "booked christmas flights last night!",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "need to pick up my prescription tomorrow",
+              "topic": "Health",
+              "alternative_topic": null
+            },
+            {
+              "text": "finally cleaned the kitchen too",
+              "topic": "House",
+              "alternative_topic": null
+            },
+            {
+              "text": "laundry is still waiting for me lol",
+              "topic": "House",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "missing ['check whether I booked a dentist appointment', 'do the laundry']; extra ['still need to check if I booked the dentist', 'laundry is still waiting for me lol']",
+          "counts": {
+            "exp": 9,
+            "got": 9,
+            "matched": 7,
+            "matched_req": 7,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 7,
+            "topic_total": 7
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6179794000927359,
+            "prompt_tokens": 291,
+            "completion_tokens": 179,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00011640000000000001,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.0002864,
+            "cost_usd": 0.00040280000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "completed-01",
+          "output": [
+            {
+              "text": "I just watered my plants",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.7958356000017375,
+            "prompt_tokens": 205,
+            "completion_tokens": 26,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.2e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.16e-05,
+            "cost_usd": 0.0001236,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "completed-02",
+          "output": [
+            {
+              "text": "already paid the rent this morning",
+              "topic": "Finance",
+              "alternative_topic": null
+            },
+            {
+              "text": "finished the Q3 report too",
+              "topic": "Work",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 2,
+            "got": 2,
+            "matched": 2,
+            "matched_req": 2,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 2,
+            "topic_total": 2
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8697263000067323,
+            "prompt_tokens": 213,
+            "completion_tokens": 45,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.52e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 7.2e-05,
+            "cost_usd": 0.0001572,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "cancelled-01",
+          "output": [
+            {
+              "text": "I already booked my ballet class",
+              "topic": "Personal",
+              "alternative_topic": null
+            }
+          ],
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "exp": 1,
+            "got": 1,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.8729920000769198,
+            "prompt_tokens": 206,
+            "completion_tokens": 27,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.240000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.32e-05,
+            "cost_usd": 0.00012560000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "cancelled-02",
+          "output": [
+            {
+              "text": "No longer need to send Sam the contract",
+              "topic": "Work",
+              "alternative_topic": null
+            },
+            {
+              "text": "The deal fell through",
+              "topic": "Work",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra ['The deal fell through']",
+          "counts": {
+            "exp": 1,
+            "got": 2,
+            "matched": 1,
+            "matched_req": 1,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 1,
+            "topic_total": 1
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0922817001119256,
+            "prompt_tokens": 213,
+            "completion_tokens": 42,
+            "cached_tokens": 0,
+            "cost_input_usd": 8.52e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.720000000000001e-05,
+            "cost_usd": 0.00015240000000000002,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "mixed-completed-01",
+          "output": [
+            {
+              "text": "booked the flights last night",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "still need to pack my bags",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "cancel the hotel I reserved",
+              "topic": "Personal",
+              "alternative_topic": null
+            },
+            {
+              "text": "plans changed",
+              "topic": "INBOX",
+              "alternative_topic": null
+            }
+          ],
+          "ok": false,
+          "detail": "extra ['plans changed']",
+          "counts": {
+            "exp": 3,
+            "got": 4,
+            "matched": 3,
+            "matched_req": 3,
+            "kind_ok": 0,
+            "kind_total": 0,
+            "topic_ok": 3,
+            "topic_total": 3
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0620508000720292,
+            "prompt_tokens": 231,
+            "completion_tokens": 86,
+            "cached_tokens": 0,
+            "cost_input_usd": 9.240000000000001e-05,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 0.00013759999999999998,
+            "cost_usd": 0.00023,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

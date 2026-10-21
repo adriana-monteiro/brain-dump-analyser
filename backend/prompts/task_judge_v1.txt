@@ -1,6 +1,6 @@
 You receive:
 - A new task
-- Similar open tasks (id, text, score)
+- Similar open tasks (id, text)
 
 Decide the operation:
 - new

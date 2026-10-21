@@ -6,8 +6,8 @@ Examples:
     uv run --env-file .env python -m evals.run --step judge -v
     uv run --env-file .env python -m evals.run --model gpt-4o --json out/gpt4o.json --fail-under 0.8
 
-Compare single-call extraction against the two-call split:
-    uv run --env-file .env python -m evals.run --step extract_classify --step extract_split
+Run the two-call extract+classify split:
+    uv run --env-file .env python -m evals.run --step extract_split
 
 Cases live in evals/cases/<step>.json.
 """
@@ -22,10 +22,11 @@ from pathlib import Path
 
 from backend import llm, llm_pricing, retrieval
 from backend.config import settings
+from backend.interpret_agent import InterpretAgent
 
-e2e_retrieval = retrieval.RetrievalService(
-    persist_directory="evals/data/chroma_e2e",
-    collection_name="e2e_tasks",
+judge_rag_retrieval = retrieval.RetrievalService(
+    persist_directory="evals/data/chroma_judge_rag",
+    collection_name="judge_rag_tasks",
 )
 
 # Retrieval-only step reads from the corpus built by evals/run_retrieval.py.
@@ -35,23 +36,52 @@ retrieval_eval = retrieval.RetrievalService(
 )
 
 CASES = Path(__file__).parent / "cases"
+# Directories searched for case files when a name is given to --cases (or a
+# default step name is used). cases/ is searched first, then the per-step
+# corpus folders kept alongside it (e.g. evals/01_brain_dump/,
+# evals/02_extract/), discovered by the NN_name numbering convention so new
+# step folders are picked up without editing this list.
+EVALS_ROOT = Path(__file__).parent
+
+
+def case_dirs():
+    """cases/ first, then numbered per-step folders (01_*, 02_*, ...)."""
+    numbered = sorted(
+        d for d in EVALS_ROOT.iterdir()
+        if d.is_dir() and len(d.name) > 3 and d.name[:2].isdigit()
+        and d.name[2] == "_"
+    )
+    return [CASES, *numbered]
+
+
+def find_case_file(name):
+    """Return the first <dir>/<name>.json across case_dirs(), else raise."""
+    dirs = case_dirs()
+    for directory in dirs:
+        path = directory / f"{name}.json"
+        if path.is_file():
+            return path
+    searched = ", ".join(str(d) for d in dirs)
+    raise FileNotFoundError(f"No case file {name}.json in: {searched}")
 
 LLM_STEPS = {
     "dump": ["dump"],
     "extract": ["extract"],
     "classify": ["classify"],
-    "extract_classify": ["extract_classify"],
     "extract_split": ["extract", "classify"],
     "judge": ["judge"],
-    "interpret": ["interpret"],
+    # The interpret step drives the agentic InterpretAgent loop, which carries
+    # its instructions in code (INTERPRET_INSTRUCTIONS). There is no prompt
+    # file or STEP_PROMPTS entry for it, so report no prompt (like retrieval).
+    "interpret": [],
     "retrieval": [],  # No LLM prompt
-    "e2e": ["judge"],
+    "judge_rag": ["judge"],
 }
 
 CASE_FILES = {
     "extract": "extract",
-    "extract_classify": "extract_classify",
     "extract_split": "extract",
+    "judge_rag": "task_judge_rag",
 }
 
 DEFAULT_TOPICS = ["Work", "Personal", "Health", "Finance"]
@@ -157,9 +187,8 @@ def sum_dump(t, n):
 # ---------------------------------------------------------------------------
 # Extraction
 #
-# extract:           text + topic
-# extract_classify:  text + topic + kind, one call
-# extract_split:     extract followed by classify, two calls
+# extract:        text + topic
+# extract_split:  extract followed by classify, two calls (text + topic + kind)
 # ---------------------------------------------------------------------------
 
 def _topics(c):
@@ -173,10 +202,6 @@ def run_extract(c):
 def run_classify(c):
     # Input is already-extracted items; output is a list of kind labels.
     return llm.classify(c["input"])
-
-
-def run_extract_classify(c):
-    return llm.extract_classify(c["input"], _topics(c))
 
 
 def run_extract_split(c):
@@ -245,14 +270,6 @@ def _val_ok(want, got):
     return want == "*" or (got in want if isinstance(want, list) else got == want)
 
 
-def _is_noise(noise, text):
-    text = text.lower()
-    return any(
-        all(keyword.lower() in text for keyword in item["keywords"])
-        for item in noise
-    )
-
-
 def _check_links(c, out, pairs):
     """Check whether contextual facts attach to the intended task."""
     expected_to_output = dict(pairs)
@@ -300,7 +317,6 @@ def _check_links(c, out, pairs):
 def score_extraction(c, out, check_kind):
     """Shared extraction scorer; kind is checked only for combined/split runs."""
     expected = c["expected"]
-    noise = c.get("noise", [])
     pairs = _match(expected, out)
 
     matched_expected = {e for e, _ in pairs}
@@ -320,24 +336,7 @@ def score_extraction(c, out, check_kind):
         i for i in range(len(out))
         if i not in matched_output
     ]
-    kept_noise = [
-        out[i]["text"]
-        for i in unmatched
-        if _is_noise(noise, out[i]["text"])
-    ]
-    extra = [
-        out[i]["text"]
-        for i in unmatched
-        if not _is_noise(noise, out[i]["text"])
-    ]
-
-    leaked = sum(
-        any(
-            all(k.lower() in out[i]["text"].lower() for k in n["keywords"])
-            for i in unmatched
-        )
-        for n in noise
-    )
+    extra = [out[i]["text"] for i in unmatched]
 
     wrong = []
     kind_ok = kind_total = 0
@@ -374,8 +373,6 @@ def score_extraction(c, out, check_kind):
         problems.append(f"missing {missing}")
     if extra:
         problems.append(f"extra {extra}")
-    if kept_noise:
-        problems.append(f"noise kept as items {kept_noise}")
     if wrong:
         problems.append("wrong " + " | ".join(wrong))
     if link_problems:
@@ -393,8 +390,6 @@ def score_extraction(c, out, check_kind):
             "kind_total": kind_total,
             "topic_ok": topic_ok,
             "topic_total": topic_total,
-            "noise_total": len(noise),
-            "noise_leaked": leaked,
             **link_counts,
         },
     }
@@ -405,8 +400,7 @@ def score_extract(c, out):
     return score_extraction(c, out, check_kind=False)
 
 
-def score_extract_classify(c, out):
-    return score_extraction(c, out, check_kind=True)
+
 
 
 def score_extract_split(c, out):
@@ -433,11 +427,6 @@ def sum_extract(t, n):
         parts.append(
             f"link {pct(t['link_ok'], t['link_n'])} "
             f"(mislink {t['mislink']}, orphan {t['orphan']}, lost {t['lost']})"
-        )
-
-    if t["noise_total"]:
-        parts.append(
-            f"noise kept {pct(t['noise_leaked'], t['noise_total'])}"
         )
 
     return " · ".join(parts)
@@ -511,10 +500,15 @@ def sum_classify(t, n):
 # Judge
 # ---------------------------------------------------------------------------
 
+def _judge_candidates(items):
+    """Send only id and text to the judge, so it decides on text alone."""
+    return [{"id": item["id"], "text": item["text"]} for item in items]
+
+
 def run_judge(case):
     return llm.judge(
         case["task"],
-        case["existing"],
+        _judge_candidates(case["existing"]),
     )
 
 
@@ -677,74 +671,319 @@ def sum_judge(t, n):
 # Interpret
 # ---------------------------------------------------------------------------
 
+# The interpret step drives the agentic InterpretAgent loop (which finishes by
+# calling the terminal submit_plan tool) rather than the retired llm.interpret
+# one-shot call. run_interpret returns the produced SubmitPlan as a plain dict
+# with keys {actions, new_dump, unrelated}; scoring compares it against the
+# case's expected routing targets and per-candidate operations.
+#
+# Design choice (kept runnable + honest): we invoke the real InterpretAgent.run
+# over the case's candidates/message. This issues real model calls, like every
+# other LLM-backed step in this runner (dump/extract/judge/...), so the eval
+# needs the same OpenAI credentials those steps need — it does not fabricate a
+# plan from the expected answer (that would make scoring trivially perfect).
+# The max_steps fallback (plan is None) is scored as an empty plan so the case
+# still produces routing/action numbers instead of raising.
+
+
 def run_interpret(c):
-    return llm.interpret(
+    agent = InterpretAgent()
+
+    # History-dependent cases carry a `history` array of prior turns
+    # ({role, content}). Seed them into a real conversation so the agent's
+    # get_history tool returns actual turns; otherwise use the case's conv_id
+    # (or None for self-contained cases).
+    conv_id = c.get("conv_id")
+    if c.get("history"):
+        from backend import repositories as repo
+
+        conv_id = repo.get_or_create_conversation()
+        for turn in c["history"]:
+            repo.add_message(conv_id, turn["role"], turn["content"])
+
+    # Topics the agent may target with change_topic. Carried per-case so a case
+    # can control exactly which topics exist (e.g. omit "Gardening" to test
+    # that a new topic gets registered). Falls back to the default list.
+    topics = c.get("topics", DEFAULT_TOPICS)
+
+    result = agent.run(
+        conv_id,
         c["candidates"],
-        c.get("history", []),
         c["message"],
+        topics=topics,
     )
+    plan = result.plan
+    # Always carry the agent trace + tools_used into the output so the report
+    # records agentic behavior (which tools fired, loop steps, stalls,
+    # max_steps exhaustion), not just the final plan. The scorer ignores these
+    # extra keys. tools_used may be empty / contain "none" markers for
+    # no_tool_calls and exhausted steps.
+    agent_meta = {
+        "tools_used": result.tools_used,
+        "trace": result.trace,
+    }
+    if plan is None:
+        # max_steps exhausted with no submit_plan: treat as an empty plan so
+        # the case scores routing/action-correctness (likely 0) rather than
+        # crashing the runner.
+        return {"actions": [], "new_dump": None, "unrelated": None, **agent_meta}
+    return {
+        "actions": [
+            {
+                "display_no": a.display_no,
+                "operation": a.operation,
+                # The operation alone is meaningless for mutating ops —
+                # change_text needs the new text, change_kind the new kind,
+                # needs_human the question. Carry the full payload so the
+                # report shows WHAT the agent changed to (and whether it
+                # fabricated or left it empty), not just that it changed.
+                "text": a.text,
+                "kind": a.kind,
+                "topic": a.topic,
+                "question": a.question,
+            }
+            for a in plan.actions
+        ],
+        "new_dump": plan.new_dump,
+        "unrelated": plan.unrelated,
+        **agent_meta,
+    }
 
 
 def score_interpret(c, out):
-    got = {
-        (action["display_no"], action["operation"])
-        for action in out["actions"]
+    """Score routing and action-correctness as two independent measures.
+
+    Routing (Req 13.1/13.4): the proportion of content items routed to the
+    correct target — either `new_dump`/`unrelated` (leftover/unknown content)
+    or `actions` (an existing candidate). We check two expected routing
+    signals the case can carry:
+      - `expected_other`: whether leftover content should surface via
+        new_dump/unrelated (True) or stay empty (False).
+      - `expected_action_nos`: the set of candidate display_nos that should be
+        touched by an action (i.e. routed to `actions`, not left for routing).
+
+    Action-correctness (Req 13.2/13.5): the proportion of candidates assigned
+    the correct operation, keyed by display_no against `expected_operations`.
+
+    When a measure has zero items to evaluate, its counts stay zero and
+    sum_interpret reports it as `n/a` (Req 13.6).
+    """
+    actions = out.get("actions") or []
+    by_no = {a["display_no"]: a["operation"] for a in actions}
+    action_by_no = {a["display_no"]: a for a in actions}
+    wrong = []  # human-readable problems collected across all measures
+
+    # -- Routing measure -------------------------------------------------
+    # Content items = the candidates the case expects routed to `actions`
+    # plus (optionally) a single "leftover" content item routed to
+    # new_dump/unrelated. Each is correct when it lands on its target.
+    expected_action_nos = set(c.get("expected_action_nos", []))
+    routing_ok = 0
+    routing_total = 0
+
+    for no in expected_action_nos:
+        routing_total += 1
+        if no in by_no:
+            routing_ok += 1
+
+    other_present = bool(
+        (out.get("new_dump") or "").strip()
+        or (out.get("unrelated") or "").strip()
+    )
+    if "expected_other" in c:
+        routing_total += 1
+        if other_present == bool(c["expected_other"]):
+            routing_ok += 1
+
+    # Precise routing: when the case says what SHOULD land in new_dump, require
+    # those keywords (case-insensitive) to appear there. This distinguishes
+    # correctly-routed new content from junk routing (e.g. routing a command
+    # like "confirm number 7" into new_dump), which the boolean cannot.
+    new_dump_keywords = c.get("expected_new_dump_contains")
+    if new_dump_keywords:
+        routing_total += 1
+        blob = (out.get("new_dump") or "").lower()
+        if all(k.lower() in blob for k in new_dump_keywords):
+            routing_ok += 1
+        else:
+            missing = [k for k in new_dump_keywords if k.lower() not in blob]
+            wrong.append(f"new_dump missing {missing}")
+
+    # -- Action-correctness measure --------------------------------------
+    expected_operations = {
+        int(no): op
+        for no, op in (c.get("expected_operations") or {}).items()
     }
-    alternatives = [
-        c["expected_actions"],
-        *c.get("alt_actions", []),
-    ]
-    wants = [
-        {(action["display_no"], action["operation"]) for action in group}
-        for group in alternatives
-    ]
-    want = next((group for group in wants if group == got), wants[0])
+    action_ok = 0
+    action_total = 0
 
-    other = bool(out["other_content"].strip())
-    expected_other = c.get("expected_other", False)
+    for no, want_op in expected_operations.items():
+        action_total += 1
+        got_op = by_no.get(no)
+        # want_op may be a single op string OR a list of acceptable ops
+        # (hard-tier cases where more than one operation is defensible, e.g.
+        # "same existing task" → update_task OR reject). Mirrors the accept
+        # list used by score_judge.
+        accepted = want_op if isinstance(want_op, list) else [want_op]
+        if got_op in accepted:
+            action_ok += 1
+        else:
+            wrong.append(f"#{no}: op wanted {'/'.join(accepted)}, got {got_op}")
+
+    # -- Content measure (positive keywords) -----------------------------
+    # For text-producing ops the operation alone is not enough — the written
+    # text must actually contain the required detail (e.g. the real account
+    # number / name), not a fabricated one. `expected_text_contains` maps a
+    # display_no to a list of keywords that must ALL appear (case-insensitive
+    # substring) in that action's text. A missing action or missing keyword
+    # fails the content check for that candidate.
+    expected_text = {
+        int(no): kws
+        for no, kws in (c.get("expected_text_contains") or {}).items()
+    }
+    content_ok = 0
+    content_total = 0
+
+    for no, keywords in expected_text.items():
+        content_total += 1
+        action = action_by_no.get(no)
+        text = (action.get("text") or "").lower() if action else ""
+        missing = [k for k in keywords if k.lower() not in text]
+        if action and not missing:
+            content_ok += 1
+        else:
+            wrong.append(
+                f"#{no}: text missing {missing or 'ACTION'}"
+            )
+
+    # -- Topic measure ----------------------------------------------------
+    # For change_topic actions, the chosen topic must match (case-insensitive,
+    # since the service title-cases). `expected_topic` maps a display_no to the
+    # expected topic. Folded into the content measure counts.
+    expected_topic = {
+        int(no): t
+        for no, t in (c.get("expected_topic") or {}).items()
+    }
+    for no, want_topic in expected_topic.items():
+        content_total += 1
+        action = action_by_no.get(no)
+        got_topic = (action.get("topic") or "") if action else ""
+        if action and got_topic.strip().casefold() == want_topic.casefold():
+            content_ok += 1
+        else:
+            wrong.append(
+                f"#{no}: topic wanted {want_topic}, got {got_topic or 'ACTION'}"
+            )
+
+    # Tool / trace telemetry (summed across cases by sum_interpret). Count each
+    # real tool the agent used, how many turns needed >1 model step, and how
+    # many stalled (no submit_plan). "none" markers are not real tool calls.
+    trace = out.get("trace") or []
+    real_tools = [t for t in (out.get("tools_used") or []) if t != "none"]
+    steps = {entry.get("step") for entry in trace} or {1}
+
     problems = []
+    if routing_total and routing_ok != routing_total:
+        problems.append(f"routing {routing_ok}/{routing_total}")
+    if wrong:
+        problems.append(" | ".join(wrong))
 
-    if got != want:
-        problems.append(
-            f"actions: missing {sorted(want - got)}, "
-            f"extra {sorted(got - want)}"
-        )
+    # Tool-use expectation: a history-dependent case only passes if the agent
+    # actually called the required tool(s). Without this a case could resolve
+    # correctly by guessing, never exercising get_history. `expected_tools` is
+    # a list of tool names that MUST appear in the trace.
+    tool_ok = True
+    for required in c.get("expected_tools", []):
+        if required not in real_tools:
+            tool_ok = False
+            problems.append(f"missing tool {required}")
 
-    if other != expected_other:
-        problems.append(
-            f"other_content {'present' if other else 'empty'}, expected "
-            f"{'present' if expected_other else 'empty'}"
-        )
+    counts = {
+        "routing_ok": routing_ok,
+        "routing_total": routing_total,
+        "action_ok": action_ok,
+        "action_total": action_total,
+        "content_ok": content_ok,
+        "content_total": content_total,
+        "tool_get_history": real_tools.count("get_history"),
+        "tool_submit_plan": real_tools.count("submit_plan"),
+        "multi_step_turns": int(len(steps) > 1),
+        "stalled_turns": int(
+            any(e.get("status") in ("no_tool_calls", "exhausted") for e in trace)
+        ),
+        # History-tool compliance: how many cases that required a tool got it.
+        "tool_expect_total": int(bool(c.get("expected_tools"))),
+        "tool_expect_ok": int(bool(c.get("expected_tools")) and tool_ok),
+    }
 
     return {
         "ok": not problems,
         "detail": "; ".join(problems),
-        "counts": {
-            "tp": len(got & want),
-            "got": len(got),
-            "want": len(want),
-        },
+        "counts": counts,
     }
 
 
 def sum_interpret(t, n):
+    """Two independent measures, each its own line; never a single aggregate.
+
+    Mirrors the two-group reporting style of sum_judge_rag (ROUTING / ACTION).
+    A measure with zero items to score reports `n/a` (Req 13.6).
+    """
+    routing = (
+        "ROUTING    " + pct(t["routing_ok"], t["routing_total"])
+        if t["routing_total"]
+        else "ROUTING    n/a"
+    )
+    action = (
+        "ACTION     " + pct(t["action_ok"], t["action_total"])
+        if t["action_total"]
+        else "ACTION     n/a"
+    )
+    content = (
+        "CONTENT    " + pct(t["content_ok"], t["content_total"])
+        if t.get("content_total")
+        else "CONTENT    n/a"
+    )
+    tools = (
+        "TOOLS      "
+        f"get_history x{t.get('tool_get_history', 0)}, "
+        f"submit_plan x{t.get('tool_submit_plan', 0)} · "
+        f"{t.get('multi_step_turns', 0)} multi-step, "
+        f"{t.get('stalled_turns', 0)} stalled"
+    )
+    if t.get("tool_expect_total"):
+        tools += (
+            " · history-tool "
+            + pct(t.get("tool_expect_ok", 0), t["tool_expect_total"])
+        )
     return (
-        f"action recall {pct(t['tp'], t['want'])} · "
-        f"precision {pct(t['tp'], t['got'])}"
+        routing + "\n   " + action + "\n   " + content + "\n   " + tools
     )
 
 
 
-def run_e2e(case):
-    """Retrieve candidates, then judge the incoming task."""
-    retrieved = e2e_retrieval.search_tasks(
+def run_judge_rag(case):
+    """Retrieve candidates, then judge the incoming task.
+
+    JUDGE_RAG_TOP_K and JUDGE_RAG_MIN_SIM override the retrieval top-k and the
+    similarity threshold so a sweep can be run without code edits. Defaults
+    mirror production (top-k 4, settings.retrieval_min_similarity).
+    """
+    import os
+
+    top_k = int(os.getenv("JUDGE_RAG_TOP_K", "4"))
+    min_sim = float(
+        os.getenv("JUDGE_RAG_MIN_SIM", settings.retrieval_min_similarity)
+    )
+
+    retrieved = judge_rag_retrieval.search_tasks(
         text=case["task"],
-        n_results=4,
+        n_results=top_k,
     )
 
     retrieved = [
         item for item in retrieved
-        if item.get("similarity", 0) >= settings.retrieval_min_similarity
+        if item.get("similarity", 0) >= min_sim
     ]
 
     existing = [
@@ -756,7 +995,9 @@ def run_e2e(case):
         for item in retrieved
     ]
 
-    decision = llm.judge(case["task"], existing)
+    # The judge decides on text alone; the score is kept in `existing` only
+    # for retrieval scoring/reporting, not sent to the model.
+    decision = llm.judge(case["task"], _judge_candidates(existing))
 
     return {
         "decision": decision,
@@ -766,12 +1007,12 @@ def run_e2e(case):
 
 
 
-def score_e2e(case, out):
+def score_judge_rag(case, out):
     """Score the complete retrieval -> judge pipeline."""
     if not isinstance(out, dict) or "decision" not in out:
         return {
             "ok": False,
-            "detail": "Invalid E2E output",
+            "detail": "Invalid judge_rag output",
             "counts": {
                 "op_ok": 0,
                 "duplicate_tp": 0,
@@ -780,60 +1021,108 @@ def score_e2e(case, out):
                     case.get("expected_op") == "duplicate"
                 ),
                 "wrong_task": 0,
-                "retrieval_target_found": 0,
-                "retrieval_target_total": int(
-                    "expected_task_id" in case
-                ),
+                "judge_ok": 0,
+                "retrieval_hit": 0,
+                "retrieval_labeled": int("expected_task_id" in case),
+                "reciprocal_rank": 0.0,
+            },
+            "output": None,
+            "retrieval": {
+                "retrieved": [],
+                "retrieved_ids": [],
+                "expected_task_id": case.get("expected_task_id"),
+                "target_found": None,
+                "target_rank": None,
+                "reciprocal_rank": 0.0,
+                "ok": None,
+            },
+            "inference": {
+                "decision": None,
+                "ok": False,
+                "detail": "Invalid judge_rag output",
             },
         }
 
     existing = out["retrieved"]
     decision = out["decision"]
 
-    # Reuse the judge scorer, but validate IDs against the
-    # candidates that retrieval actually returned.
+    # -- Inference (judge) stage, scored independently of retrieval --------
+    # Reuse the judge scorer, validating IDs against the candidates that
+    # retrieval actually returned. This measures judge quality on its own,
+    # so a retrieval miss does not contaminate the inference metrics.
     judge_case = {**case, "existing": existing}
     scored = score_judge(judge_case, decision)
+    judge_ok = scored["ok"]
 
-    retrieved_ids = {item["id"] for item in existing}
+    # -- Retrieval stage, scored independently of the judge ----------------
+    retrieved_ids = [item["id"] for item in existing]
     expected_id = case.get("expected_task_id")
-    target_found = (
-        expected_id in retrieved_ids
-        if expected_id is not None
-        else None
+    labeled = expected_id is not None
+
+    target_found = expected_id in retrieved_ids if labeled else None
+    # Rank of the expected task in the retrieved list (1-based), 0 if absent.
+    target_rank = (
+        retrieved_ids.index(expected_id) + 1 if target_found else 0
     )
+    reciprocal_rank = (1.0 / target_rank) if target_rank else 0.0
+    retrieval_ok = target_found if labeled else None
 
-    problems = [scored["detail"]] if scored["detail"] else []
+    # -- Diagnosis: attribute each failure to a stage ----------------------
+    problems = []
+    if not judge_ok:
+        problems.append(f"[judge] {scored['detail']}")
+    if retrieval_ok is False:
+        problems.append(f"[retrieval] missed expected task {expected_id}")
 
-    if target_found is False:
-        problems.append(
-            f"retrieval missed expected task {expected_id}"
-        )
-
+    # Judge counts stay exactly as score_judge computed them (inference only).
+    # Retrieval counts are tracked under a separate namespace.
     counts = dict(scored["counts"])
-    counts["retrieval_target_found"] = int(target_found is True)
-    counts["retrieval_target_total"] = int(expected_id is not None)
+    counts["judge_ok"] = int(judge_ok)
+    counts["retrieval_hit"] = int(target_found is True)
+    counts["retrieval_labeled"] = int(labeled)
+    counts["reciprocal_rank"] = reciprocal_rank
 
     return {
-        "ok": scored["ok"] and target_found is not False,
+        # Overall pass requires both stages to succeed where labeled.
+        "ok": judge_ok and (retrieval_ok is not False),
         "detail": "; ".join(problems),
         "counts": counts,
-        "output": decision,
-        "retrieved_ids": sorted(retrieved_ids),
+        # Persist both halves of the pipeline so failures can be traced to
+        # retrieval vs judgment. `output` is None to avoid duplicating this
+        # data in run_case's raw output blob.
+        "output": None,
+        "retrieval": {
+            "retrieved": existing,
+            "retrieved_ids": retrieved_ids,
+            "expected_task_id": expected_id,
+            "target_found": target_found,
+            "target_rank": target_rank or None,
+            "reciprocal_rank": reciprocal_rank,
+            "ok": retrieval_ok,
+        },
+        "inference": {
+            "decision": decision,
+            "ok": judge_ok,
+            "detail": scored["detail"],
+        },
     }
 
 
-def sum_e2e(totals, n):
-    summary = sum_judge(totals, n)
+def sum_judge_rag(totals, n):
+    """Two independent metric groups: retrieval quality and inference quality."""
+    labeled = totals["retrieval_labeled"]
 
-    if totals["retrieval_target_total"]:
-        found = pct(
-            totals["retrieval_target_found"],
-            totals["retrieval_target_total"],
-        )
-        summary += f" · expected-target retrieval {found}"
+    retrieval = (
+        "RETRIEVAL  "
+        f"recall@k {pct(totals['retrieval_hit'], labeled)} · "
+        f"MRR {totals['reciprocal_rank'] / labeled:.3f}"
+        if labeled
+        else "RETRIEVAL  no labeled targets to score"
+    )
 
-    return summary
+    inference = "INFERENCE  " + sum_judge(totals, n)
+
+    return retrieval + "\n   " + inference
 
 # ---------------------------------------------------------------------------
 # Step registry
@@ -843,11 +1132,6 @@ STEP_FUNCS = {
     "dump": (run_dump, score_dump, sum_dump),
     "extract": (run_extract, score_extract, sum_extract),
     "classify": (run_classify, score_classify, sum_classify),
-    "extract_classify": (
-        run_extract_classify,
-        score_extract_classify,
-        sum_extract,
-    ),
     "extract_split": (
         run_extract_split,
         score_extract_split,
@@ -860,7 +1144,7 @@ STEP_FUNCS = {
     score_retrieval,
     sum_retrieval,
     ),
-    "e2e": (run_e2e, score_e2e, sum_e2e),
+    "judge_rag": (run_judge_rag, score_judge_rag, sum_judge_rag),
 }
 
 
@@ -868,9 +1152,9 @@ STEP_FUNCS = {
 # Case loading and execution
 # ---------------------------------------------------------------------------
 
-def setup_e2e_retrieval(tasks):
-    # This is safe because this service uses a dedicated E2E collection.
-    e2e_retrieval.collection.delete(
+def setup_judge_rag_retrieval(tasks):
+    # This is safe because this service uses a dedicated judge_rag collection.
+    judge_rag_retrieval.collection.delete(
         where={"record_type": "task"}
     )
 
@@ -888,17 +1172,17 @@ def setup_e2e_retrieval(tasks):
         for task in tasks
     ]
 
-    e2e_retrieval.upsert_batch(records)
+    judge_rag_retrieval.upsert_batch(records)
 
 
 def load(step, cases_name=None):
     name = cases_name or CASE_FILES.get(step, step)
-    path = CASES / f"{name}.json"
+    path = find_case_file(name)
     data = json.loads(path.read_text(encoding="utf-8"))
 
-    if step == "e2e":
+    if step == "judge_rag":
         tasks = data["existing_tasks"]
-        setup_e2e_retrieval(tasks)
+        setup_judge_rag_retrieval(tasks)
 
         return [
             {**case, "existing_tasks": tasks}
@@ -910,7 +1194,7 @@ def load(step, cases_name=None):
     # Scaling cases can reference inputs and sizes from dump.json.
     if any("dump_id" in case for case in cases):
         dump_cases = json.loads(
-            (CASES / "dump.json").read_text(encoding="utf-8")
+            find_case_file("dump").read_text(encoding="utf-8")
         )
         dump_by_id = {case["id"]: case for case in dump_cases}
 
@@ -968,6 +1252,15 @@ def run_case(step, case):
 # ---------------------------------------------------------------------------
 
 def main(argv=None):
+    # The report uses unicode (· ✗ etc.). On Windows the default console
+    # codec is cp1252, which raises UnicodeEncodeError mid-run and can abort
+    # before the --json report is written. Force UTF-8 so output is portable.
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
+
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--step",
@@ -977,7 +1270,7 @@ def main(argv=None):
     )
     parser.add_argument(
         "--cases",
-        help="case file name without .json, e.g. extract_classify_v2",
+        help="case file name without .json, e.g. extract or interpret_agent_hard",
     )
     parser.add_argument("--model")
     parser.add_argument("--workers", type=int, default=4)

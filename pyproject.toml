@@ -5,9 +5,17 @@ requires-python = ">=3.10"
 dependencies = [
     "chromadb>=1.5.9",
     "fastapi>=0.143.2",
-    "numpy>=2.2.6",
     "openai>=3.29.0",
     "pydantic>=2.14.1",
     "pydantic-settings>=2.15.0",
     "python-dotenv>=1.2.4",
+    "requests>=2.31.0",
+    "streamlit>=1.65.0",
+    "uvicorn>=0.30.0",
+]
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.0.0",
+    "pytest>=8.0.0",
 ]

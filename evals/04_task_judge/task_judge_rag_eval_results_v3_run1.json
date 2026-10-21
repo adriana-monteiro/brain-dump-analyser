@@ -1,0 +1,820 @@
+{
+  "model": "gpt-4.1-mini",
+  "steps": {
+    "judge_rag": {
+      "accuracy": 0.9166666666666666,
+      "passed": 11,
+      "total": 12,
+      "prompts": "task_judge_v3",
+      "latency_p50_s": 1.2247672499506734,
+      "latency_p95_s": 1.5971791499934624,
+      "cost_usd": 0.0034640000000000005,
+      "cost_input_usd": 0.0028720000000000004,
+      "cost_output_usd": 0.0005920000000000001,
+      "prompt_tokens": 7180,
+      "completion_tokens": 370,
+      "cases": [
+        {
+          "id": "E001",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 1,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T004",
+                "text": "Fix the endless loading spinner on the dashboard",
+                "score": 0.8252372741699219
+              },
+              {
+                "id": "T002",
+                "text": "Fix login page alignment",
+                "score": 0.3213247060775757
+              },
+              {
+                "id": "T003",
+                "text": "Reduce login API latency",
+                "score": 0.31581825017929077
+              }
+            ],
+            "retrieved_ids": [
+              "T004",
+              "T002",
+              "T003"
+            ],
+            "expected_task_id": "T004",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "duplicate",
+              "task_id": "T004",
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5226463000290096,
+            "prompt_tokens": 607,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00024280000000000002,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.0002812,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E002",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 1,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T001",
+                "text": "Add Google login support",
+                "score": 0.7683088779449463
+              },
+              {
+                "id": "T010",
+                "text": "Allow users to upload a profile picture",
+                "score": 0.39637911319732666
+              },
+              {
+                "id": "T002",
+                "text": "Fix login page alignment",
+                "score": 0.3422011137008667
+              },
+              {
+                "id": "T003",
+                "text": "Reduce login API latency",
+                "score": 0.32742881774902344
+              }
+            ],
+            "retrieved_ids": [
+              "T001",
+              "T010",
+              "T002",
+              "T003"
+            ],
+            "expected_task_id": "T001",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "duplicate",
+              "task_id": "T001",
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5765246000373736,
+            "prompt_tokens": 624,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00024960000000000005,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.00028800000000000006,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E003",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 1,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 0.5
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T005",
+                "text": "Add a dark mode toggle to settings",
+                "score": 0.651523768901825
+              },
+              {
+                "id": "T006",
+                "text": "Respect system theme preference throughout the app",
+                "score": 0.3863670229911804
+              }
+            ],
+            "retrieved_ids": [
+              "T005",
+              "T006"
+            ],
+            "expected_task_id": "T006",
+            "target_found": true,
+            "target_rank": 2,
+            "reciprocal_rank": 0.5,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "update",
+              "task_id": "T006",
+              "proposed_text": "Add dark mode that follows the computer's theme (respect system theme preference throughout the app)",
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5642701999749988,
+            "prompt_tokens": 596,
+            "completion_tokens": 41,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002384,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.560000000000001e-05,
+            "cost_usd": 0.000304,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E004",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 0,
+            "retrieval_labeled": 0,
+            "reciprocal_rank": 0.0
+          },
+          "retrieval": {
+            "retrieved": [],
+            "retrieved_ids": [],
+            "expected_task_id": null,
+            "target_found": null,
+            "target_rank": null,
+            "reciprocal_rank": 0.0,
+            "ok": null
+          },
+          "inference": {
+            "decision": {
+              "operation": "new",
+              "task_id": null,
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.5089542999630794,
+            "prompt_tokens": 553,
+            "completion_tokens": 23,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002212,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.680000000000001e-05,
+            "cost_usd": 0.00025800000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E005",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 1,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T013",
+                "text": "Add CSV export for reports",
+                "score": 0.8260401487350464
+              }
+            ],
+            "retrieved_ids": [
+              "T013"
+            ],
+            "expected_task_id": "T013",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "duplicate",
+              "task_id": "T013",
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0288926999783143,
+            "prompt_tokens": 575,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00023,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.0002684,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E006",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 0,
+            "retrieval_labeled": 0,
+            "reciprocal_rank": 0.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T002",
+                "text": "Fix login page alignment",
+                "score": 0.6299874782562256
+              },
+              {
+                "id": "T003",
+                "text": "Reduce login API latency",
+                "score": 0.594244122505188
+              },
+              {
+                "id": "T001",
+                "text": "Add Google login support",
+                "score": 0.5310067534446716
+              },
+              {
+                "id": "T004",
+                "text": "Fix the endless loading spinner on the dashboard",
+                "score": 0.3845481872558594
+              }
+            ],
+            "retrieved_ids": [
+              "T002",
+              "T003",
+              "T001",
+              "T004"
+            ],
+            "expected_task_id": null,
+            "target_found": null,
+            "target_rank": null,
+            "reciprocal_rank": 0.0,
+            "ok": null
+          },
+          "inference": {
+            "decision": {
+              "operation": "needs_human",
+              "task_id": null,
+              "proposed_text": null,
+              "clarifying_question": "Does 'Improve the login experience' refer to UI fixes, performance improvements, adding new login methods, or something else?"
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.6224235999397933,
+            "prompt_tokens": 621,
+            "completion_tokens": 48,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002484,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 7.680000000000001e-05,
+            "cost_usd": 0.00032520000000000004,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E007",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T007",
+                "text": "Document the public API",
+                "score": 0.579166054725647
+              },
+              {
+                "id": "T008",
+                "text": "Improve API response performance",
+                "score": 0.3777388334274292
+              },
+              {
+                "id": "T009",
+                "text": "Add API rate limiting",
+                "score": 0.34474092721939087
+              },
+              {
+                "id": "T015",
+                "text": "Add unit tests for payment processing",
+                "score": 0.3117709159851074
+              }
+            ],
+            "retrieved_ids": [
+              "T007",
+              "T008",
+              "T009",
+              "T015"
+            ],
+            "expected_task_id": "T007",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "complete",
+              "task_id": "T007",
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.2580714999930933,
+            "prompt_tokens": 623,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00024920000000000004,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.00028760000000000005,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E008",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T009",
+                "text": "Add API rate limiting",
+                "score": 0.7135083675384521
+              },
+              {
+                "id": "T008",
+                "text": "Improve API response performance",
+                "score": 0.4607963562011719
+              },
+              {
+                "id": "T003",
+                "text": "Reduce login API latency",
+                "score": 0.4087362289428711
+              }
+            ],
+            "retrieved_ids": [
+              "T009",
+              "T008",
+              "T003"
+            ],
+            "expected_task_id": "T009",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "cancel",
+              "task_id": "T009",
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 0.9609378000022843,
+            "prompt_tokens": 603,
+            "completion_tokens": 24,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002412,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.8400000000000005e-05,
+            "cost_usd": 0.0002796,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E009",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T007",
+                "text": "Document the public API",
+                "score": 0.5435559153556824
+              },
+              {
+                "id": "T008",
+                "text": "Improve API response performance",
+                "score": 0.45078766345977783
+              },
+              {
+                "id": "T009",
+                "text": "Add API rate limiting",
+                "score": 0.4215996265411377
+              },
+              {
+                "id": "T015",
+                "text": "Add unit tests for payment processing",
+                "score": 0.3839966058731079
+              }
+            ],
+            "retrieved_ids": [
+              "T007",
+              "T008",
+              "T009",
+              "T015"
+            ],
+            "expected_task_id": "T007",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "update",
+              "task_id": "T007",
+              "proposed_text": "Document the public API, including authentication",
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.032804200076498,
+            "prompt_tokens": 624,
+            "completion_tokens": 30,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.00024960000000000005,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 4.8e-05,
+            "cost_usd": 0.0002976000000000001,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E010",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 0,
+            "retrieval_labeled": 0,
+            "reciprocal_rank": 0.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T008",
+                "text": "Improve API response performance",
+                "score": 0.7786080241203308
+              },
+              {
+                "id": "T009",
+                "text": "Add API rate limiting",
+                "score": 0.5573143362998962
+              },
+              {
+                "id": "T007",
+                "text": "Document the public API",
+                "score": 0.5569362640380859
+              },
+              {
+                "id": "T003",
+                "text": "Reduce login API latency",
+                "score": 0.4721134901046753
+              }
+            ],
+            "retrieved_ids": [
+              "T008",
+              "T009",
+              "T007",
+              "T003"
+            ],
+            "expected_task_id": null,
+            "target_found": null,
+            "target_rank": null,
+            "reciprocal_rank": 0.0,
+            "ok": null
+          },
+          "inference": {
+            "decision": {
+              "operation": "needs_human",
+              "task_id": null,
+              "proposed_text": null,
+              "clarifying_question": "Does 'Improve the API' refer to performance, documentation, rate limiting, or another aspect?"
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.1914629999082536,
+            "prompt_tokens": 616,
+            "completion_tokens": 43,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002464,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.879999999999999e-05,
+            "cost_usd": 0.0003152,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E011",
+          "output": null,
+          "ok": false,
+          "detail": "[judge] op update, expected duplicate",
+          "counts": {
+            "op_ok": 0,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 1,
+            "wrong_task": 0,
+            "judge_ok": 0,
+            "retrieval_hit": 1,
+            "retrieval_labeled": 1,
+            "reciprocal_rank": 1.0
+          },
+          "retrieval": {
+            "retrieved": [
+              {
+                "id": "T012",
+                "text": "Send an email notification when a task is assigned",
+                "score": 0.7933498024940491
+              }
+            ],
+            "retrieved_ids": [
+              "T012"
+            ],
+            "expected_task_id": "T012",
+            "target_found": true,
+            "target_rank": 1,
+            "reciprocal_rank": 1.0,
+            "ok": true
+          },
+          "inference": {
+            "decision": {
+              "operation": "update",
+              "task_id": "T012",
+              "proposed_text": "Add a notification (e.g., email or app notification) when someone assigns a task to me",
+              "clarifying_question": null
+            },
+            "ok": false,
+            "detail": "op update, expected duplicate"
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0523203000193462,
+            "prompt_tokens": 580,
+            "completion_tokens": 42,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.000232,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 6.720000000000001e-05,
+            "cost_usd": 0.0002992,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        },
+        {
+          "id": "E012",
+          "output": null,
+          "ok": true,
+          "detail": "",
+          "counts": {
+            "op_ok": 1,
+            "duplicate_tp": 0,
+            "duplicate_fp": 0,
+            "duplicate_fn": 0,
+            "wrong_task": 0,
+            "judge_ok": 1,
+            "retrieval_hit": 0,
+            "retrieval_labeled": 0,
+            "reciprocal_rank": 0.0
+          },
+          "retrieval": {
+            "retrieved": [],
+            "retrieved_ids": [],
+            "expected_task_id": null,
+            "target_found": null,
+            "target_rank": null,
+            "reciprocal_rank": 0.0,
+            "ok": null
+          },
+          "inference": {
+            "decision": {
+              "operation": "new",
+              "task_id": null,
+              "proposed_text": null,
+              "clarifying_question": null
+            },
+            "ok": true,
+            "detail": ""
+          },
+          "usage": {
+            "calls": 1,
+            "latency_s": 1.0260764999547973,
+            "prompt_tokens": 558,
+            "completion_tokens": 23,
+            "cached_tokens": 0,
+            "cost_input_usd": 0.0002232,
+            "cost_cached_input_usd": 0.0,
+            "cost_output_usd": 3.680000000000001e-05,
+            "cost_usd": 0.00026000000000000003,
+            "models": [
+              "gpt-4.1-mini-2025-04-14"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

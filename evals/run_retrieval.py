@@ -275,6 +275,7 @@ def evaluate(
     openai_client: OpenAI,
     embedding_model: str,
     k: int,
+    threshold: float = 0,
 ) -> dict[str, Any]:
     results = []
 
@@ -290,6 +291,7 @@ def evaluate(
             embedding_model=embedding_model,
             query_text=query_case["candidate_task"],
             k=k,
+            threshold=threshold,
         )
 
         results.append(score_query(query_case, retrieved, k))
@@ -352,6 +354,12 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("-k", "--top-k", type=int, default=3)
     parser.add_argument(
+        "--threshold",
+        type=float,
+        default=0.0,
+        help="Minimum cosine similarity; candidates below it are dropped.",
+    )
+    parser.add_argument(
         "--embedding-model",
         default=DEFAULT_EMBEDDING_MODEL,
     )
@@ -393,6 +401,7 @@ def main() -> None:
         openai_client=openai_client,
         embedding_model=args.embedding_model,
         k=args.top_k,
+        threshold=args.threshold,
     )
 
     report["metadata"] = {
@@ -400,6 +409,8 @@ def main() -> None:
         "chroma_directory": str(args.chroma_dir),
         "collection": args.collection,
         "embedding_model": args.embedding_model,
+        "top_k": args.top_k,
+        "threshold": args.threshold,
         "corpus_task_count": len(tasks),
     }
 

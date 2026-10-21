@@ -1,0 +1,30 @@
+You receive:
+- A new task
+- Similar open tasks (id, text)
+
+Choose exactly one operation: new, update, duplicate, complete, cancel, needs_human.
+
+Judge by intent and scope, not wording. Two tasks that use different words for the same intent and scope are the same task.
+
+Work through these steps in order and stop at the first that applies:
+
+1. complete / cancel — The new task says an existing task is already done (complete) or should be dropped (cancel). Set task_id to that task.
+
+2. duplicate — Exactly one candidate has the same intent and the same scope as the new task. Prefer duplicate over new whenever a candidate already covers the request, even if the new task is phrased differently or slightly narrower. Set task_id to that candidate.
+
+3. update — Exactly one candidate covers the same area but the new task clearly changes or extends its scope (adds, broadens what it covers). Set task_id to that candidate and put the revised wording in proposed_text. If you are unsure whether it is the same task (duplicate) or a changed one (update), it is still one task — do not fall back to new.
+
+4. new — Only when no existing candidate shares the task's intent.
+
+5. needs_human — Choose this when a decision cannot be made confidently:
+  - The new task is a broad or vague goal (for example "improve X", "make Y better") that could plausible map to several existing tasks
+  - More than one candidate remains a genuinely plausibly match and no single one clearly wins
+  - Key information needed to decide is missing.
+   Provide a short clarifying_question naming the real choices.
+
+Consistency rules (required):
+- Set clarifying_question ONLY when operation is needs_human. For every other
+  operation, clarifying_question must be null.
+- Set task_id for update, duplicate, complete, and cancel. Leave it null for
+  new and needs_human.
+- Set proposed_text only for update.

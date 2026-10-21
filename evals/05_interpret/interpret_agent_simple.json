@@ -1,0 +1,135 @@
+[
+  {
+    "id": "simple-change-text",
+    "message": "change #1 to 'email the landlord about the broken heating by Friday'",
+    "topics": ["Home", "Errands", "Money"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "email landlord", "topic": "Home", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_text" },
+    "expected_text_contains": { "1": ["landlord", "heating", "Friday"] },
+    "expected_other": false
+  },
+  {
+    "id": "simple-change-kind-task-to-idea",
+    "message": "#1 is really more of an idea than a task",
+    "topics": ["Projects", "Admin"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Maybe redesign the whole onboarding flow someday", "topic": "Projects", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_kind" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-change-kind-note-to-task",
+    "message": "the wifi one isn't just a note, make it a task",
+    "topics": ["Office", "Admin"],
+    "candidates": [
+      { "display_no": 1, "kind": "note", "text": "Reset the office wifi router", "topic": "Office", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_kind" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-change-topic",
+    "message": "actually that dentist one is a Health thing, not Personal",
+    "topics": ["Work", "Personal", "Health", "Family"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Book dentist appointment", "topic": "Personal", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_topic" },
+    "expected_topic": { "1": "Health" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-change-topic-to-work",
+    "message": "put the invoice task under Work",
+    "topics": ["Work", "Money", "Errands", "Home"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Chase the overdue invoice", "topic": "INBOX", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_topic" },
+    "expected_topic": { "1": "Work" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-change-topic-new-topic",
+    "message": "file the compost one under Gardening",
+    "topics": ["Home", "Errands", "Money", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Start a compost bin", "topic": "INBOX", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "change_topic" },
+    "expected_topic": { "1": "Gardening" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-nl-target-confirm-reject",
+    "message": "keep the Sam call, drop the milk one",
+    "topics": ["Work", "Errands"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Call Sam about the invoice", "topic": "Work", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Buy milk", "topic": "Errands", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2],
+    "expected_operations": { "1": "confirm", "2": "reject" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-nl-target-single-confirm",
+    "message": "the flu shot one is good, keep that",
+    "topics": ["Office", "Health"],
+    "candidates": [
+      { "display_no": 1, "kind": "note", "text": "Office wifi code is swordfish", "topic": "Office", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Book flu shot", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [2],
+    "expected_operations": { "2": "confirm" },
+    "expected_other": false
+  },
+  {
+    "id": "simple-pure-new-content",
+    "message": "book a dance class",
+    "topics": ["Home", "Chores"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Clean kitchen", "topic": "Chores", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Clean bedroom", "topic": "Chores", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [],
+    "expected_operations": {},
+    "expected_new_dump_contains": ["book", "dance class"],
+    "expected_other": true
+  },
+  {
+    "id": "simple-mixed-confirm-reject-change",
+    "message": "confirm #1, reject #2, and change #3 to 'water the plants weekly'",
+    "topics": ["Money", "Hobbies", "Garden"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Pay rent", "topic": "Money", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "idea", "text": "Learn to juggle", "topic": "Hobbies", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 3, "kind": "task", "text": "plants", "topic": "Garden", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1, 2, 3],
+    "expected_operations": { "1": "confirm", "2": "reject", "3": "change_text" },
+    "expected_text_contains": { "3": ["water", "plants"] },
+    "expected_other": false
+  },
+  {
+    "id": "simple-partial-leave-rest-pending",
+    "message": "just confirm the dentist one for now, I'll deal with the rest later",
+    "topics": ["Health", "Admin"],
+    "candidates": [
+      { "display_no": 1, "kind": "task", "text": "Book dentist appointment", "topic": "Health", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null },
+      { "display_no": 2, "kind": "task", "text": "Renew driving licence", "topic": "Admin", "op": "new", "proposed_text": null, "question": null, "existing_item_text": null, "existing_item_status": null }
+    ],
+    "expected_action_nos": [1],
+    "expected_operations": { "1": "confirm" },
+    "expected_other": false
+  }
+]

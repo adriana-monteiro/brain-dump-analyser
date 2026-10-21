@@ -20,13 +20,12 @@ PROMPTS_DIR = Path(
     os.getenv("PROMPTS_DIR", Path(__file__).resolve().parent / "prompts")
 )
 
-# Pipeline step -> prompt file in prompts/ (without .txt).
+# step to prompt file
 STEP_PROMPTS = {
-    "dump": "dump_v1",
-    "extract": "extract_v1",
-    "extract_classify": "extract_classify_v1",
-    "classify": "classify_v1",
-    "judge": "task_judge_v1",
+    "dump": "dump_v4",
+    "extract": "extract_v4",
+    "classify": "classify_v2",
+    "judge": "task_judge_v4",
     "interpret": "interpret_v1",
 }
 
@@ -34,9 +33,26 @@ DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
 MAX_OUTPUT_TOKENS = int(os.getenv("LLM_MAX_OUTPUT_TOKENS", "1500"))
 MAX_ATTEMPTS = int(os.getenv("LLM_MAX_ATTEMPTS", "2"))
 
+STEP_MODELS = {
+    "dump": None,
+    "extract": None,
+    "classify": None,
+    "judge": None,
+    "interpret": "gpt-4.1",
+}
+
+def model_for_step(step: str) -> str:
+    """Resolve the model for a step: MODEL_<STEP> env > STEP_MODELS > default.
+
+    `interpret` also honors the legacy INTERPRET_MODEL env var.
+    """
+    override = os.getenv(f"MODEL_{step.upper()}")
+    if not override and step == "interpret":
+        override = os.getenv("INTERPRET_MODEL")
+    return override or STEP_MODELS.get(step) or DEFAULT_MODEL
+
 
 # ---------------- prompts ----------------
-
 def get_prompt_for_operation(step: str) -> str:
     """PROMPT_<STEP>=<file> overrides the default prompt."""
     if step not in STEP_PROMPTS:
@@ -173,29 +189,30 @@ class LLMClient:
     def __init__(self, model: str | None = None):
         import openai
 
-        self.model = model or DEFAULT_MODEL
+        self.model = model
         self._client = openai.OpenAI()
 
-    def _sampling_kwargs(self) -> dict:
+    @staticmethod
+    def _sampling_kwargs(model: str) -> dict:
         # Reasoning models reject `temperature`.
-        if self.model.startswith(("o1", "o3", "o4", "gpt-5")):
+        if model.startswith(("o1", "o3", "o4", "gpt-5")):
             return {}
         return {"temperature": 0}
 
-    def _call_once(self, step, instructions, payload, schema) -> dict:
+    def _call_once(self, step, instructions, payload, schema, model) -> dict:
         t0 = time.perf_counter()
         response = None
         try:
             log.debug("step=%s instructions=%s", step, instructions)
             log.debug("step=%s payload=%s", step, payload)
             response = self._client.responses.parse(
-                model=self.model,
+                model=model,
                 instructions=instructions,
                 input=payload if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False),
                 text_format=schema,
                 max_output_tokens=MAX_OUTPUT_TOKENS,  # stops runaway generations
                 store=False,
-                **self._sampling_kwargs(),
+                **self._sampling_kwargs(model),
             )
 
             if response.status == "incomplete":
@@ -208,22 +225,23 @@ class LLMClient:
                     f"Model refused or returned no parsed output: {refusal or 'no parsed output'}"
                 )
 
-            _record_call(step, self.model, t0, response)
+            _record_call(step, model, t0, response)
             return parsed.model_dump()
         except Exception:
             # Log failed attempts too, with usage if we got a response back.
-            _record_call(step, self.model, t0, None)
+            _record_call(step, model, t0, None)
             raise
 
     def run_step(self, step: str, payload, *, schema=None, **context) -> dict:
         """Load the step prompt, call the Responses API (with retry), return a dict."""
         instructions = build_step_instructions(step, **context)
         schema = schema or SCHEMAS[step]
+        model = self.model or model_for_step(step)
 
         last_exc = None
         for attempt in range(1, MAX_ATTEMPTS + 1):
             try:
-                return self._call_once(step, instructions, payload, schema)
+                return self._call_once(step, instructions, payload, schema, model)
             except Exception as exc:
                 last_exc = exc
                 log.warning("LLM step %s failed (attempt %d/%d): %s", step, attempt, MAX_ATTEMPTS, exc)
@@ -268,16 +286,6 @@ def extract(text, topics):
     return _clean_alternatives(items)
 
 
-def extract_classify(text, topics):
-    items = run_step(
-        "extract_classify",
-        {"message": text, "topics": list(topics)},
-        schema=extract_schema("extract_classify", topics),
-        topics=", ".join(topics),
-    )["items"]
-    return _clean_alternatives(items)
-
-
 def classify(items):
     result = run_step(
         "classify",
@@ -289,14 +297,3 @@ def classify(items):
 
 def judge(task, similar):
     return run_step("judge", {"task": task, "similar": similar})
-
-
-def interpret(candidates, history, message):
-    return run_step(
-        "interpret",
-        {
-            "candidates": candidates,
-            "history": history,
-            "message": message,
-        },
-    )
