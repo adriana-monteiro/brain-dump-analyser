@@ -183,10 +183,3 @@ Only `OPENAI_API_KEY` is required; the rest have sensible defaults.
 
 Model and prompt versions per step live in `backend/llm.py` (`STEP_MODELS`,
 `STEP_PROMPTS`); the env vars above override them at runtime.
-
-## Tests
-
-```bash
-uv run python -m pytest          # unit + property tests
-uv run python -m pytest -q       # quieter
-```
