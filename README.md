@@ -83,7 +83,7 @@ Prerequisites: [uv](https://docs.astral.sh/uv/) and an OpenAI API key.
 
 ```bash
 git clone https://github.com/adriana-monteiro/brain-dump-analyser.git
-cd <repo-name>
+cd brain-dump-analyser
 ```
 
 2. Install dependencies (creates `.venv` and installs everything)
